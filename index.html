@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Fjelsted Rasmussen – Feriehus i Hou</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sand:#f5efe6;--warm:#e8ddd0;--bark:#8b6f4e;--bark-dark:#5c4832;
+  --moss:#6b7c5a;--cream:#faf6f0;--text:#2c2016;--text-light:#6b5c4a;
+  --accent:#c17f3e;--white:#fff9f4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lora',serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;width:100%;z-index:100;
+  background:rgba(250,246,240,0.96);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--warm);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2.5rem;
+}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--bark-dark);letter-spacing:0.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:0.78rem;color:var(--text-light);letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-btn{
+  background:var(--bark);color:var(--cream);border:none;cursor:pointer;
+  padding:0.55rem 1.4rem;border-radius:2px;font-family:'Lora',serif;
+  font-size:0.82rem;letter-spacing:0.05em;text-decoration:none;display:inline-block;
+  transition:background 0.2s;
+}
+.nav-btn:hover{background:var(--bark-dark)}
+
+.hero{
+  min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;
+  background:#957555;overflow:hidden;
+}
+.hero-texture{
+  position:absolute;inset:0;opacity:0.06;
+  background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+  background-size:18px 18px;
+}
+.hero-content{text-align:center;z-index:1;padding:2rem;max-width:720px}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#dcc8ae;margin-bottom:1.2rem}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,7vw,4.6rem);color:#fff9f0;line-height:1.08;margin-bottom:0.8rem}
+.hero-title em{font-style:italic;color:#f0d9bc}
+.hero-sub{font-size:1rem;color:#d4b99a;max-width:480px;margin:0 auto 2.5rem;line-height:1.78}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-prim{
+  background:var(--accent);color:#fff9f0;border:none;cursor:pointer;
+  padding:0.9rem 2.2rem;font-family:'Lora',serif;font-size:0.9rem;
+  letter-spacing:0.05em;border-radius:2px;text-decoration:none;display:inline-block;
+  transition:background 0.2s,transform 0.15s;
+}
+.btn-prim:hover{background:#a66a2e;transform:translateY(-1px)}
+.btn-ghost{
+  background:transparent;color:#fff9f0;border:1px solid rgba(255,249,240,0.45);
+  cursor:pointer;padding:0.9rem 2.2rem;font-family:'Lora',serif;font-size:0.9rem;
+  letter-spacing:0.05em;border-radius:2px;text-decoration:none;display:inline-block;
+  transition:background 0.2s;
+}
+.btn-ghost:hover{background:rgba(255,249,240,0.1)}
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  color:rgba(255,249,240,0.45);font-size:0.7rem;letter-spacing:0.12em;
+  text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+}
+.scroll-line{width:1px;height:36px;background:rgba(255,249,240,0.3);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0.25;transform:scaleY(1)}50%{opacity:0.7;transform:scaleY(1.15)}}
+
+section{padding:5rem 2rem}
+.inner{max-width:1080px;margin:0 auto}
+.label{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--bark);margin-bottom:0.5rem}
+.heading{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);color:var(--bark-dark);margin-bottom:1.5rem;line-height:1.2}
+.heading em{font-style:italic}
+
+/* BILLEDER */
+#billeder{background:var(--sand)}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:260px 180px;gap:10px;margin-top:2rem}
+.photo-cell{border-radius:3px;overflow:hidden;background:var(--warm);position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;color:var(--bark);font-size:0.78rem;letter-spacing:0.08em;text-align:center;padding:1rem}
+.photo-cell:first-child{grid-column:span 2;grid-row:span 2}
+.photo-cell svg{opacity:0.35;width:32px;height:32px;flex-shrink:0}
+.photo-note{font-size:0.68rem;color:var(--text-light);opacity:0.6;margin-top:0.15rem}
+
+/* OM */
+#om{background:var(--cream)}
+.om-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.om-text p{color:var(--text-light);line-height:1.85;margin-bottom:1rem;font-size:0.95rem}
+.features{list-style:none;margin-top:1.2rem;display:flex;flex-direction:column;gap:0.65rem}
+.features li{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.87rem;color:var(--text-light);line-height:1.5}
+.dot{width:7px;height:7px;background:var(--moss);border-radius:50%;flex-shrink:0;margin-top:0.35rem}
+.info-box{background:var(--bark-dark);border-radius:4px;padding:2.2rem;color:var(--cream)}
+.info-box h3{font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:1.2rem;color:#f0e0cc}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(255,249,240,0.12);font-size:0.87rem}
+.info-row:last-child{border-bottom:none}
+.info-row .val{font-weight:500;color:#f0d9bc;text-align:right;max-width:55%}
+
+/* AKTIVITETER */
+#aktiviteter{background:var(--sand)}
+.akt-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.akt-card{background:white;border:1px solid var(--warm);border-radius:4px;padding:1.8rem}
+.akt-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--bark-dark);margin-bottom:1rem}
+.akt-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.akt-list li{display:flex;align-items:flex-start;gap:0.65rem;font-size:0.85rem;color:var(--text-light);line-height:1.45}
+.akt-list .dot{background:var(--accent)}
+
+/* KALENDER */
+#kalender{background:var(--cream)}
+.cal-intro{color:var(--text-light);max-width:580px;margin-bottom:2rem;line-height:1.8;font-size:0.95rem}
+.cal-wrap{background:white;border-radius:6px;border:1px solid var(--warm);overflow:hidden;max-width:700px}
+.cal-header{background:var(--bark);color:var(--cream);padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.cal-nav-btn{background:none;border:none;color:var(--cream);cursor:pointer;font-size:1.2rem;padding:0.2rem 0.6rem;border-radius:2px;transition:background 0.15s}
+.cal-nav-btn:hover{background:rgba(255,249,240,0.15)}
+.cal-month{font-family:'Playfair Display',serif;font-size:1.1rem}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.cal-day-name{text-align:center;padding:0.6rem 0;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);background:#faf6f0;border-bottom:1px solid var(--warm)}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:default;border:0.5px solid rgba(0,0,0,0.04);transition:background 0.15s;color:var(--text)}
+.cal-day.empty{background:#fafaf8}
+.cal-day.booked{background:#e8ddd0;color:#a08060;cursor:not-allowed;text-decoration:line-through}
+.cal-day.available:hover{background:#eaf3de;cursor:pointer}
+.cal-day.selected{background:var(--moss);color:white;font-weight:500}
+.cal-day.today{border:1.5px solid var(--accent)}
+.cal-legend{display:flex;gap:1.5rem;padding:1rem 1.5rem;background:#faf6f0;border-top:1px solid var(--warm);flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-light)}
+.leg-dot{width:12px;height:12px;border-radius:2px}
+.airbnb-note{margin-top:1rem;font-size:0.8rem;color:var(--text-light);display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
+.airbnb-badge{background:#ff5a5f;color:white;padding:0.15rem 0.5rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.04em;flex-shrink:0}
+
+/* PRISER */
+#priser{background:var(--sand)}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
+.price-card{background:white;border:1px solid var(--warm);border-radius:4px;padding:1.8rem;position:relative}
+.price-card.featured{border:2px solid var(--accent)}
+.price-season{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.5rem}
+.price-amount{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--bark-dark);line-height:1}
+.price-unit{font-size:0.8rem;color:var(--text-light);margin-bottom:1rem}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.83rem;color:var(--text-light)}
+.price-features li::before{content:"✓ ";color:var(--moss)}
+.popular-badge{
+  position:absolute;top:-1px;right:1rem;
+  background:var(--accent);color:white;
+  font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;
+  padding:0.25rem 0.7rem;border-radius:0 0 3px 3px;
+}
+.price-note{margin-top:2rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px;background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem}
+.price-note strong{color:var(--bark-dark);font-weight:500}
+.medbring-box{margin-top:1.2rem;background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px}
+.medbring-box strong{color:var(--bark-dark);font-weight:500}
+
+/* BOOKING */
+#book{background:var(--bark-dark);padding:5rem 2rem}
+.book-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.book-left p{color:#c9b49a;line-height:1.85;font-size:0.93rem;margin-bottom:1.5rem}
+.steps{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.step{display:flex;gap:1rem;align-items:flex-start}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:0.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.1rem}
+.step-text{font-size:0.87rem;color:#c9b49a;line-height:1.6}
+.step-text strong{color:#f0e0cc;font-weight:500}
+.book-form{background:var(--cream);border-radius:6px;padding:2.5rem}
+.book-form h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--bark-dark);margin-bottom:1.8rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bark);margin-bottom:0.4rem}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:0.7rem 0.9rem;border:1px solid var(--warm);border-radius:3px;
+  font-family:'Lora',serif;font-size:0.9rem;color:var(--text);background:white;
+  transition:border-color 0.2s;outline:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--bark)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group textarea{resize:vertical;min-height:90px}
+.bank-info{background:var(--sand);border-radius:3px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:0.83rem;border-left:3px solid var(--accent)}
+.bank-info p{color:var(--text-light);margin-bottom:0.25rem;line-height:1.6}
+.bank-info strong{color:var(--bark-dark)}
+.submit-btn{
+  width:100%;background:var(--bark-dark);color:var(--cream);border:none;cursor:pointer;
+  padding:1rem;font-family:'Lora',serif;font-size:0.95rem;letter-spacing:0.05em;
+  border-radius:3px;transition:background 0.2s;margin-top:0.5rem;
+}
+.submit-btn:hover{background:#3d2e1e}
+.form-disclaimer{font-size:0.74rem;color:var(--text-light);text-align:center;margin-top:0.8rem;line-height:1.6}
+.success-msg{display:none;background:#eaf3de;border:1px solid #c0dd97;border-radius:3px;padding:1.4rem;text-align:center;color:#3B6D11;font-size:0.9rem;margin-top:1rem;line-height:1.7}
+
+footer{background:#2c2016;color:#9a8470;text-align:center;padding:2.5rem 2rem}
+footer p{font-size:0.82rem;line-height:2;letter-spacing:0.03em}
+footer a{color:#c9a87c;text-decoration:none}
+footer a:hover{color:var(--accent)}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#f0e0cc;margin-bottom:0.8rem;display:block;font-style:italic}
+
+@media(max-width:768px){
+  nav{padding:0.8rem 1.2rem}
+  .nav-links{display:none}
+  .om-grid,.book-inner,.akt-grid{grid-template-columns:1fr;gap:2rem}
+  .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .photo-cell:first-child{grid-column:span 2;height:220px}
+  .photo-cell{height:140px}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Villa Fjelsted Rasmussen</span>
+  <ul class="nav-links">
+    <li><a href="#billeder">Billeder</a></li>
+    <li><a href="#om">Om villaen</a></li>
+    <li><a href="#aktiviteter">Aktiviteter</a></li>
+    <li><a href="#kalender">Kalender</a></li>
+    <li><a href="#priser">Priser</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+  <a href="#book" class="nav-btn">Book ophold</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Hou &nbsp;·&nbsp; Jylland &nbsp;·&nbsp; 1 km fra stranden</p>
+    <h1 class="hero-title">Villa<br><em>Fjelsted Rasmussen</em></h1>
+    <p class="hero-sub">Unikt feriehus fra 2015 på 1.400 m² naturgrund — med vildmarksbad, bålplads, brændeovn og stor terrasse. Plads til 6 personer.</p>
+    <div class="hero-ctas">
+      <a href="#book" class="btn-prim">Send bookingforespørgsel</a>
+      <a href="#om" class="btn-ghost">Se huset</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section id="billeder">
+  <div class="inner">
+    <p class="label">Galleri</p>
+    <h2 class="heading">Se <em>villaen</em></h2>
+    <div class="photo-grid">
+      <div class="photo-cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Hovedbillede — facaden</span>
+        <span class="photo-note">Erstat med dit eget foto</span>
+      </div>
+      <div class="photo-cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Vildmarksbad</span>
+      </div>
+      <div class="photo-cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Stue & brændeovn</span>
+      </div>
+      <div class="photo-cell">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Terrasse & have</span>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-light);margin-top:1rem;font-style:italic">Tip: Erstat photo-cell divs med &lt;img src="dit-billede.jpg" style="width:100%;height:100%;object-fit:cover"&gt;</p>
+  </div>
+</section>
+
+<section id="om">
+  <div class="inner">
+    <div class="om-grid">
+      <div class="om-text">
+        <p class="label">Om villaen</p>
+        <h2 class="heading">Unikt design — <em>naturskøn grund</em></h2>
+        <p>Lækkert feriehus fra 2015 på 99 m² med plads til 6 personer. To soveværelser med dobbeltseng, stor hems med ståhøjde og 2 sovepladser. Moderne køkken og stue i forskudte plan med brændeovn, alkove, aircondition og internet.</p>
+        <p>Udendørs er der en stor naturgrund på 1.400 m² med hyggelige kroge, flere store træterrasser, speciallavet vildmarksbad til 6 personer, udebruser og bålplads med hængekøje.</p>
+        <ul class="features">
+          <li><span class="dot"></span> Privat 1.400 m² naturgrund med niveauforskel</li>
+          <li><span class="dot"></span> Unikt sommerhusdesign med skæve vinkler og forskudt plan</li>
+          <li><span class="dot"></span> Speciallavet vildmarksbad til 6 personer</li>
+          <li><span class="dot"></span> Brændeovn, aircondition og alkove i stuen</li>
+          <li><span class="dot"></span> Bålplads med terrasse og hængekøje i baghaven</li>
+          <li><span class="dot"></span> Udendørs bruser</li>
+          <li><span class="dot"></span> Wifi inkluderet</li>
+          <li><span class="dot"></span> Rigt dyreliv — rådyr og fasaner på grunden</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3>Praktiske oplysninger</h3>
+        <div class="info-row"><span>Beliggenhed</span><span class="val">Hou, Jylland</span></div>
+        <div class="info-row"><span>Størrelse</span><span class="val">99 m²</span></div>
+        <div class="info-row"><span>Grundareal</span><span class="val">1.400 m²</span></div>
+        <div class="info-row"><span>Maks. gæster</span><span class="val">6 personer</span></div>
+        <div class="info-row"><span>Soveværelser</span><span class="val">2 + hems</span></div>
+        <div class="info-row"><span>Senge</span><span class="val">2×180×200, 1×140×200, 2×90×200</span></div>
+        <div class="info-row"><span>Check-in</span><span class="val">Fra kl. 15:00</span></div>
+        <div class="info-row"><span>Check-ud</span><span class="val">Senest kl. 11:00</span></div>
+        <div class="info-row"><span>Til stranden</span><span class="val">Ca. 1 km</span></div>
+        <div class="info-row"><span>Til Hou havn</span><span class="val">Ca. 1 km</span></div>
+        <div class="info-row"><span>Rygeforhold</span><span class="val">Kun udendørs</span></div>
+        <div class="info-row"><span>El afregnes</span><span class="val">3 kr/kWh</span></div>
+        <div class="info-row"><span>Vand afregnes</span><span class="val">100 kr/m³</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aktiviteter">
+  <div class="inner">
+    <p class="label">I nærheden</p>
+    <h2 class="heading">Aktiviteter <em>tæt på</em></h2>
+    <div class="akt-grid">
+      <div class="akt-card">
+        <h3>0–10 min væk</h3>
+        <ul class="akt-list">
+          <li><span class="dot"></span> En af Danmarks reneste sandstrande (børnevenlig)</li>
+          <li><span class="dot"></span> Hou Havnebad med sauna</li>
+          <li><span class="dot"></span> Hals Strand Campings Aqua Park</li>
+          <li><span class="dot"></span> 18-huls & par-3 golf / minigolf</li>
+          <li><span class="dot"></span> Mountainbike-ruter og naturstier</li>
+          <li><span class="dot"></span> Put & take fiskesø</li>
+          <li><span class="dot"></span> Legepladser</li>
+          <li><span class="dot"></span> Iskiosk i højsæsonen</li>
+          <li><span class="dot"></span> Livemusik, marked og "Hou Dage" (sommer)</li>
+        </ul>
+      </div>
+      <div class="akt-card">
+        <h3>10–40 min væk</h3>
+        <ul class="akt-list">
+          <li><span class="dot"></span> Aalborg Zoo</li>
+          <li><span class="dot"></span> Kunsten Museum of Modern Art Aalborg</li>
+          <li><span class="dot"></span> Vestre Fjordpark & Gigantium svømmehal</li>
+          <li><span class="dot"></span> Nymarkminde Farmpark</li>
+          <li><span class="dot"></span> Maximum aktivitetscenter og biograf</li>
+          <li><span class="dot"></span> Aalborg Street Food</li>
+          <li><span class="dot"></span> Musikkens Hus</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kalender">
+  <div class="inner">
+    <p class="label">Tilgængelighed</p>
+    <h2 class="heading">Kalender</h2>
+    <p class="cal-intro">Se hvornår Villa Fjelsted Rasmussen er ledig. Kalenderen synkroniserer automatisk med Airbnb, så du altid ser de korrekte datoer.</p>
+    <div class="cal-wrap">
+      <div class="cal-header">
+        <button class="cal-nav-btn" id="prev">&#8592;</button>
+        <span class="cal-month" id="monthLabel"></span>
+        <button class="cal-nav-btn" id="next">&#8594;</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="cal-legend">
+        <div class="leg-item"><div class="leg-dot" style="background:#eaf3de;border:1px solid #c0dd97"></div> Ledig</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#e8ddd0"></div> Optaget</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#6b7c5a"></div> Valgt</div>
+      </div>
+    </div>
+    <p class="airbnb-note">
+      <span class="airbnb-badge">Airbnb</span>
+      Synkroniseret via iCal — opdateres automatisk.
+      <a href="#" style="color:var(--accent)">Se også på Airbnb</a>
+    </p>
+  </div>
+</section>
+
+<section id="priser">
+  <div class="inner">
+    <p class="label">Priser</p>
+    <h2 class="heading"><em>Gennemsigtige</em> priser</h2>
+    <div class="price-grid">
+      <div class="price-card">
+        <p class="price-season">Lavsæson</p>
+        <div class="price-amount">X.XXX</div>
+        <p class="price-unit">kr. pr. uge · Jan–Apr & Okt–Dec</p>
+        <ul class="price-features">
+          <li>Op til 6 personer</li>
+          <li>Wifi inkluderet</li>
+          <li>Vildmarksbad inkl.</li>
+          <li>El & vand afregnes efter forbrug</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="popular-badge">Mest populær</div>
+        <p class="price-season">Mellemsæson</p>
+        <div class="price-amount">X.XXX</div>
+        <p class="price-unit">kr. pr. uge · Maj–Jun & Aug–Sep</p>
+        <ul class="price-features">
+          <li>Op til 6 personer</li>
+          <li>Wifi inkluderet</li>
+          <li>Vildmarksbad inkl.</li>
+          <li>El & vand afregnes efter forbrug</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <p class="price-season">Højsæson</p>
+        <div class="price-amount">X.XXX</div>
+        <p class="price-unit">kr. pr. uge · Juli</p>
+        <ul class="price-features">
+          <li>Op til 6 personer</li>
+          <li>Wifi inkluderet</li>
+          <li>Vildmarksbad inkl.</li>
+          <li>El & vand afregnes efter forbrug</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-note" style="margin-top:2rem">
+      <strong>Forbrug afregnes separat:</strong><br>
+      Elektricitet: 3 kr/kWh &nbsp;·&nbsp; Vand: 100 kr/m³<br><br>
+      <strong>Depositum:</strong> Opkræves ved bookingbekræftelse og tilbagebetales senest 14 dage efter afrejse, forudsat ingen skader.<br><br>
+      Kortere ophold kan aftales uden for højsæson — kontakt os for tilbud.
+    </div>
+
+    <div class="medbring-box">
+      <strong>Medbring selv:</strong> Sengelinned &nbsp;·&nbsp; Håndklæder &nbsp;·&nbsp; Viskestykker &nbsp;·&nbsp; Klude
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="book-inner">
+    <div class="book-left">
+      <p class="label" style="color:#c9a87c">Reservation</p>
+      <h2 class="heading" style="color:#f0e0cc">Book dit <em>ophold</em></h2>
+      <p>Send os en bookingforespørgsel, og vi vender tilbage inden for 24 timer med bekræftelse og bankoplysninger til overførsel af depositum.</p>
+      <ul class="steps">
+        <li class="step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Udfyld formularen</strong><br>Med ønskede datoer og kontaktoplysninger</div>
+        </li>
+        <li class="step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Vi bekræfter inden 24 timer</strong><br>Du modtager svar med kontonummer til bankoverførsel</div>
+        </li>
+        <li class="step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Indbetal depositum</strong><br>Resten betales senest 4 uger før ankomst</div>
+        </li>
+        <li class="step">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>Nyd opholdet!</strong><br>Vi sender alle praktiske informationer inden ankomst</div>
+        </li>
+      </ul>
+    </div>
+    <div class="book-form">
+      <h3>Bookingforespørgsel</h3>
+      <div id="bookForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Fornavn</label>
+            <input type="text" id="fname" placeholder="Dit fornavn">
+          </div>
+          <div class="form-group">
+            <label>Efternavn</label>
+            <input type="text" id="lname" placeholder="Dit efternavn">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" id="email" placeholder="din@email.dk">
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" id="phone" placeholder="+45 12 34 56 78">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ankomst</label>
+            <input type="date" id="checkin">
+          </div>
+          <div class="form-group">
+            <label>Afrejse</label>
+            <input type="date" id="checkout">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Antal gæster</label>
+          <select id="guests">
+            <option>1 person</option>
+            <option>2 personer</option>
+            <option>3 personer</option>
+            <option>4 personer</option>
+            <option>5 personer</option>
+            <option>6 personer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Besked (valgfri)</label>
+          <textarea id="msg" placeholder="Spørgsmål, ønsker eller særlige behov..."></textarea>
+        </div>
+        <div class="bank-info">
+          <p><strong>Betaling via bankoverførsel</strong></p>
+          <p>Efter din forespørgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr — enkel og tryg betaling.</p>
+        </div>
+        <button class="submit-btn" onclick="sendBooking()">Send forespørgsel</button>
+        <p class="form-disclaimer">Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.</p>
+      </div>
+      <div class="success-msg" id="successMsg">
+        <strong>Tak for din forespørgsel!</strong><br>
+        Vi vender tilbage til dig på din e-mail inden for 24 timer med bekræftelse og bankoplysninger til betaling.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Villa Fjelsted Rasmussen</span>
+  <p>Hou, Jylland &nbsp;·&nbsp; <a href="mailto:DIN-EMAIL@HER.DK">DIN-EMAIL@HER.DK</a> &nbsp;·&nbsp; <a href="tel:+4500000000">+45 00 00 00 00</a></p>
+  <p style="margin-top:0.5rem;font-size:0.72rem">© 2025 Villa Fjelsted Rasmussen &nbsp;·&nbsp; <a href="#">Privatlivspolitik</a></p>
+</footer>
+
+<script>
+const DAYS=['Man','Tir','Ons','Tor','Fre','Lør','Søn'];
+const MONTHS=['Januar','Februar','Marts','April','Maj','Juni','Juli','August','September','Oktober','November','December'];
+const bookedRanges=[
+  {from:new Date(2025,5,14),to:new Date(2025,5,21)},
+  {from:new Date(2025,6,5),to:new Date(2025,6,19)},
+  {from:new Date(2025,7,2),to:new Date(2025,7,9)},
+];
+let current=new Date();
+let viewYear=current.getFullYear();
+let viewMonth=current.getMonth();
+function isBooked(d){return bookedRanges.some(r=>d>=r.from&&d<r.to)}
+function isToday(d){return d.toDateString()===current.toDateString()}
+function renderCal(){
+  document.getElementById('monthLabel').textContent=MONTHS[viewMonth]+' '+viewYear;
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+  DAYS.forEach(d=>{const el=document.createElement('div');el.className='cal-day-name';el.textContent=d;grid.appendChild(el)});
+  const first=new Date(viewYear,viewMonth,1);
+  let startDay=first.getDay()-1;if(startDay<0)startDay=6;
+  for(let i=0;i<startDay;i++){const el=document.createElement('div');el.className='cal-day empty';grid.appendChild(el)}
+  const dim=new Date(viewYear,viewMonth+1,0).getDate();
+  for(let d=1;d<=dim;d++){
+    const date=new Date(viewYear,viewMonth,d);
+    const el=document.createElement('div');
+    const booked=isBooked(date);
+    el.className='cal-day '+(booked?'booked':'available')+(isToday(date)?' today':'');
+    el.textContent=d;
+    if(!booked)el.onclick=()=>{
+      document.querySelectorAll('.cal-day.selected').forEach(x=>x.classList.remove('selected'));
+      el.classList.add('selected');
+      const ci=document.getElementById('checkin');
+      if(ci)ci.value=date.toISOString().split('T')[0];
+    };
+    grid.appendChild(el);
+  }
+}
+document.getElementById('prev').onclick=()=>{viewMonth--;if(viewMonth<0){viewMonth=11;viewYear--;}renderCal()};
+document.getElementById('next').onclick=()=>{viewMonth++;if(viewMonth>11){viewMonth=0;viewYear++;}renderCal()};
+renderCal();
+
+function sendBooking(){
+  const fname=document.getElementById('fname').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const checkin=document.getElementById('checkin').value;
+  const checkout=document.getElementById('checkout').value;
+  if(!fname||!email||!checkin||!checkout){alert('Udfyld venligst: navn, e-mail, ankomst og afrejse.');return;}
+  const lname=document.getElementById('lname').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const guests=document.getElementById('guests').value;
+  const msg=document.getElementById('msg').value.trim();
+  const subject=encodeURIComponent('Bookingforespørgsel Villa Fjelsted Rasmussen: '+checkin+' – '+checkout);
+  const body=encodeURIComponent(
+    'Navn: '+fname+' '+lname+'\n'+
+    'E-mail: '+email+'\n'+
+    'Telefon: '+phone+'\n'+
+    'Ankomst: '+checkin+'\n'+
+    'Afrejse: '+checkout+'\n'+
+    'Antal gæster: '+guests+'\n\n'+
+    'Besked:\n'+msg
+  );
+  window.location.href='mailto:DIN-EMAIL@HER.DK?subject='+subject+'&body='+body;
+  document.getElementById('bookForm').style.display='none';
+  document.getElementById('successMsg').style.display='block';
+}
+</script>
+</body>
+</html>
