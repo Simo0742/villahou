@@ -3,89 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Villa Fjelsted Rasmussen – Feriehus i Hou</title>
+<title>Villa Hou – villahou.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --sand:#f5efe6;--warm:#e8ddd0;--bark:#8b6f4e;--bark-dark:#5c4832;
-  --moss:#6b7c5a;--cream:#faf6f0;--text:#2c2016;--text-light:#6b5c4a;
-  --accent:#c17f3e;--white:#fff9f4;
-}
+:root{--sand:#f5efe6;--warm:#e8ddd0;--bark:#8b6f4e;--bark-dark:#5c4832;--moss:#6b7c5a;--cream:#faf6f0;--text:#2c2016;--text-light:#6b5c4a;--accent:#c17f3e}
 html{scroll-behavior:smooth}
 body{font-family:'Lora',serif;background:var(--cream);color:var(--text);overflow-x:hidden}
-
-nav{
-  position:fixed;top:0;width:100%;z-index:100;
-  background:rgba(250,246,240,0.96);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--warm);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1rem 2.5rem;
-}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--bark-dark);letter-spacing:0.02em}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:0.78rem;color:var(--text-light);letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(250,246,240,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--warm);display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;gap:1rem}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--bark-dark);letter-spacing:0.02em;white-space:nowrap}
+.nav-links{display:flex;gap:1.6rem;list-style:none;flex-wrap:nowrap}
+.nav-links a{text-decoration:none;font-size:0.76rem;color:var(--text-light);letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap}
 .nav-links a:hover{color:var(--accent)}
-.nav-btn{
-  background:var(--bark);color:var(--cream);border:none;cursor:pointer;
-  padding:0.55rem 1.4rem;border-radius:2px;font-family:'Lora',serif;
-  font-size:0.82rem;letter-spacing:0.05em;text-decoration:none;display:inline-block;
-  transition:background 0.2s;
-}
+.nav-right{display:flex;align-items:center;gap:0.9rem;flex-shrink:0}
+.lang-switcher{display:flex;align-items:center;gap:0.35rem}
+.lang-btn{background:none;border:none;cursor:pointer;font-size:1.25rem;line-height:1;padding:0.15rem 0.2rem;border-radius:3px;opacity:0.45;transition:opacity 0.2s,transform 0.15s}
+.lang-btn:hover{opacity:0.85;transform:scale(1.1)}
+.lang-btn.active{opacity:1;transform:scale(1.15)}
+.nav-btn{background:var(--bark);color:var(--cream);border:none;cursor:pointer;padding:0.55rem 1.3rem;border-radius:2px;font-family:'Lora',serif;font-size:0.82rem;letter-spacing:0.05em;text-decoration:none;display:inline-block;transition:background 0.2s;white-space:nowrap}
 .nav-btn:hover{background:var(--bark-dark)}
-
-.hero{
-  min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;
-  background:#957555;overflow:hidden;
-}
-.hero-texture{
-  position:absolute;inset:0;opacity:0.06;
-  background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
-  background-size:18px 18px;
-}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;background:url('images/cover.jpg') center/cover no-repeat;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:rgba(60,35,15,0.52)}
+.hero-texture{display:none}
 .hero-content{text-align:center;z-index:1;padding:2rem;max-width:720px}
 .hero-eyebrow{font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:#dcc8ae;margin-bottom:1.2rem}
 .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,7vw,4.6rem);color:#fff9f0;line-height:1.08;margin-bottom:0.8rem}
 .hero-title em{font-style:italic;color:#f0d9bc}
 .hero-sub{font-size:1rem;color:#d4b99a;max-width:480px;margin:0 auto 2.5rem;line-height:1.78}
 .hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-prim{
-  background:var(--accent);color:#fff9f0;border:none;cursor:pointer;
-  padding:0.9rem 2.2rem;font-family:'Lora',serif;font-size:0.9rem;
-  letter-spacing:0.05em;border-radius:2px;text-decoration:none;display:inline-block;
-  transition:background 0.2s,transform 0.15s;
-}
+.btn-prim{background:var(--accent);color:#fff9f0;border:none;cursor:pointer;padding:0.9rem 2.2rem;font-family:'Lora',serif;font-size:0.9rem;letter-spacing:0.05em;border-radius:2px;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.15s}
 .btn-prim:hover{background:#a66a2e;transform:translateY(-1px)}
-.btn-ghost{
-  background:transparent;color:#fff9f0;border:1px solid rgba(255,249,240,0.45);
-  cursor:pointer;padding:0.9rem 2.2rem;font-family:'Lora',serif;font-size:0.9rem;
-  letter-spacing:0.05em;border-radius:2px;text-decoration:none;display:inline-block;
-  transition:background 0.2s;
-}
+.btn-ghost{background:transparent;color:#fff9f0;border:1px solid rgba(255,249,240,0.45);cursor:pointer;padding:0.9rem 2.2rem;font-family:'Lora',serif;font-size:0.9rem;letter-spacing:0.05em;border-radius:2px;text-decoration:none;display:inline-block;transition:background 0.2s}
 .btn-ghost:hover{background:rgba(255,249,240,0.1)}
-.scroll-hint{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  color:rgba(255,249,240,0.45);font-size:0.7rem;letter-spacing:0.12em;
-  text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.5rem;
-}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(255,249,240,0.45);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:0.5rem}
 .scroll-line{width:1px;height:36px;background:rgba(255,249,240,0.3);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:0.25;transform:scaleY(1)}50%{opacity:0.7;transform:scaleY(1.15)}}
-
 section{padding:5rem 2rem}
 .inner{max-width:1080px;margin:0 auto}
 .label{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--bark);margin-bottom:0.5rem}
 .heading{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);color:var(--bark-dark);margin-bottom:1.5rem;line-height:1.2}
 .heading em{font-style:italic}
-
-/* BILLEDER */
 #billeder{background:var(--sand)}
-.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:260px 180px;gap:10px;margin-top:2rem}
-.photo-cell{border-radius:3px;overflow:hidden;background:var(--warm);position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem;color:var(--bark);font-size:0.78rem;letter-spacing:0.08em;text-align:center;padding:1rem}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:300px 200px;gap:10px;margin-top:2rem}
+.photo-cell{border-radius:3px;overflow:hidden;background:var(--warm);position:relative}
 .photo-cell:first-child{grid-column:span 2;grid-row:span 2}
-.photo-cell svg{opacity:0.35;width:32px;height:32px;flex-shrink:0}
-.photo-note{font-size:0.68rem;color:var(--text-light);opacity:0.6;margin-top:0.15rem}
-
-/* OM */
 #om{background:var(--cream)}
 .om-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 .om-text p{color:var(--text-light);line-height:1.85;margin-bottom:1rem;font-size:0.95rem}
@@ -97,8 +58,6 @@ section{padding:5rem 2rem}
 .info-row{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(255,249,240,0.12);font-size:0.87rem}
 .info-row:last-child{border-bottom:none}
 .info-row .val{font-weight:500;color:#f0d9bc;text-align:right;max-width:55%}
-
-/* AKTIVITETER */
 #aktiviteter{background:var(--sand)}
 .akt-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
 .akt-card{background:white;border:1px solid var(--warm);border-radius:4px;padding:1.8rem}
@@ -106,8 +65,6 @@ section{padding:5rem 2rem}
 .akt-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
 .akt-list li{display:flex;align-items:flex-start;gap:0.65rem;font-size:0.85rem;color:var(--text-light);line-height:1.45}
 .akt-list .dot{background:var(--accent)}
-
-/* KALENDER */
 #kalender{background:var(--cream)}
 .cal-intro{color:var(--text-light);max-width:580px;margin-bottom:2rem;line-height:1.8;font-size:0.95rem}
 .cal-wrap{background:white;border-radius:6px;border:1px solid var(--warm);overflow:hidden;max-width:700px}
@@ -128,8 +85,6 @@ section{padding:5rem 2rem}
 .leg-dot{width:12px;height:12px;border-radius:2px}
 .airbnb-note{margin-top:1rem;font-size:0.8rem;color:var(--text-light);display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
 .airbnb-badge{background:#ff5a5f;color:white;padding:0.15rem 0.5rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.04em;flex-shrink:0}
-
-/* PRISER */
 #priser{background:var(--sand)}
 .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
 .price-card{background:white;border:1px solid var(--warm);border-radius:4px;padding:1.8rem;position:relative}
@@ -139,18 +94,11 @@ section{padding:5rem 2rem}
 .price-unit{font-size:0.8rem;color:var(--text-light);margin-bottom:1rem}
 .price-features{list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.83rem;color:var(--text-light)}
 .price-features li::before{content:"✓ ";color:var(--moss)}
-.popular-badge{
-  position:absolute;top:-1px;right:1rem;
-  background:var(--accent);color:white;
-  font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;
-  padding:0.25rem 0.7rem;border-radius:0 0 3px 3px;
-}
+.popular-badge{position:absolute;top:-1px;right:1rem;background:var(--accent);color:white;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:0 0 3px 3px}
 .price-note{margin-top:2rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px;background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem}
 .price-note strong{color:var(--bark-dark);font-weight:500}
 .medbring-box{margin-top:1.2rem;background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px}
 .medbring-box strong{color:var(--bark-dark);font-weight:500}
-
-/* BOOKING */
 #book{background:var(--bark-dark);padding:5rem 2rem}
 .book-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .book-left p{color:#c9b49a;line-height:1.85;font-size:0.93rem;margin-bottom:1.5rem}
@@ -163,181 +111,189 @@ section{padding:5rem 2rem}
 .book-form h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--bark-dark);margin-bottom:1.8rem}
 .form-group{margin-bottom:1.2rem}
 .form-group label{display:block;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bark);margin-bottom:0.4rem}
-.form-group input,.form-group select,.form-group textarea{
-  width:100%;padding:0.7rem 0.9rem;border:1px solid var(--warm);border-radius:3px;
-  font-family:'Lora',serif;font-size:0.9rem;color:var(--text);background:white;
-  transition:border-color 0.2s;outline:none;
-}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.7rem 0.9rem;border:1px solid var(--warm);border-radius:3px;font-family:'Lora',serif;font-size:0.9rem;color:var(--text);background:white;transition:border-color 0.2s;outline:none}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--bark)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group textarea{resize:vertical;min-height:90px}
 .bank-info{background:var(--sand);border-radius:3px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:0.83rem;border-left:3px solid var(--accent)}
 .bank-info p{color:var(--text-light);margin-bottom:0.25rem;line-height:1.6}
 .bank-info strong{color:var(--bark-dark)}
-.submit-btn{
-  width:100%;background:var(--bark-dark);color:var(--cream);border:none;cursor:pointer;
-  padding:1rem;font-family:'Lora',serif;font-size:0.95rem;letter-spacing:0.05em;
-  border-radius:3px;transition:background 0.2s;margin-top:0.5rem;
-}
+.submit-btn{width:100%;background:var(--bark-dark);color:var(--cream);border:none;cursor:pointer;padding:1rem;font-family:'Lora',serif;font-size:0.95rem;letter-spacing:0.05em;border-radius:3px;transition:background 0.2s;margin-top:0.5rem}
 .submit-btn:hover{background:#3d2e1e}
 .form-disclaimer{font-size:0.74rem;color:var(--text-light);text-align:center;margin-top:0.8rem;line-height:1.6}
 .success-msg{display:none;background:#eaf3de;border:1px solid #c0dd97;border-radius:3px;padding:1.4rem;text-align:center;color:#3B6D11;font-size:0.9rem;margin-top:1rem;line-height:1.7}
-
 footer{background:#2c2016;color:#9a8470;text-align:center;padding:2.5rem 2rem}
 footer p{font-size:0.82rem;line-height:2;letter-spacing:0.03em}
 footer a{color:#c9a87c;text-decoration:none}
 footer a:hover{color:var(--accent)}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#f0e0cc;margin-bottom:0.8rem;display:block;font-style:italic}
-
-@media(max-width:768px){
-  nav{padding:0.8rem 1.2rem}
+@media(max-width:900px){
   .nav-links{display:none}
+  nav{padding:0.8rem 1.2rem}
+}
+@media(max-width:768px){
   .om-grid,.book-inner,.akt-grid{grid-template-columns:1fr;gap:2rem}
   .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .photo-cell:first-child{grid-column:span 2;height:220px}
   .photo-cell{height:140px}
   .form-row{grid-template-columns:1fr}
+  .kontakt-grid{grid-template-columns:1fr!important}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">Villa Fjelsted Rasmussen</span>
+  <span class="nav-logo">Villa Hou</span>
   <ul class="nav-links">
-    <li><a href="#billeder">Billeder</a></li>
-    <li><a href="#om">Om villaen</a></li>
-    <li><a href="#aktiviteter">Aktiviteter</a></li>
-    <li><a href="#kalender">Kalender</a></li>
-    <li><a href="#priser">Priser</a></li>
-    <li><a href="#book">Book</a></li>
+    <li><a href="#billeder" data-i18n="nav_photos">Billeder</a></li>
+    <li><a href="#om" data-i18n="nav_about">Om villaen</a></li>
+    <li><a href="#aktiviteter" data-i18n="nav_activities">Aktiviteter</a></li>
+    <li><a href="#kalender" data-i18n="nav_calendar">Kalender</a></li>
+    <li><a href="#priser" data-i18n="nav_prices">Priser</a></li>
+    <li><a href="#book" data-i18n="nav_book">Book</a></li>
+    <li><a href="#kontakt" data-i18n="nav_contact">Kontakt</a></li>
+    <li><a href="#betingelser" data-i18n="nav_terms">Betingelser</a></li>
   </ul>
-  <a href="#book" class="nav-btn">Book ophold</a>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('da')" title="Dansk">&#127465;&#127472;</button>
+      <button class="lang-btn" onclick="setLang('de')" title="Deutsch">&#127465;&#127466;</button>
+      <button class="lang-btn" onclick="setLang('en')" title="English">&#127468;&#127463;</button>
+    </div>
+    <a href="#book" class="nav-btn" data-i18n="nav_book_btn">Book ophold</a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-texture"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Hou &nbsp;·&nbsp; Jylland &nbsp;·&nbsp; 1 km fra stranden</p>
-    <h1 class="hero-title">Villa<br><em>Fjelsted Rasmussen</em></h1>
-    <p class="hero-sub">Unikt feriehus fra 2015 på 1.400 m² naturgrund — med vildmarksbad, bålplads, brændeovn og stor terrasse. Plads til 6 personer.</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Hou &nbsp;·&nbsp; Jylland &nbsp;·&nbsp; 1 km fra stranden</p>
+    <h1 class="hero-title"><em>Villa Hou</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Unikt feriehus fra 2015 på 1.400 m² naturgrund — med vildmarksbad, bålplads, brændeovn og stor terrasse. Plads til 6 personer.</p>
     <div class="hero-ctas">
-      <a href="#book" class="btn-prim">Send bookingforespørgsel</a>
-      <a href="#om" class="btn-ghost">Se huset</a>
+      <a href="#book" class="btn-prim" data-i18n="hero_cta_book">Send bookingforespørgsel</a>
+      <a href="#om" class="btn-ghost" data-i18n="hero_cta_see">Se huset</a>
     </div>
   </div>
   <div class="scroll-hint">
-    <span>Scroll</span>
+    <span data-i18n="scroll">Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
 
+<!-- BILLEDER -->
+<!-- BILLEDER -->
 <section id="billeder">
   <div class="inner">
-    <p class="label">Galleri</p>
-    <h2 class="heading">Se <em>villaen</em></h2>
+    <p class="label" data-i18n="photos_label">Galleri</p>
+    <h2 class="heading" data-i18n="photos_heading">Se <em>villaen</em></h2>
     <div class="photo-grid">
       <div class="photo-cell">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>Hovedbillede — facaden</span>
-        <span class="photo-note">Erstat med dit eget foto</span>
+        <img src="images/cover.jpg" alt="Villa Hou" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>Vildmarksbad</span>
+        <img src="images/stue.jpg" alt="Stue" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>Stue & brændeovn</span>
+        <img src="images/baghave.jpg" alt="Baghave" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>Terrasse & have</span>
+        <img src="images/hems.jpg" alt="Hems" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="photo-cell">
+        <img src="images/vaerelse1.jpg" alt="Soveværelse" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="photo-cell">
+        <img src="images/badevarelse.jpg" alt="Badeværelse" style="width:100%;height:100%;object-fit:cover">
       </div>
     </div>
-    <p style="font-size:0.78rem;color:var(--text-light);margin-top:1rem;font-style:italic">Tip: Erstat photo-cell divs med &lt;img src="dit-billede.jpg" style="width:100%;height:100%;object-fit:cover"&gt;</p>
   </div>
 </section>
 
+<!-- OM HUSET -->
 <section id="om">
   <div class="inner">
     <div class="om-grid">
       <div class="om-text">
-        <p class="label">Om villaen</p>
-        <h2 class="heading">Unikt design — <em>naturskøn grund</em></h2>
-        <p>Lækkert feriehus fra 2015 på 99 m² med plads til 6 personer. To soveværelser med dobbeltseng, stor hems med ståhøjde og 2 sovepladser. Moderne køkken og stue i forskudte plan med brændeovn, alkove, aircondition og internet.</p>
-        <p>Udendørs er der en stor naturgrund på 1.400 m² med hyggelige kroge, flere store træterrasser, speciallavet vildmarksbad til 6 personer, udebruser og bålplads med hængekøje.</p>
+        <p class="label" data-i18n="about_label">Om villaen</p>
+        <h2 class="heading" data-i18n="about_heading">Unikt design — <em>naturskøn grund</em></h2>
+        <p data-i18n="about_p1">Lækkert feriehus fra 2015 på 99 m² med plads til 6 personer. To soveværelser med dobbeltseng, stor hems med ståhøjde og 2 sovepladser. Moderne køkken og stue i forskudte plan med brændeovn, alkove, aircondition og internet.</p>
+        <p data-i18n="about_p2">Udendørs er der en stor naturgrund på 1.400 m² med hyggelige kroge, flere store træterrasser, speciallavet vildmarksbad til 6 personer, udebruser og bålplads med hængekøje.</p>
         <ul class="features">
-          <li><span class="dot"></span> Privat 1.400 m² naturgrund med niveauforskel</li>
-          <li><span class="dot"></span> Unikt sommerhusdesign med skæve vinkler og forskudt plan</li>
-          <li><span class="dot"></span> Speciallavet vildmarksbad til 6 personer</li>
-          <li><span class="dot"></span> Brændeovn, aircondition og alkove i stuen</li>
-          <li><span class="dot"></span> Bålplads med terrasse og hængekøje i baghaven</li>
-          <li><span class="dot"></span> Udendørs bruser</li>
-          <li><span class="dot"></span> Wifi inkluderet</li>
-          <li><span class="dot"></span> Rigt dyreliv — rådyr og fasaner på grunden</li>
+          <li><span class="dot"></span><span data-i18n="f1">Privat 1.400 m² naturgrund med niveauforskel</span></li>
+          <li><span class="dot"></span><span data-i18n="f2">Unikt sommerhusdesign med skæve vinkler og forskudt plan</span></li>
+          <li><span class="dot"></span><span data-i18n="f3">Speciallavet vildmarksbad til 6 personer</span></li>
+          <li><span class="dot"></span><span data-i18n="f4">Brændeovn, aircondition og alkove i stuen</span></li>
+          <li><span class="dot"></span><span data-i18n="f5">Bålplads med terrasse og hængekøje i baghaven</span></li>
+          <li><span class="dot"></span><span data-i18n="f6">Udendørs bruser</span></li>
+          <li><span class="dot"></span><span data-i18n="f7">Wifi inkluderet</span></li>
+          <li><span class="dot"></span><span data-i18n="f8">Rigt dyreliv — rådyr og fasaner på grunden</span></li>
         </ul>
       </div>
       <div class="info-box">
-        <h3>Praktiske oplysninger</h3>
-        <div class="info-row"><span>Beliggenhed</span><span class="val">Hou, Jylland</span></div>
-        <div class="info-row"><span>Størrelse</span><span class="val">99 m²</span></div>
-        <div class="info-row"><span>Grundareal</span><span class="val">1.400 m²</span></div>
-        <div class="info-row"><span>Maks. gæster</span><span class="val">6 personer</span></div>
-        <div class="info-row"><span>Soveværelser</span><span class="val">2 + hems</span></div>
-        <div class="info-row"><span>Senge</span><span class="val">2×180×200, 1×140×200, 2×90×200</span></div>
-        <div class="info-row"><span>Check-in</span><span class="val">Fra kl. 15:00</span></div>
-        <div class="info-row"><span>Check-ud</span><span class="val">Senest kl. 11:00</span></div>
-        <div class="info-row"><span>Til stranden</span><span class="val">Ca. 1 km</span></div>
-        <div class="info-row"><span>Til Hou havn</span><span class="val">Ca. 1 km</span></div>
-        <div class="info-row"><span>Rygeforhold</span><span class="val">Kun udendørs</span></div>
-        <div class="info-row"><span>El afregnes</span><span class="val">3 kr/kWh</span></div>
-        <div class="info-row"><span>Vand afregnes</span><span class="val">100 kr/m³</span></div>
+        <h3 data-i18n="info_heading">Praktiske oplysninger</h3>
+        <div class="info-row"><span data-i18n="info_loc">Beliggenhed</span><span class="val">Hou, Jylland</span></div>
+        <div class="info-row"><span data-i18n="info_size">Størrelse</span><span class="val">99 m²</span></div>
+        <div class="info-row"><span data-i18n="info_plot">Grundareal</span><span class="val">1.400 m²</span></div>
+        <div class="info-row"><span data-i18n="info_guests">Maks. gæster</span><span class="val" data-i18n="val_guests">6 personer</span></div>
+        <div class="info-row"><span data-i18n="info_beds">Soveværelser</span><span class="val">2 + hems</span></div>
+        <div class="info-row"><span data-i18n="info_bedsize">Senge</span><span class="val">2×180×200, 1×140×200, 2×90×200</span></div>
+        <div class="info-row"><span data-i18n="info_checkin">Check-in</span><span class="val" data-i18n="val_checkin">Fra kl. 15:00</span></div>
+        <div class="info-row"><span data-i18n="info_checkout">Check-ud</span><span class="val" data-i18n="val_checkout">Senest kl. 11:00</span></div>
+        <div class="info-row"><span data-i18n="info_beach">Til stranden</span><span class="val" data-i18n="val_1km">Ca. 1 km</span></div>
+        <div class="info-row"><span data-i18n="info_harbor">Til Hou havn</span><span class="val" data-i18n="val_1km2">Ca. 1 km</span></div>
+        <div class="info-row"><span data-i18n="info_smoking">Rygeforhold</span><span class="val" data-i18n="val_smoking">Kun udendørs</span></div>
+        <div class="info-row"><span data-i18n="info_el">El afregnes</span><span class="val">3 kr/kWh</span></div>
+        <div class="info-row"><span data-i18n="info_water">Vand afregnes</span><span class="val">100 kr/m³</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- AKTIVITETER -->
 <section id="aktiviteter">
   <div class="inner">
-    <p class="label">I nærheden</p>
-    <h2 class="heading">Aktiviteter <em>tæt på</em></h2>
+    <p class="label" data-i18n="akt_label">I nærheden</p>
+    <h2 class="heading" data-i18n="akt_heading">Aktiviteter <em>tæt på</em></h2>
     <div class="akt-grid">
       <div class="akt-card">
-        <h3>0–10 min væk</h3>
+        <h3 data-i18n="akt_near">0–10 min væk</h3>
         <ul class="akt-list">
-          <li><span class="dot"></span> En af Danmarks reneste sandstrande (børnevenlig)</li>
-          <li><span class="dot"></span> Hou Havnebad med sauna</li>
-          <li><span class="dot"></span> Hals Strand Campings Aqua Park</li>
-          <li><span class="dot"></span> 18-huls & par-3 golf / minigolf</li>
-          <li><span class="dot"></span> Mountainbike-ruter og naturstier</li>
-          <li><span class="dot"></span> Put & take fiskesø</li>
-          <li><span class="dot"></span> Legepladser</li>
-          <li><span class="dot"></span> Iskiosk i højsæsonen</li>
-          <li><span class="dot"></span> Livemusik, marked og "Hou Dage" (sommer)</li>
+          <li><span class="dot"></span><span data-i18n="a1">En af Danmarks reneste sandstrande (børnevenlig)</span></li>
+          <li><span class="dot"></span><span data-i18n="a2">Hou Havnebad med sauna</span></li>
+          <li><span class="dot"></span><span data-i18n="a3">Hals Strand Campings Aqua Park</span></li>
+          <li><span class="dot"></span><span data-i18n="a4">18-huls & par-3 golf / minigolf</span></li>
+          <li><span class="dot"></span><span data-i18n="a5">Mountainbike-ruter og naturstier</span></li>
+          <li><span class="dot"></span><span data-i18n="a6">Put & take fiskesø</span></li>
+          <li><span class="dot"></span><span data-i18n="a7">Legepladser</span></li>
+          <li><span class="dot"></span><span data-i18n="a8">Iskiosk i højsæsonen</span></li>
+          <li><span class="dot"></span><span data-i18n="a9">Livemusik, marked og "Hou Dage" (sommer)</span></li>
         </ul>
       </div>
       <div class="akt-card">
-        <h3>10–40 min væk</h3>
+        <h3 data-i18n="akt_far">10–40 min væk</h3>
         <ul class="akt-list">
-          <li><span class="dot"></span> Aalborg Zoo</li>
-          <li><span class="dot"></span> Kunsten Museum of Modern Art Aalborg</li>
-          <li><span class="dot"></span> Vestre Fjordpark & Gigantium svømmehal</li>
-          <li><span class="dot"></span> Nymarkminde Farmpark</li>
-          <li><span class="dot"></span> Maximum aktivitetscenter og biograf</li>
-          <li><span class="dot"></span> Aalborg Street Food</li>
-          <li><span class="dot"></span> Musikkens Hus</li>
+          <li><span class="dot"></span><span>Aalborg Zoo</span></li>
+          <li><span class="dot"></span><span>Kunsten Museum of Modern Art Aalborg</span></li>
+          <li><span class="dot"></span><span data-i18n="a11">Vestre Fjordpark & Gigantium svømmehal</span></li>
+          <li><span class="dot"></span><span>Nymarkminde Farmpark</span></li>
+          <li><span class="dot"></span><span data-i18n="a13">Maximum aktivitetscenter og biograf</span></li>
+          <li><span class="dot"></span><span>Aalborg Street Food</span></li>
+          <li><span class="dot"></span><span>Musikkens Hus</span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+<!-- KALENDER -->
 <section id="kalender">
   <div class="inner">
-    <p class="label">Tilgængelighed</p>
-    <h2 class="heading">Kalender</h2>
-    <p class="cal-intro">Se hvornår Villa Fjelsted Rasmussen er ledig. Kalenderen synkroniserer automatisk med Airbnb, så du altid ser de korrekte datoer.</p>
+    <p class="label" data-i18n="cal_label">Tilgængelighed</p>
+    <h2 class="heading" data-i18n="cal_heading">Kalender</h2>
+    <p class="cal-intro" data-i18n="cal_intro">Se hvornår Villa Hou er ledig. Kalenderen synkroniserer automatisk med Airbnb, så du altid ser de korrekte datoer.</p>
     <div class="cal-wrap">
       <div class="cal-header">
         <button class="cal-nav-btn" id="prev">&#8592;</button>
@@ -346,183 +302,554 @@ footer a:hover{color:var(--accent)}
       </div>
       <div class="cal-grid" id="calGrid"></div>
       <div class="cal-legend">
-        <div class="leg-item"><div class="leg-dot" style="background:#eaf3de;border:1px solid #c0dd97"></div> Ledig</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#e8ddd0"></div> Optaget</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#6b7c5a"></div> Valgt</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#eaf3de;border:1px solid #c0dd97"></div><span data-i18n="leg_free">Ledig</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#e8ddd0"></div><span data-i18n="leg_booked">Optaget</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#6b7c5a"></div><span data-i18n="leg_selected">Valgt</span></div>
       </div>
     </div>
     <p class="airbnb-note">
       <span class="airbnb-badge">Airbnb</span>
-      Synkroniseret via iCal — opdateres automatisk.
-      <a href="#" style="color:var(--accent)">Se også på Airbnb</a>
+      <span data-i18n="cal_sync">Synkroniseret via iCal — opdateres automatisk.</span>
+      <a href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" style="color:var(--accent)" data-i18n="cal_airbnb_link">Se også på Airbnb</a>
     </p>
   </div>
 </section>
 
+<!-- PRISER -->
 <section id="priser">
   <div class="inner">
-    <p class="label">Priser</p>
-    <h2 class="heading"><em>Gennemsigtige</em> priser</h2>
-    <div class="price-grid">
-      <div class="price-card">
-        <p class="price-season">Lavsæson</p>
-        <div class="price-amount">X.XXX</div>
-        <p class="price-unit">kr. pr. uge · Jan–Apr & Okt–Dec</p>
-        <ul class="price-features">
-          <li>Op til 6 personer</li>
-          <li>Wifi inkluderet</li>
-          <li>Vildmarksbad inkl.</li>
-          <li>El & vand afregnes efter forbrug</li>
-        </ul>
-      </div>
-      <div class="price-card featured">
-        <div class="popular-badge">Mest populær</div>
-        <p class="price-season">Mellemsæson</p>
-        <div class="price-amount">X.XXX</div>
-        <p class="price-unit">kr. pr. uge · Maj–Jun & Aug–Sep</p>
-        <ul class="price-features">
-          <li>Op til 6 personer</li>
-          <li>Wifi inkluderet</li>
-          <li>Vildmarksbad inkl.</li>
-          <li>El & vand afregnes efter forbrug</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <p class="price-season">Højsæson</p>
-        <div class="price-amount">X.XXX</div>
-        <p class="price-unit">kr. pr. uge · Juli</p>
-        <ul class="price-features">
-          <li>Op til 6 personer</li>
-          <li>Wifi inkluderet</li>
-          <li>Vildmarksbad inkl.</li>
-          <li>El & vand afregnes efter forbrug</li>
-        </ul>
-      </div>
-    </div>
+    <p class="label" data-i18n="price_label">Priser</p>
+    <h2 class="heading" data-i18n="price_heading"><em>Billigere</em> end Airbnb</h2>
 
-    <div class="price-note" style="margin-top:2rem">
-      <strong>Forbrug afregnes separat:</strong><br>
-      Elektricitet: 3 kr/kWh &nbsp;·&nbsp; Vand: 100 kr/m³<br><br>
-      <strong>Depositum:</strong> Opkræves ved bookingbekræftelse og tilbagebetales senest 14 dage efter afrejse, forudsat ingen skader.<br><br>
-      Kortere ophold kan aftales uden for højsæson — kontakt os for tilbud.
+    <!-- Airbnb sammenligning banner -->
+    <div style="background:var(--bark-dark);border-radius:6px;padding:2rem 2.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
+      <div style="flex:1;min-width:220px">
+        <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a87c;margin-bottom:0.5rem" data-i18n="p_badge_label">Direkte booking</p>
+        <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#f0e0cc;line-height:1.1" data-i18n="p_badge_pct">15% billigere</p>
+        <p style="font-size:0.85rem;color:#c9b49a;margin-top:0.4rem" data-i18n="p_badge_sub">end Airbnb-prisen — samme hus, ingen formidlingsgebyr</p>
+        <a href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" style="display:inline-block;margin-top:0.8rem;font-size:0.78rem;color:#c9a87c;text-decoration:underline;letter-spacing:0.03em" data-i18n="p_airbnb_compare">Se vores Airbnb-opslag</a>
+      </div>
+      <div style="flex:2;min-width:260px">
+        <div style="display:flex;flex-direction:column;gap:0.7rem">
+          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
+            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
+            <span data-i18n="p_usp1">Ingen Airbnb-gebyr — pengene går direkte til udlejer</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
+            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
+            <span data-i18n="p_usp2">Minimum 3 overnatninger</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
+            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
+            <span data-i18n="p_usp3">Send en forespørgsel — vi svarer med en pris inden 24 timer</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
+            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
+            <span data-i18n="p_usp4">Betaling via bankoverførsel — ingen kortgebyr</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
+            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
+            <span data-i18n="p_usp5">Slutrengøring inkluderet i prisen</span>
+          </div>
+        </div>
+      </div>
+      <div style="flex-shrink:0">
+        <a href="#book" class="btn-prim" data-i18n="p_cta">Få et tilbud</a>
+      </div>
     </div>
 
     <div class="medbring-box">
-      <strong>Medbring selv:</strong> Sengelinned &nbsp;·&nbsp; Håndklæder &nbsp;·&nbsp; Viskestykker &nbsp;·&nbsp; Klude
+      <span data-i18n="p_bring"></span>
     </div>
   </div>
 </section>
 
+
+<!-- BOOKING -->
 <section id="book">
   <div class="book-inner">
     <div class="book-left">
-      <p class="label" style="color:#c9a87c">Reservation</p>
-      <h2 class="heading" style="color:#f0e0cc">Book dit <em>ophold</em></h2>
-      <p>Send os en bookingforespørgsel, og vi vender tilbage inden for 24 timer med bekræftelse og bankoplysninger til overførsel af depositum.</p>
+      <p class="label" style="color:#c9a87c" data-i18n="book_label">Reservation</p>
+      <h2 class="heading" style="color:#f0e0cc" data-i18n="book_heading">Book dit <em>ophold</em></h2>
+      <p data-i18n="book_intro">Send os en bookingforespørgsel, og vi vender tilbage inden for 24 timer med bekræftelse og bankoplysninger.</p>
       <ul class="steps">
-        <li class="step">
-          <div class="step-num">1</div>
-          <div class="step-text"><strong>Udfyld formularen</strong><br>Med ønskede datoer og kontaktoplysninger</div>
-        </li>
-        <li class="step">
-          <div class="step-num">2</div>
-          <div class="step-text"><strong>Vi bekræfter inden 24 timer</strong><br>Du modtager svar med kontonummer til bankoverførsel</div>
-        </li>
-        <li class="step">
-          <div class="step-num">3</div>
-          <div class="step-text"><strong>Indbetal depositum</strong><br>Resten betales senest 4 uger før ankomst</div>
-        </li>
-        <li class="step">
-          <div class="step-num">4</div>
-          <div class="step-text"><strong>Nyd opholdet!</strong><br>Vi sender alle praktiske informationer inden ankomst</div>
-        </li>
+        <li class="step"><div class="step-num">1</div><div class="step-text"><strong data-i18n="step1_title">Udfyld formularen</strong><br><span data-i18n="step1_text">Med ønskede datoer og kontaktoplysninger</span></div></li>
+        <li class="step"><div class="step-num">2</div><div class="step-text"><strong data-i18n="step2_title">Vi bekræfter inden 24 timer</strong><br><span data-i18n="step2_text">Du modtager svar med kontonummer til bankoverførsel</span></div></li>
+        <li class="step"><div class="step-num">3</div><div class="step-text"><strong data-i18n="step3_title">Indbetal depositum</strong><br><span data-i18n="step3_text">Resten betales senest 4 uger før ankomst</span></div></li>
+        <li class="step"><div class="step-num">4</div><div class="step-text"><strong data-i18n="step4_title">Nyd opholdet!</strong><br><span data-i18n="step4_text">Vi sender alle praktiske informationer inden ankomst</span></div></li>
       </ul>
     </div>
     <div class="book-form">
-      <h3>Bookingforespørgsel</h3>
+      <h3 data-i18n="form_heading">Bookingforespørgsel</h3>
       <div id="bookForm">
         <div class="form-row">
-          <div class="form-group">
-            <label>Fornavn</label>
-            <input type="text" id="fname" placeholder="Dit fornavn">
-          </div>
-          <div class="form-group">
-            <label>Efternavn</label>
-            <input type="text" id="lname" placeholder="Dit efternavn">
-          </div>
+          <div class="form-group"><label data-i18n="form_fname">Fornavn</label><input type="text" id="fname" data-i18n-ph="ph_fname"></div>
+          <div class="form-group"><label data-i18n="form_lname">Efternavn</label><input type="text" id="lname" data-i18n-ph="ph_lname"></div>
         </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" id="email" placeholder="din@email.dk">
-        </div>
-        <div class="form-group">
-          <label>Telefon</label>
-          <input type="tel" id="phone" placeholder="+45 12 34 56 78">
-        </div>
+        <div class="form-group"><label data-i18n="form_email">E-mail</label><input type="email" id="email" placeholder="din@email.dk"></div>
+        <div class="form-group"><label data-i18n="form_phone">Telefon</label><input type="tel" id="phone" placeholder="+45 12 34 56 78"></div>
         <div class="form-row">
-          <div class="form-group">
-            <label>Ankomst</label>
-            <input type="date" id="checkin">
-          </div>
-          <div class="form-group">
-            <label>Afrejse</label>
-            <input type="date" id="checkout">
-          </div>
+          <div class="form-group"><label data-i18n="form_checkin">Ankomst</label><input type="date" id="checkin"></div>
+          <div class="form-group"><label data-i18n="form_checkout">Afrejse</label><input type="date" id="checkout"></div>
         </div>
         <div class="form-group">
-          <label>Antal gæster</label>
+          <label data-i18n="form_guests">Antal gæster</label>
           <select id="guests">
-            <option>1 person</option>
-            <option>2 personer</option>
-            <option>3 personer</option>
-            <option>4 personer</option>
-            <option>5 personer</option>
-            <option>6 personer</option>
+            <option data-i18n="opt_1">1 person</option>
+            <option data-i18n="opt_2">2 personer</option>
+            <option data-i18n="opt_3">3 personer</option>
+            <option data-i18n="opt_4">4 personer</option>
+            <option data-i18n="opt_5">5 personer</option>
+            <option data-i18n="opt_6">6 personer</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Besked (valgfri)</label>
-          <textarea id="msg" placeholder="Spørgsmål, ønsker eller særlige behov..."></textarea>
-        </div>
+        <div class="form-group"><label data-i18n="form_msg">Besked (valgfri)</label><textarea id="msg" data-i18n-ph="ph_msg"></textarea></div>
         <div class="bank-info">
-          <p><strong>Betaling via bankoverførsel</strong></p>
-          <p>Efter din forespørgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr — enkel og tryg betaling.</p>
+          <p><strong data-i18n="bank_title">Betaling via bankoverførsel</strong></p>
+          <p data-i18n="bank_text">Efter din forespørgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr — enkel og tryg betaling.</p>
         </div>
-        <button class="submit-btn" onclick="sendBooking()">Send forespørgsel</button>
-        <p class="form-disclaimer">Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.</p>
+        <button class="submit-btn" onclick="sendBooking()" data-i18n="form_submit">Send forespørgsel</button>
+        <p class="form-disclaimer" data-i18n="form_disclaimer">Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.</p>
       </div>
-      <div class="success-msg" id="successMsg">
-        <strong>Tak for din forespørgsel!</strong><br>
-        Vi vender tilbage til dig på din e-mail inden for 24 timer med bekræftelse og bankoplysninger til betaling.
+      <div class="success-msg" id="successMsg" data-i18n="form_success">
+        <strong>Tak!</strong> Vi vender tilbage inden for 24 timer med bekræftelse og bankoplysninger.
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" style="background:var(--sand);padding:5rem 2rem">
+  <div class="inner">
+    <p class="label" data-i18n="contact_label">Kontakt</p>
+    <h2 class="heading" data-i18n="contact_heading">Find <em>os</em></h2>
+    <div class="kontakt-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+      <div>
+        <p style="color:var(--text-light);line-height:1.85;margin-bottom:2rem;font-size:0.95rem" data-i18n="contact_intro">Har du spørgsmål? Du er altid velkommen til at kontakte os — vi svarer hurtigt.</p>
+        <div style="display:flex;flex-direction:column;gap:1.2rem">
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:40px;height:40px;background:var(--bark-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f0e0cc" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.2rem" data-i18n="contact_addr_label">Adresse</p>
+              <a href="https://maps.google.com/?q=Kongevejen+219,+9370+Hals" target="_blank" style="color:var(--text);text-decoration:none;font-size:0.92rem;line-height:1.6">Kongevejen 219<br>9370 Hals</a>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:40px;height:40px;background:var(--bark-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f0e0cc" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.2rem" data-i18n="contact_phone_label">Telefon</p>
+              <a href="tel:+4557709971" style="color:var(--text);text-decoration:none;font-size:0.92rem">+45 57 70 99 71</a>
+            </div>
+          </div>
+          <div style="display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:40px;height:40px;background:var(--bark-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f0e0cc" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.2rem">E-mail</p>
+              <a href="/cdn-cgi/l/email-protection#1871767e77586e7174747970776d367b7775" style="color:var(--text);text-decoration:none;font-size:0.92rem"><span class="__cf_email__" data-cfemail="137a7d757c53657a7f7f727b7c663d707c7e">[email&#160;protected]</span></a>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.8rem;margin-top:2rem;flex-wrap:wrap">
+          <a href="https://wa.me/4557709971" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:white;padding:0.7rem 1.4rem;border-radius:3px;text-decoration:none;font-family:'Lora',serif;font-size:0.87rem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:+4557709971" style="display:inline-flex;align-items:center;gap:0.6rem;background:var(--bark);color:var(--cream);padding:0.7rem 1.4rem;border-radius:3px;text-decoration:none;font-family:'Lora',serif;font-size:0.87rem" data-i18n="contact_call">Ring til os</a>
+        </div>
+      </div>
+      <div style="border-radius:6px;overflow:hidden;border:1px solid var(--warm);height:380px">
+        <iframe src="https://maps.google.com/maps?q=Kongevejen+219,+9370+Hals,+Danmark&output=embed&z=14" width="100%" height="100%" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEJEBETINGELSER -->
+<section id="betingelser" style="background:var(--cream);padding:5rem 2rem">
+  <div class="inner" style="max-width:780px">
+    <p class="label" data-i18n="terms_label">Lejebetingelser</p>
+    <h2 class="heading" data-i18n="terms_heading"><em>Betingelser</em> for leje</h2>
+    <p style="color:var(--text-light);font-size:0.9rem;margin-bottom:2rem;line-height:1.8" data-i18n="terms_intro">Læs venligst vores lejebetingelser grundigt inden booking.</p>
+    <div style="display:flex;flex-direction:column;gap:0.5rem" id="termsAccordion">
     </div>
   </div>
 </section>
 
 <footer>
-  <span class="footer-logo">Villa Fjelsted Rasmussen</span>
-  <p>Hou, Jylland &nbsp;·&nbsp; <a href="mailto:DIN-EMAIL@HER.DK">DIN-EMAIL@HER.DK</a> &nbsp;·&nbsp; <a href="tel:+4500000000">+45 00 00 00 00</a></p>
-  <p style="margin-top:0.5rem;font-size:0.72rem">© 2025 Villa Fjelsted Rasmussen &nbsp;·&nbsp; <a href="#">Privatlivspolitik</a></p>
+  <span class="footer-logo">Villa Hou</span>
+  <p>Kongevejen 219, 9370 Hals &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#85ecebe3eac5f3ece9e9e4edeaf0abe6eae8"><span class="__cf_email__" data-cfemail="e28b8c848da2948b8e8e838a8d97cc818d8f">[email&#160;protected]</span></a> &nbsp;·&nbsp; <a href="tel:+4557709971">+45 57 70 99 71</a></p>
+  <p style="margin-top:0.4rem"><a href="https://wa.me/4557709971" target="_blank" style="color:#25D366">WhatsApp</a> &nbsp;·&nbsp; <a href="#betingelser" data-i18n="nav_terms">Lejebetingelser</a> &nbsp;·&nbsp; <a href="#">Privatlivspolitik</a></p>
+  <p style="margin-top:0.5rem;font-size:0.72rem">© 2025 Villa Hou &nbsp;·&nbsp; villahou.com</p>
 </footer>
 
-<script>
-const DAYS=['Man','Tir','Ons','Tor','Fre','Lør','Søn'];
-const MONTHS=['Januar','Februar','Marts','April','Maj','Juni','Juli','August','September','Oktober','November','December'];
-const bookedRanges=[
-  {from:new Date(2025,5,14),to:new Date(2025,5,21)},
-  {from:new Date(2025,6,5),to:new Date(2025,6,19)},
-  {from:new Date(2025,7,2),to:new Date(2025,7,9)},
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const T = {
+  da: {
+    nav_photos:'Billeder', nav_about:'Om villaen', nav_activities:'Aktiviteter',
+    nav_calendar:'Kalender', nav_prices:'Priser', nav_book:'Book', nav_contact:'Kontakt',
+    nav_book_btn:'Book ophold',
+    hero_eyebrow:'Hou \u00b7 Jylland \u00b7 1 km fra stranden',
+    hero_sub:'Unikt feriehus fra 2015 p\u00e5 1.400 m\u00b2 naturgrund \u2014 med vildmarksbad, b\u00e5lplads, br\u00e6ndeovn og stor terrasse. Plads til 6 personer.',
+    hero_cta_book:'Send bookingforesp\u00f8rgsel', hero_cta_see:'Se huset', scroll:'Scroll',
+    photos_label:'Galleri', photos_heading:'Se <em>villaen</em>',
+    photo1:'Hovedbillede \u2014 facaden', photo2:'Vildmarksbad', photo3:'Stue & br\u00e6ndeovn', photo4:'Terrasse & have',
+    about_label:'Om villaen', about_heading:'Unikt design \u2014 <em>natursk\u00f8n grund</em>',
+    about_p1:'L\u00e6kkert feriehus fra 2015 p\u00e5 99 m\u00b2 med plads til 6 personer. To sovev\u00e6relser med dobbeltseng, stor hems med st\u00e5h\u00f8jde og 2 sovepladser. Moderne k\u00f8kken og stue i forskudte plan med br\u00e6ndeovn, alkove, aircondition og internet.',
+    about_p2:'Udend\u00f8rs er der en stor naturgrund p\u00e5 1.400 m\u00b2 med hyggelige kroge, flere store tr\u00e6terrasser, speciallavet vildmarksbad til 6 personer, udebruser og b\u00e5lplads med h\u00e6ngek\u00f8je.',
+    f1:'Privat 1.400 m\u00b2 naturgrund med niveauforskel', f2:'Unikt sommerhusdesign med sk\u00e6ve vinkler og forskudt plan',
+    f3:'Speciallavet vildmarksbad til 6 personer', f4:'Br\u00e6ndeovn, aircondition og alkove i stuen',
+    f5:'B\u00e5lplads med terrasse og h\u00e6ngek\u00f8je i baghaven', f6:'Udend\u00f8rs bruser',
+    f7:'Wifi inkluderet', f8:'Rigt dyreliv \u2014 r\u00e5dyr og fasaner p\u00e5 grunden',
+    info_heading:'Praktiske oplysninger', info_loc:'Beliggenhed', info_size:'St\u00f8rrelse',
+    info_plot:'Grundareal', info_guests:'Maks. g\u00e6ster', val_guests:'6 personer',
+    info_beds:'Sovev\u00e6relser', info_bedsize:'Senge',
+    info_checkin:'Check-in', val_checkin:'Fra kl. 15:00', info_checkout:'Check-ud', val_checkout:'Senest kl. 11:00',
+    info_beach:'Til stranden', val_1km:'Ca. 1 km', info_harbor:'Til Hou havn', val_1km2:'Ca. 1 km',
+    info_smoking:'Rygeforhold', val_smoking:'Kun udend\u00f8rs', info_el:'El afregnes', info_water:'Vand afregnes',
+    akt_label:'I n\u00e6rheden', akt_heading:'Aktiviteter <em>t\u00e6t p\u00e5</em>', akt_near:'0\u201310 min v\u00e6k', akt_far:'10\u201340 min v\u00e6k',
+    a1:'En af Danmarks reneste sandstrande (b\u00f8rnevenlig)', a2:'Hou Havnebad med sauna',
+    a3:'Hals Strand Campings Aqua Park', a4:'18-huls & par-3 golf / minigolf',
+    a5:'Mountainbike-ruter og naturstier', a6:'Put & take fiskesø', a7:'Legepladser',
+    a8:'Iskiosk i h\u00f8js\u00e6sonen', a9:'Livemusik, marked og "Hou Dage" (sommer)',
+    a11:'Vestre Fjordpark & Gigantium sv\u00f8mmehal', a13:'Maximum aktivitetscenter og biograf',
+    cal_label:'Tilg\u00e6ngelighed', cal_heading:'Kalender',
+    cal_intro:'Se hvorn\u00e5r Villa Hou er ledig. Kalenderen synkroniserer automatisk med Airbnb, s\u00e5 du altid ser de korrekte datoer.',
+    leg_free:'Ledig', leg_booked:'Optaget', leg_selected:'Valgt',
+    cal_sync:'Synkroniseret via iCal \u2014 opdateres automatisk.', cal_airbnb_link:'Se ogs\u00e5 p\u00e5 Airbnb',
+    price_label:'Priser', price_heading:'<em>Billigere</em> end Airbnb',
+    p_badge_label:'Direkte booking', p_badge_pct:'15% billigere',
+    p_badge_sub:'end Airbnb-prisen \u2014 samme hus, ingen formidlingsgeb\u00e6r',
+    p_airbnb_compare:'Se vores Airbnb-opslag \u2192',
+    p_usp1:'Ingen Airbnb-geb\u00e6r \u2014 pengene g\u00e5r direkte til udlejer',
+    p_usp2:'Minimum 3 overnatninger',
+    p_usp3:'Send en foresp\u00f8rgsel \u2014 vi svarer med en pris inden 24 timer',
+    p_usp4:'Betaling via bankovef\u00f8rsel \u2014 ingen kortgeb\u00e6r',
+    p_usp5:'Slutreng\u00f8ring inkluderet i prisen',
+    p_cta:'F\u00e5 et tilbud',
+    p_on_request:'Pris p\u00e5 foresp\u00f8rgsel',
+    p_low_season:'Lavs\u00e6son', p_low_unit:'Jan\u2013Apr & Okt\u2013Dec',
+    p_mid_season:'Mellemsæson', p_mid_unit:'Maj\u2013Jun & Aug\u2013Sep',
+    p_high_season:'H\u00f8js\u00e6son', p_high_unit:'Juli',
+    p_popular:'Mest popul\u00e6r',
+    p_feat1:'Op til 6 personer', p_feat2:'Wifi inkluderet', p_feat3:'Vildmarksbad inkl.', p_feat_min:'Min. 3 n\u00e6tter',
+    p_note:'<strong>Forbrug afregnes separat:</strong> Elektricitet: 3 kr/kWh &nbsp;\u00b7&nbsp; Vand: 100 kr/m\u00b3<br><br><strong>Depositum: 1.000 kr.</strong> — betales med 2. rate senest 6 uger f\u00f8r ankomst. Tilbagebetales senest 1 uge efter afrejse.<br><strong>Gratis afbestilling</strong> op til 6 uger f\u00f8r ankomst.',
+    p_bring:'<strong>Medbring selv:</strong> Sengelinned &nbsp;\u00b7&nbsp; H\u00e5ndkl\u00e6der &nbsp;\u00b7&nbsp; Viskestykker &nbsp;\u00b7&nbsp; Klude',
+    book_label:'Reservation', book_heading:'Book dit <em>ophold</em>',
+    book_intro:'Send os en bookingforesp\u00f8rgsel, og vi vender tilbage inden for 24 timer med bekr\u00e6ftelse og bankoplysninger.',
+    step1_title:'Udfyld formularen', step1_text:'Med \u00f8nskede datoer og kontaktoplysninger',
+    step2_title:'Vi bekr\u00e6fter inden 24 timer', step2_text:'Du modtager svar med kontonummer til bankovef\u00f8rsel',
+    step3_title:'Indbetal depositum', step3_text:'Resten betales senest 6 uger f\u00f8r ankomst',
+    step4_title:'Nyd opholdet!', step4_text:'Vi sender alle praktiske informationer inden ankomst',
+    form_heading:'Bookingforesp\u00f8rgsel', form_fname:'Fornavn', form_lname:'Efternavn',
+    form_email:'E-mail', form_phone:'Telefon', form_checkin:'Ankomst', form_checkout:'Afrejse',
+    form_guests:'Antal g\u00e6ster', form_msg:'Besked (valgfri)',
+    ph_fname:'Dit fornavn', ph_lname:'Dit efternavn', ph_msg:'Sp\u00f8rgsm\u00e5l eller \u00f8nsker\u2026',
+    opt_1:'1 person', opt_2:'2 personer', opt_3:'3 personer', opt_4:'4 personer', opt_5:'5 personer', opt_6:'6 personer',
+    bank_title:'Betaling via bankovef\u00f8rsel',
+    bank_text:'Efter din foresp\u00f8rgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr \u2014 enkel og tryg betaling.',
+    form_submit:'Send foresp\u00f8rgsel',
+    form_disclaimer:'Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.',
+    form_success:'<strong>Tak!</strong> Vi vender tilbage inden for 24 timer med bekr\u00e6ftelse og bankoplysninger.',
+    contact_label:'Kontakt', contact_heading:'Find <em>os</em>',
+    contact_intro:'Har du sp\u00f8rgsm\u00e5l? Du er altid velkommen til at kontakte os \u2014 vi svarer hurtigt.',
+    contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Ring til os',
+    nav_terms:'Betingelser',
+    terms_label:'Lejebetingelser', terms_heading:'<em>Betingelser</em> for leje',
+    terms_intro:'L\u00e6s venligst vores lejebetingelser grundigt inden booking.',
+    terms:[
+      {t:'Generelt', b:'Sommerhuset m\u00e5 max benyttes af 6 personer. Lejem\u00e5lets reservation er bindende.'},
+      {t:'Husorden', b:'Husdyr er ikke tilladt. R\u00f8gning er ikke tilladt indendd\u00f8rs. Udend\u00f8rs fodt\u00f8j er ikke tilladt indend\u00f8rs. M\u00f8bler tilh\u00f8rende indvendig beboelse m\u00e5 ikke tages udenfor.'},
+      {t:'Skader & reklamationer', b:'Lejeren holdes ansvarlig for forvoldte skader p\u00e5 hus og inventar. Reklamationer over ferieboligen skal rettes til udlejer straks ved overtagelsen og senest inden 24 timer fra lejeperiodens start. Forlader lejer ferieboligen uden at have underrettet udlejer om fejl/mangler kan udlejer ikke p\u00e5l\u00e6gges nogen tilbagebetalingspligt.'},
+      {t:'Affald & reng\u00f8ring', b:'Det er lejerens pligt at s\u00f8rge for at affaldet sorteres. Reng\u00f8ringsgebyret er obligatorisk og er lagt ind i lejeprisen. Lejeren er ansvarlig for, at huset afleveres p\u00e6nt og i samme stand som ved ankomst.'},
+      {t:'Afbestilling', b:'Annulleres bookingen <strong>mere end 6 uger</strong> før ankomst, tilbagebetales alle betalte bel\u00f8b fuldt ud (100%). Annulleres inden for 6 uger fra ankomst, forfalder alle betalte bel\u00f8b til udlejeren.'},
+      {t:'Forbrug', b:'Lejer afregner selv for forbrug af el og vand. Str\u00f8m: 3,00 kr/kWh. Vand: 100 kr/m\u00b3. Lejer skal ved ind- og udtjekning tage billeder af el- og vandm\u00e5ler som dokumentation.'},
+      {t:'Betalingsbetingelser', b:'Lejebeløbet betales i 2 rater:<br><br><strong>1. rate (25%)</strong> — indbetales senest 8 dage efter fakturaudstedelse.<br><br><strong>2. rate (75%) + depositum (1.000 kr.)</strong> — indbetales senest 6 uger f\u00f8r ankomst.<br><br>Depositum tilbagebetales senest 1 uge efter sidste lejedag. Dækker depositum ikke for skader, opkræves en særskilt regning.'},
+    ],
+  },
+  de: {
+    nav_photos:'Fotos', nav_about:'\u00dcber die Villa', nav_activities:'Aktivit\u00e4ten',
+    nav_calendar:'Kalender', nav_prices:'Preise', nav_book:'Buchen', nav_contact:'Kontakt',
+    nav_book_btn:'Aufenthalt buchen',
+    hero_eyebrow:'Hou \u00b7 J\u00fctland \u00b7 1 km zum Strand',
+    hero_sub:'Einzigartiges Ferienhaus aus 2015 auf 1.400 m\u00b2 Naturgrundst\u00fcck \u2014 mit Wildnisbad, Lagerfeuerplatz, Kamin und gro\u00dfer Terrasse. Platz f\u00fcr 6 Personen.',
+    hero_cta_book:'Buchungsanfrage senden', hero_cta_see:'Das Haus ansehen', scroll:'Scrollen',
+    photos_label:'Galerie', photos_heading:'Die <em>Villa</em> entdecken',
+    photo1:'Hauptbild \u2014 Fassade', photo2:'Wildnisbad', photo3:'Wohnzimmer & Kamin', photo4:'Terrasse & Garten',
+    about_label:'\u00dcber die Villa', about_heading:'Einzigartiges Design \u2014 <em>Naturgrundst\u00fcck</em>',
+    about_p1:'Sch\u00f6nes Ferienhaus aus 2015 mit 99 m\u00b2 f\u00fcr bis zu 6 Personen. Zwei Schlafzimmer mit Doppelbett, gro\u00dfes Hochbett mit Stehhöhe und 2 Schlafpl\u00e4tzen. Modernes K\u00fcche und Wohnzimmer auf versetzter Ebene mit Kamin, Alkoven, Klimaanlage und Internet.',
+    about_p2:'Im Au\u00dfenbereich gibt es ein 1.400 m\u00b2 gro\u00dfes Naturgrundst\u00fcck mit gem\u00fctlichen Ecken, mehreren Holzterrassen, einem speziell gefertigten Wildnisbad f\u00fcr 6 Personen, Au\u00dfendusche und Lagerfeuerplatz mit H\u00e4ngematte.',
+    f1:'Privates 1.400 m\u00b2 Naturgrundst\u00fcck mit H\u00f6henunterschied', f2:'Einzigartiges Hausdesign mit schiefen Winkeln und versetzten Ebenen',
+    f3:'Speziell gefertigtes Wildnisbad f\u00fcr 6 Personen', f4:'Kamin, Klimaanlage und Alkoven im Wohnzimmer',
+    f5:'Lagerfeuerplatz mit Terrasse und H\u00e4ngematte im Hintergarten', f6:'Au\u00dfendusche',
+    f7:'WLAN inklusive', f8:'Reiches Tierleben \u2014 Rehe und Fasane auf dem Grundst\u00fcck',
+    info_heading:'Praktische Informationen', info_loc:'Lage', info_size:'Gr\u00f6\u00dfe',
+    info_plot:'Grundst\u00fcck', info_guests:'Max. G\u00e4ste', val_guests:'6 Personen',
+    info_beds:'Schlafzimmer', info_bedsize:'Betten',
+    info_checkin:'Check-in', val_checkin:'Ab 15:00 Uhr', info_checkout:'Check-out', val_checkout:'Bis 11:00 Uhr',
+    info_beach:'Zum Strand', val_1km:'Ca. 1 km', info_harbor:'Zum Hafen Hou', val_1km2:'Ca. 1 km',
+    info_smoking:'Rauchen', val_smoking:'Nur drau\u00dfen', info_el:'Strom', info_water:'Wasser',
+    akt_label:'In der N\u00e4he', akt_heading:'Aktivit\u00e4ten <em>in der N\u00e4he</em>', akt_near:'0\u201310 Min. entfernt', akt_far:'10\u201340 Min. entfernt',
+    a1:'Einer der saubersten Sandstr\u00e4nde D\u00e4nemarks (kinderfreundlich)', a2:'Hou Hafenbad mit Sauna',
+    a3:'Hals Strand Campings Aqua Park', a4:'18-Loch & Par-3 Golf / Minigolf',
+    a5:'Mountainbike-Routen und Naturpfade', a6:'Angelteich (Catch & Release)', a7:'Spielpl\u00e4tze',
+    a8:'Eiskiosk in der Hochsaison', a9:'Live-Musik, Markt und "Hou Dage" (Sommer)',
+    a11:'Vestre Fjordpark & Gigantium Schwimmbad', a13:'Maximum Aktivit\u00e4tszentrum und Kino',
+    cal_label:'Verf\u00fcgbarkeit', cal_heading:'Kalender',
+    cal_intro:'Sehen Sie, wann Villa Hou frei ist. Der Kalender synchronisiert automatisch mit Airbnb.',
+    leg_free:'Frei', leg_booked:'Belegt', leg_selected:'Ausgew\u00e4hlt',
+    cal_sync:'Synchronisiert \u00fcber iCal \u2014 wird automatisch aktualisiert.', cal_airbnb_link:'Auch auf Airbnb ansehen',
+    price_label:'Preise', price_heading:'<em>G\u00fcnstiger</em> als Airbnb',
+    p_badge_label:'Direktbuchung', p_badge_pct:'15% g\u00fcnstiger',
+    p_badge_sub:'als Airbnb \u2014 gleiche Villa, keine Vermittlungsgeb\u00fchr',
+    p_airbnb_compare:'Unser Airbnb-Inserat ansehen \u2192',
+    p_usp1:'Keine Airbnb-Geb\u00fchr \u2014 Ihr Geld geht direkt an den Vermieter',
+    p_usp2:'Mindestaufenthalt 3 N\u00e4chte',
+    p_usp3:'Anfrage senden \u2014 wir antworten mit einem Preis innerhalb von 24 Stunden',
+    p_usp4:'Zahlung per Banktransfer \u2014 keine Kartengebühren',
+    p_usp5:'Endreinigung im Preis inbegriffen',
+    p_cta:'Angebot anfordern',
+    p_on_request:'Preis auf Anfrage',
+    p_low_season:'Nebensaison', p_low_unit:'Jan\u2013Apr & Okt\u2013Dez',
+    p_mid_season:'Zwischensaison', p_mid_unit:'Mai\u2013Jun & Aug\u2013Sep',
+    p_high_season:'Hochsaison', p_high_unit:'Juli',
+    p_popular:'Beliebteste',
+    p_feat1:'Bis zu 6 Personen', p_feat2:'WLAN inklusive', p_feat3:'Wildnisbad inkl.', p_feat_min:'Mind. 3 N\u00e4chte',
+    p_note:'<strong>Verbrauch wird separat abgerechnet:</strong> Strom: 0,40 \u20ac/kWh &nbsp;\u00b7&nbsp; Wasser: 13 \u20ac/m\u00b3<br><br><strong>Kaution: 150 \u20ac</strong> — f\u00e4llig mit der 2. Rate sp\u00e4testens 6 Wochen vor Anreise. R\u00fcckzahlung sp\u00e4testens 1 Woche nach Abreise.<br><strong>Kostenlose Stornierung</strong> bis zu 6 Wochen vor Anreise.',
+    p_bring:'<strong>Bitte mitbringen:</strong> Bettw\u00e4sche &nbsp;\u00b7&nbsp; Handt\u00fccher &nbsp;\u00b7&nbsp; Geschirrt\u00fccher &nbsp;\u00b7&nbsp; Lappen',
+    book_label:'Reservierung', book_heading:'Ihren <em>Aufenthalt</em> buchen',
+    book_intro:'Senden Sie uns eine Buchungsanfrage, und wir melden uns innerhalb von 24 Stunden mit Best\u00e4tigung und Bankdaten.',
+    step1_title:'Formular ausf\u00fcllen', step1_text:'Mit gew\u00fcnschten Terminen und Kontaktdaten',
+    step2_title:'Wir best\u00e4tigen innerhalb 24 Std.', step2_text:'Sie erhalten eine Antwort mit Kontonummer f\u00fcr die \u00dcberweisung',
+    step3_title:'Kaution einzahlen', step3_text:'Rest wird sp\u00e4testens 6 Wochen vor Anreise bezahlt',
+    step4_title:'Genie\u00dfen Sie den Aufenthalt!', step4_text:'Wir senden alle praktischen Informationen vor der Anreise',
+    form_heading:'Buchungsanfrage', form_fname:'Vorname', form_lname:'Nachname',
+    form_email:'E-Mail', form_phone:'Telefon', form_checkin:'Anreise', form_checkout:'Abreise',
+    form_guests:'Anzahl G\u00e4ste', form_msg:'Nachricht (optional)',
+    ph_fname:'Ihr Vorname', ph_lname:'Ihr Nachname', ph_msg:'Fragen oder W\u00fcnsche\u2026',
+    opt_1:'1 Person', opt_2:'2 Personen', opt_3:'3 Personen', opt_4:'4 Personen', opt_5:'5 Personen', opt_6:'6 Personen',
+    bank_title:'Zahlung per Banktransfer',
+    bank_text:'Nach Ihrer Anfrage senden wir Ihnen direkt Kontonummer und Zahlungsdetails. Keine Kartengebühren \u2014 einfach und sicher.',
+    form_submit:'Anfrage senden',
+    form_disclaimer:'Wir bearbeiten Ihre Anfrage innerhalb von 24 Stunden. Ihre Daten werden niemals an Dritte weitergegeben.',
+    form_success:'<strong>Danke!</strong> Wir melden uns innerhalb von 24 Stunden mit Best\u00e4tigung und Bankdaten.',
+    contact_label:'Kontakt', contact_heading:'<em>Uns</em> finden',
+    contact_intro:'Haben Sie Fragen? Kontaktieren Sie uns jederzeit \u2014 wir antworten schnell.',
+    contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Anrufen',
+    nav_terms:'Mietbedingungen',
+    terms_label:'Mietbedingungen', terms_heading:'<em>Mietbedingungen</em>',
+    terms_intro:'Bitte lesen Sie unsere Mietbedingungen sorgf\u00e4ltig vor der Buchung.',
+    terms:[
+      {t:'Allgemeines', b:'Das Ferienhaus darf von maximal 6 Personen genutzt werden. Die Buchung ist verbindlich.'},
+      {t:'Hausordnung', b:'Haustiere sind nicht erlaubt. Rauchen ist im Inneren nicht gestattet. Au\u00dfenschuhe d\u00fcrfen nicht im Haus getragen werden. Innenm\u00f6bel d\u00fcrfen nicht nach drau\u00dfen gebracht werden.'},
+      {t:'Sch\u00e4den & Reklamationen', b:'Der Mieter haftet f\u00fcr verursachte Sch\u00e4den an Haus und Inventar. Reklamationen m\u00fcssen sp\u00e4testens innerhalb von 24 Stunden nach Mietbeginn beim Vermieter gemeldet werden. Verl\u00e4sst der Mieter das Ferienhaus ohne den Vermieter \u00fcber M\u00e4ngel zu informieren, entf\u00e4llt jede R\u00fcckzahlungspflicht.'},
+      {t:'M\u00fcll & Reinigung', b:'Der Mieter ist verpflichtet, den M\u00fcll zu trennen. Die Reinigungsgeb\u00fchr ist obligatorisch und im Mietpreis enthalten. Das Haus muss in sauberem Zustand und wie bei der \u00dcbernahme zur\u00fcckgegeben werden.'},
+      {t:'Stornierung', b:'Wird die Buchung <strong>mehr als 6 Wochen</strong> vor Anreise storniert, werden alle geleisteten Zahlungen vollst\u00e4ndig zur\u00fcckgegeben (100%). Bei einer Stornierung innerhalb von 6 Wochen vor Anreise verfallen alle Zahlungen an den Vermieter.'},
+      {t:'Verbrauch', b:'Der Mieter rechnet Strom und Wasser selbst ab. Strom: 0,40 \u20ac/kWh. Wasser: 13 \u20ac/m\u00b3. Bei Ein- und Auschecken sind Fotos der Z\u00e4hler als Nachweis zu machen.'},
+      {t:'Zahlungsbedingungen', b:'Der Mietbetrag wird in 2 Raten erhoben:<br><br><strong>1. Rate (25%)</strong> — sp\u00e4testens 8 Tage nach Rechnungsausstellung.<br><br><strong>2. Rate (75%) + Kaution (150 \u20ac)</strong> — sp\u00e4testens 6 Wochen vor Anreise.<br><br>Die Kaution wird sp\u00e4testens 1 Woche nach dem letzten Miettag zur\u00fcckgezahlt. Reicht die Kaution f\u00fcr Sch\u00e4den nicht aus, wird eine gesonderte Rechnung gestellt.'},
+    ],
+  },
+  en: {
+    nav_photos:'Photos', nav_about:'About', nav_activities:'Activities',
+    nav_calendar:'Calendar', nav_prices:'Prices', nav_book:'Book', nav_contact:'Contact',
+    nav_book_btn:'Book a stay',
+    hero_eyebrow:'Hou \u00b7 Jutland \u00b7 1 km from the beach',
+    hero_sub:'Unique holiday house from 2015 on a 1,400 m\u00b2 natural plot \u2014 with wilderness hot tub, fire pit, wood-burning stove and large terrace. Space for 6 guests.',
+    hero_cta_book:'Send booking enquiry', hero_cta_see:'See the house', scroll:'Scroll',
+    photos_label:'Gallery', photos_heading:'See the <em>villa</em>',
+    photo1:'Main photo \u2014 facade', photo2:'Wilderness hot tub', photo3:'Living room & fireplace', photo4:'Terrace & garden',
+    about_label:'About the villa', about_heading:'Unique design \u2014 <em>natural setting</em>',
+    about_p1:'Beautiful holiday house from 2015, 99 m\u00b2, sleeping up to 6 people. Two bedrooms with double beds, a spacious loft with standing height and 2 sleeping spots. Modern kitchen and living room on split levels with wood-burning stove, alcove, air conditioning and internet.',
+    about_p2:'Outside there is a large 1,400 m\u00b2 natural plot with cosy corners, several wooden terraces, a custom-built wilderness hot tub for 6, outdoor shower and a fire pit with hammock.',
+    f1:'Private 1,400 m\u00b2 natural plot with varied terrain', f2:'Unique house design with angled walls and split levels',
+    f3:'Custom-built wilderness hot tub for 6 people', f4:'Wood-burning stove, air conditioning and alcove',
+    f5:'Fire pit with terrace and hammock in the back garden', f6:'Outdoor shower',
+    f7:'Wi-Fi included', f8:'Rich wildlife \u2014 deer and pheasants on the property',
+    info_heading:'Practical information', info_loc:'Location', info_size:'Size',
+    info_plot:'Plot area', info_guests:'Max. guests', val_guests:'6 people',
+    info_beds:'Bedrooms', info_bedsize:'Beds',
+    info_checkin:'Check-in', val_checkin:'From 15:00', info_checkout:'Check-out', val_checkout:'By 11:00',
+    info_beach:'To the beach', val_1km:'Approx. 1 km', info_harbor:'To Hou harbour', val_1km2:'Approx. 1 km',
+    info_smoking:'Smoking', val_smoking:'Outside only', info_el:'Electricity', info_water:'Water',
+    akt_label:'Nearby', akt_heading:'Activities <em>close by</em>', akt_near:'0\u201310 min away', akt_far:'10\u201340 min away',
+    a1:'One of Denmark\'s cleanest sandy beaches (family-friendly)', a2:'Hou Harbour Bath with sauna',
+    a3:'Hals Strand Camping Aqua Park', a4:'18-hole & par-3 golf / mini golf',
+    a5:'Mountain bike trails and nature paths', a6:'Catch & release fishing lake', a7:'Playgrounds',
+    a8:'Ice cream kiosk in high season', a9:'Live music, market and "Hou Days" (summer)',
+    a11:'Vestre Fjordpark & Gigantium swimming pool', a13:'Maximum activity centre and cinema',
+    cal_label:'Availability', cal_heading:'Calendar',
+    cal_intro:'Check when Villa Hou is available. The calendar syncs automatically with Airbnb, so you always see the correct dates.',
+    leg_free:'Available', leg_booked:'Booked', leg_selected:'Selected',
+    cal_sync:'Synced via iCal \u2014 updated automatically.', cal_airbnb_link:'Also view on Airbnb',
+    price_label:'Prices', price_heading:'<em>Cheaper</em> than Airbnb',
+    p_badge_label:'Book direct', p_badge_pct:'15% cheaper',
+    p_badge_sub:'than Airbnb \u2014 same villa, no service fee',
+    p_airbnb_compare:'View our Airbnb listing \u2192',
+    p_usp1:'No Airbnb fee \u2014 your money goes directly to the owner',
+    p_usp2:'Minimum 3 nights',
+    p_usp3:'Send an enquiry \u2014 we reply with a price within 24 hours',
+    p_usp4:'Payment by bank transfer \u2014 no card fees',
+    p_usp5:'Final cleaning included in the price',
+    p_cta:'Get a quote',
+    p_on_request:'Price on request',
+    p_low_season:'Low season', p_low_unit:'Jan\u2013Apr & Oct\u2013Dec',
+    p_mid_season:'Mid season', p_mid_unit:'May\u2013Jun & Aug\u2013Sep',
+    p_high_season:'High season', p_high_unit:'July',
+    p_popular:'Most popular',
+    p_feat1:'Up to 6 people', p_feat2:'Wi-Fi included', p_feat3:'Hot tub included', p_feat_min:'Min. 3 nights',
+    p_note:'<strong>Utilities billed separately:</strong> Electricity: \u20ac0.40/kWh &nbsp;\u00b7&nbsp; Water: \u20ac13/m\u00b3<br><br><strong>Deposit: \u20ac150</strong> — due with the 2nd instalment no later than 6 weeks before arrival. Refunded within 1 week of departure.<br><strong>Free cancellation</strong> up to 6 weeks before arrival.',
+    p_bring:'<strong>Please bring:</strong> Bed linen &nbsp;\u00b7&nbsp; Towels &nbsp;\u00b7&nbsp; Tea towels &nbsp;\u00b7&nbsp; Cloths',
+    book_label:'Booking', book_heading:'Book your <em>stay</em>',
+    book_intro:'Send us a booking enquiry and we\'ll get back to you within 24 hours with confirmation and bank transfer details.',
+    step1_title:'Fill in the form', step1_text:'With your desired dates and contact details',
+    step2_title:'We confirm within 24 hours', step2_text:'You\'ll receive a reply with bank account details',
+    step3_title:'Pay the deposit', step3_text:'Balance due no later than 6 weeks before arrival',
+    step4_title:'Enjoy your stay!', step4_text:'We\'ll send all practical information before arrival',
+    form_heading:'Booking enquiry', form_fname:'First name', form_lname:'Last name',
+    form_email:'Email', form_phone:'Phone', form_checkin:'Arrival', form_checkout:'Departure',
+    form_guests:'Number of guests', form_msg:'Message (optional)',
+    ph_fname:'Your first name', ph_lname:'Your last name', ph_msg:'Questions or requests\u2026',
+    opt_1:'1 person', opt_2:'2 people', opt_3:'3 people', opt_4:'4 people', opt_5:'5 people', opt_6:'6 people',
+    bank_title:'Payment by bank transfer',
+    bank_text:'After your enquiry we\'ll send you our bank details directly. No card fees \u2014 simple and secure.',
+    form_submit:'Send enquiry',
+    form_disclaimer:'We respond within 24 hours. Your details are never shared with third parties.',
+    form_success:'<strong>Thank you!</strong> We\'ll be in touch within 24 hours with confirmation and bank details.',
+    contact_label:'Contact', contact_heading:'Find <em>us</em>',
+    contact_intro:'Have questions? Feel free to contact us \u2014 we respond quickly.',
+    contact_addr_label:'Address', contact_phone_label:'Phone', contact_call:'Call us',
+    nav_terms:'Terms',
+    terms_label:'Rental terms', terms_heading:'<em>Terms</em> & conditions',
+    terms_intro:'Please read our rental terms carefully before booking.',
+    terms:[
+      {t:'General', b:'The holiday house may be used by a maximum of 6 people. The booking is binding.'},
+      {t:'House rules', b:'Pets are not allowed. Smoking indoors is not permitted. Outdoor footwear is not allowed inside. Indoor furniture may not be taken outside.'},
+      {t:'Damages & complaints', b:'The tenant is liable for any damages caused to the house and its contents. Complaints must be reported to the landlord immediately upon arrival and no later than 24 hours after the start of the rental period. If the tenant leaves without informing the landlord of any faults, the landlord bears no obligation to refund.'},
+      {t:'Waste & cleaning', b:'The tenant is responsible for sorting waste. A cleaning fee is mandatory and included in the rental price. The house must be returned in clean condition and in the same state as upon arrival.'},
+      {t:'Cancellation', b:'If the booking is cancelled <strong>more than 6 weeks</strong> before arrival, all payments made will be refunded in full (100%). If cancelled within 6 weeks of arrival, all payments are forfeited to the landlord.'},
+      {t:'Utilities', b:'The tenant pays for electricity and water consumption. Electricity: \u20ac0.40/kWh. Water: \u20ac13/m\u00b3. Photos of the electricity and water meters must be taken at check-in and check-out as documentation.'},
+      {t:'Payment terms', b:'The rental amount is billed in 2 instalments:<br><br><strong>1st instalment (25%)</strong> — due within 8 days of invoice.<br><br><strong>2nd instalment (75%) + deposit (\u20ac150)</strong> — due no later than 6 weeks before arrival.<br><br>The deposit is refunded within 1 week of the last rental day. If the deposit does not cover damages, a separate invoice will be issued.'},
+    ],
+  }
+};
+
+let currentLang = 'da';
+
+function renderTerms(lang) {
+  const acc = document.getElementById('termsAccordion');
+  if (!acc) return;
+  const terms = T[lang].terms || [];
+  acc.innerHTML = terms.map((item, i) => `
+    <div style="border:1px solid var(--warm);border-radius:4px;overflow:hidden">
+      <button onclick="toggleTerm(${i})" style="width:100%;text-align:left;background:white;border:none;cursor:pointer;padding:1rem 1.2rem;display:flex;justify-content:space-between;align-items:center;font-family:'Lora',serif;font-size:0.92rem;color:var(--bark-dark);font-weight:500">
+        <span>${item.t}</span>
+        <span id="termArrow${i}" style="font-size:0.8rem;color:var(--bark);transition:transform 0.2s;display:inline-block">&#9660;</span>
+      </button>
+      <div id="termBody${i}" style="display:none;padding:0 1.2rem 1rem;font-size:0.87rem;color:var(--text-light);line-height:1.8;background:white;border-top:1px solid var(--warm)">${item.b}</div>
+    </div>
+  `).join('');
+}
+
+function toggleTerm(i) {
+  const body = document.getElementById('termBody'+i);
+  const arrow = document.getElementById('termArrow'+i);
+  const open = body.style.display !== 'none';
+  body.style.display = open ? 'none' : 'block';
+  arrow.style.transform = open ? '' : 'rotate(180deg)';
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  const map = {da:0,de:1,en:2};
+  document.querySelectorAll('.lang-btn')[map[lang]].classList.add('active');
+  renderTerms(lang);
+  renderCal();
+}
+
+// CALENDAR
+const ICAL_URL='https://www.airbnb.dk/calendar/ical/1440420483011438215.ics?t=50358892574146fbb10083c54419f796';
+const PROXIES=[
+  async u=>{const r=await fetch('https://corsproxy.io/?'+encodeURIComponent(u));if(!r.ok)throw new Error(r.status);return r.text()},
+  async u=>{const r=await fetch('https://api.allorigins.win/get?url='+encodeURIComponent(u));if(!r.ok)throw new Error(r.status);const d=await r.json();if(!d.contents)throw new Error('empty');return d.contents},
 ];
+const MONTHS_DA=['Januar','Februar','Marts','April','Maj','Juni','Juli','August','September','Oktober','November','December'];
+const MONTHS_DE=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+const MONTHS_EN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DAYS_DA=['Man','Tir','Ons','Tor','Fre','Lør','Søn'];
+const DAYS_DE=['Mo','Di','Mi','Do','Fr','Sa','So'];
+const DAYS_EN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+let bookedRanges=[];
 let current=new Date();
 let viewYear=current.getFullYear();
 let viewMonth=current.getMonth();
+
+function parseJsonDate(s){return new Date(+s.substring(0,4),+s.substring(4,6)-1,+s.substring(6,8))}
+
+function showCalStatus(msg,err){
+  let el=document.getElementById('cal-status');
+  if(!el){el=document.createElement('p');el.id='cal-status';el.style.cssText='font-size:0.78rem;margin-top:0.8rem;font-style:italic';document.querySelector('.cal-wrap').after(el);}
+  el.style.color=err?'#c17f3e':'#6b7c5a';
+  el.innerHTML=(err?'&#9888; ':'&#10003; ')+msg;
+}
+
+async function loadAirbnbCalendar(){
+  try{
+    const r=await fetch('calendar.json?v='+Date.now());
+    if(!r.ok)throw new Error('no json');
+    const d=await r.json();
+    bookedRanges=(d.booked||[]).map(b=>({from:parseJsonDate(b.from),to:parseJsonDate(b.to)})).filter(b=>!isNaN(b.from));
+    renderCal();
+    const upd=d.updated?new Date(d.updated).toLocaleDateString('da-DK',{day:'numeric',month:'long'}):'';
+    showCalStatus('Synkroniseret med Airbnb'+(upd?' \u00b7 '+upd:''));
+    return;
+  }catch(_){}
+  for(let i=0;i<PROXIES.length;i++){
+    try{
+      const text=await Promise.race([PROXIES[i](ICAL_URL),new Promise((_,r)=>setTimeout(()=>r(new Error('timeout')),8000))]);
+      if(!text||!text.includes('VCALENDAR'))throw new Error('invalid');
+      bookedRanges=[];
+      text.split('BEGIN:VEVENT').slice(1).forEach(ev=>{
+        const s=ev.match(/DTSTART[^:\n]*:([^\r\n]+)/);
+        const e=ev.match(/DTEND[^:\n]*:([^\r\n]+)/);
+        if(s&&e){try{const from=parseJsonDate(s[1].trim().replace(/[^\d]/g,'').substring(0,8).padEnd(8,'0'));const to=parseJsonDate(e[1].trim().replace(/[^\d]/g,'').substring(0,8).padEnd(8,'0'));if(!isNaN(from)&&to>from)bookedRanges.push({from,to});}catch(_){}}
+      });
+      renderCal();
+      showCalStatus('Synkroniseret med Airbnb');
+      return;
+    }catch(_){}
+  }
+  showCalStatus('Kalender midlertidigt utilgængelig',true);
+  renderCal();
+}
+
 function isBooked(d){return bookedRanges.some(r=>d>=r.from&&d<r.to)}
 function isToday(d){return d.toDateString()===current.toDateString()}
+
 function renderCal(){
-  document.getElementById('monthLabel').textContent=MONTHS[viewMonth]+' '+viewYear;
+  const months=currentLang==='de'?MONTHS_DE:currentLang==='en'?MONTHS_EN:MONTHS_DA;
+  const days=currentLang==='de'?DAYS_DE:currentLang==='en'?DAYS_EN:DAYS_DA;
+  document.getElementById('monthLabel').textContent=months[viewMonth]+' '+viewYear;
   const grid=document.getElementById('calGrid');
   grid.innerHTML='';
-  DAYS.forEach(d=>{const el=document.createElement('div');el.className='cal-day-name';el.textContent=d;grid.appendChild(el)});
+  days.forEach(d=>{const el=document.createElement('div');el.className='cal-day-name';el.textContent=d;grid.appendChild(el)});
   const first=new Date(viewYear,viewMonth,1);
   let startDay=first.getDay()-1;if(startDay<0)startDay=6;
   for(let i=0;i<startDay;i++){const el=document.createElement('div');el.className='cal-day empty';grid.appendChild(el)}
@@ -542,31 +869,25 @@ function renderCal(){
     grid.appendChild(el);
   }
 }
+
 document.getElementById('prev').onclick=()=>{viewMonth--;if(viewMonth<0){viewMonth=11;viewYear--;}renderCal()};
 document.getElementById('next').onclick=()=>{viewMonth++;if(viewMonth>11){viewMonth=0;viewYear++;}renderCal()};
-renderCal();
+renderTerms('da');
+loadAirbnbCalendar();
 
 function sendBooking(){
   const fname=document.getElementById('fname').value.trim();
   const email=document.getElementById('email').value.trim();
   const checkin=document.getElementById('checkin').value;
   const checkout=document.getElementById('checkout').value;
-  if(!fname||!email||!checkin||!checkout){alert('Udfyld venligst: navn, e-mail, ankomst og afrejse.');return;}
+  if(!fname||!email||!checkin||!checkout){alert('Please fill in: name, email, arrival and departure.');return;}
   const lname=document.getElementById('lname').value.trim();
   const phone=document.getElementById('phone').value.trim();
   const guests=document.getElementById('guests').value;
   const msg=document.getElementById('msg').value.trim();
-  const subject=encodeURIComponent('Bookingforespørgsel Villa Fjelsted Rasmussen: '+checkin+' – '+checkout);
-  const body=encodeURIComponent(
-    'Navn: '+fname+' '+lname+'\n'+
-    'E-mail: '+email+'\n'+
-    'Telefon: '+phone+'\n'+
-    'Ankomst: '+checkin+'\n'+
-    'Afrejse: '+checkout+'\n'+
-    'Antal gæster: '+guests+'\n\n'+
-    'Besked:\n'+msg
-  );
-  window.location.href='mailto:DIN-EMAIL@HER.DK?subject='+subject+'&body='+body;
+  const subject=encodeURIComponent('Booking Villa Hou: '+checkin+' – '+checkout);
+  const body=encodeURIComponent('Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nArrival: '+checkin+'\nDeparture: '+checkout+'\nGuests: '+guests+'\n\nMessage:\n'+msg);
+  window.location.href='mailto:info@villahou.com?subject='+subject+'&body='+body;
   document.getElementById('bookForm').style.display='none';
   document.getElementById('successMsg').style.display='block';
 }
