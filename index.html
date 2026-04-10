@@ -451,7 +451,7 @@ footer a:hover{color:var(--accent)}
             </div>
             <div>
               <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.2rem">E-mail</p>
-              <a href="/cdn-cgi/l/email-protection#1871767e77586e7174747970776d367b7775" style="color:var(--text);text-decoration:none;font-size:0.92rem"><span class="__cf_email__" data-cfemail="137a7d757c53657a7f7f727b7c663d707c7e">[email&#160;protected]</span></a>
+              <a id="email-link-contact" href="#" style="color:var(--text);text-decoration:none;font-size:0.92rem">info&#64;villahou.com</a>
             </div>
           </div>
         </div>
@@ -483,12 +483,18 @@ footer a:hover{color:var(--accent)}
 
 <footer>
   <span class="footer-logo">Villa Hou</span>
-  <p>Kongevejen 219, 9370 Hals &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#85ecebe3eac5f3ece9e9e4edeaf0abe6eae8"><span class="__cf_email__" data-cfemail="e28b8c848da2948b8e8e838a8d97cc818d8f">[email&#160;protected]</span></a> &nbsp;·&nbsp; <a href="tel:+4557709971">+45 57 70 99 71</a></p>
+  <p>Kongevejen 219, 9370 Hals &nbsp;·&nbsp; <a id="email-link-footer" href="#" style="color:#c9a87c">info&#64;villahou.com</a> &nbsp;·&nbsp; <a href="tel:+4557709971">+45 57 70 99 71</a></p>
   <p style="margin-top:0.4rem"><a href="https://wa.me/4557709971" target="_blank" style="color:#25D366">WhatsApp</a> &nbsp;·&nbsp; <a href="#betingelser" data-i18n="nav_terms">Lejebetingelser</a> &nbsp;·&nbsp; <a href="#">Privatlivspolitik</a></p>
   <p style="margin-top:0.5rem;font-size:0.72rem">© 2025 Villa Hou &nbsp;·&nbsp; villahou.com</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+const _e = ['info','villahou.com'].join('\u0040');
+['email-link-contact','email-link-footer'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el){el.href='mailto:'+_e;el.textContent=_e;}
+});
+
 const T = {
   da: {
     nav_photos:'Billeder', nav_about:'Om villaen', nav_activities:'Aktiviteter',
@@ -897,7 +903,7 @@ function sendBooking(){
   const msg=document.getElementById('msg').value.trim();
   const subject=encodeURIComponent('Booking Villa Hou: '+checkin+' – '+checkout);
   const body=encodeURIComponent('Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nArrival: '+checkin+'\nDeparture: '+checkout+'\nGuests: '+guests+'\n\nMessage:\n'+msg);
-  window.location.href='mailto:info@villahou.com?subject='+subject+'&body='+body;
+  window.location.href='mailto:'+_e+'?subject='+subject+'&body='+body;
   document.getElementById('bookForm').style.display='none';
   document.getElementById('successMsg').style.display='block';
 }
