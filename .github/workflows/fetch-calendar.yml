@@ -2,8 +2,11 @@ name: Opdater Airbnb kalender
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Kører hver time
-  workflow_dispatch:        # Kan også køres manuelt
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   fetch:
@@ -11,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Hent Airbnb iCal og gem som JSON
         run: |
@@ -30,9 +35,10 @@ jobs:
               e = re.search(r'DTEND[^:\n]*:([^\r\n]+)', ev)
               if s and e:
                   try:
-                      ds = s.group(1).strip().replace('Z','')[:8]
-                      de = e.group(1).strip().replace('Z','')[:8]
-                      ranges.append({'from': ds, 'to': de})
+                      ds = re.sub(r'[^\d]', '', s.group(1).strip())[:8]
+                      de = re.sub(r'[^\d]', '', e.group(1).strip())[:8]
+                      if len(ds) == 8 and len(de) == 8:
+                          ranges.append({'from': ds, 'to': de})
                   except:
                       pass
 
