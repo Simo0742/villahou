@@ -165,12 +165,13 @@ section{padding:5rem 2rem}
 .cal-day-name{text-align:center;padding:0.6rem 0;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);background:#faf6f0;border-bottom:1px solid var(--warm)}
 .cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:0.85rem;cursor:default;border:0.5px solid rgba(0,0,0,0.04);transition:background 0.15s;color:var(--text)}
 .cal-day.empty{background:#fafaf8}
-.cal-day.booked{background:#e8ddd0;color:#a08060;cursor:not-allowed;text-decoration:line-through}
-.cal-day.available:hover{background:#eaf3de;cursor:pointer}
+.cal-day.booked{background:#d9c5b2;color:#8a6a50;cursor:not-allowed;text-decoration:line-through}
+.cal-day.available:hover{background:#d4eac0;cursor:pointer}
 .cal-day.selected{background:var(--moss);color:white;font-weight:500}
-.cal-day.changeover{background:linear-gradient(135deg,#eaf3de 50%,#e8ddd0 50%);cursor:pointer}
-.cal-day.changeover:hover{background:linear-gradient(135deg,#d4eac0 50%,#ddd0c2 50%)}
-.cal-day.today{border:1.5px solid var(--accent)}
+.cal-day.in-range{background:#eaf3de}
+.cal-day.changeover{background:linear-gradient(135deg,#fff 50%,#d9c5b2 50%);cursor:pointer}
+.cal-day.changeover:hover{background:linear-gradient(135deg,#d4eac0 50%,#c9b09a 50%)}
+.cal-day.today{border:2px solid var(--accent)}
 .cal-legend{display:flex;gap:1.5rem;padding:1rem 1.5rem;background:#faf6f0;border-top:1px solid var(--warm);flex-wrap:wrap}
 .leg-item{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-light)}
 .leg-dot{width:12px;height:12px;border-radius:2px}
@@ -385,7 +386,7 @@ footer a:hover{color:var(--accent)}
   <div class="inner">
     <p class="label" data-i18n="cal_label">Tilgængelighed</p>
     <h2 class="heading" data-i18n="cal_heading">Kalender</h2>
-    <p class="cal-intro" data-i18n="cal_intro">Se hvornår Villa Hou er ledig. Kalenderen synkroniserer automatisk med Airbnb, så du altid ser de korrekte datoer.</p>
+    <p class="cal-intro" data-i18n="cal_intro">Se hvornår Villa Hou er ledig. Klik på ankomstdag, derefter afrejsedag — datoerne overføres automatisk til bookingformularen.</p>
     <div class="cal-wrap">
       <div class="cal-header">
         <button class="cal-nav-btn" id="prev">&#8592;</button>
@@ -394,9 +395,9 @@ footer a:hover{color:var(--accent)}
       </div>
       <div class="cal-grid" id="calGrid"></div>
       <div class="cal-legend">
-        <div class="leg-item"><div class="leg-dot" style="background:#eaf3de;border:1px solid #c0dd97"></div><span data-i18n="leg_free">Ledig</span></div>
-        <div class="leg-item"><div class="leg-dot" style="background:linear-gradient(135deg,#eaf3de 50%,#e8ddd0 50%);border:1px solid #c0dd97"></div><span data-i18n="leg_changeover">Skiftedag</span></div>
-        <div class="leg-item"><div class="leg-dot" style="background:#e8ddd0"></div><span data-i18n="leg_booked">Optaget</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#eaf3de;border:1px solid #97c459"></div><span data-i18n="leg_free">Ledig</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:linear-gradient(135deg,#fff 50%,#d9c5b2 50%);border:1px solid #c0b090"></div><span data-i18n="leg_changeover">Skiftedag</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:#d9c5b2"></div><span data-i18n="leg_booked">Optaget</span></div>
         <div class="leg-item"><div class="leg-dot" style="background:#6b7c5a"></div><span data-i18n="leg_selected">Valgt</span></div>
       </div>
     </div>
@@ -669,7 +670,7 @@ const T = {
     a8:'Iskiosk i h\u00f8js\u00e6sonen', a9:'Livemusik, marked og "Hou Dage" (sommer)',
     a11:'Vestre Fjordpark & Gigantium sv\u00f8mmehal', a13:'Maximum aktivitetscenter og biograf',
     cal_label:'Tilg\u00e6ngelighed', cal_heading:'Kalender',
-    cal_intro:'Se hvorn\u00e5r Villa Hou er ledig. Kalenderen synkroniserer automatisk med Airbnb, s\u00e5 du altid ser de korrekte datoer.',
+    cal_intro:'Se hvorn\u00e5r Villa Hou er ledig. Klik p\u00e5 ankomstdag, derefter afrejsedag \u2014 datoerne overf\u00f8res automatisk til bookingformularen.',
     leg_free:'Ledig', leg_booked:'Optaget', leg_changeover:'Skiftedag', leg_selected:'Valgt',
     cal_sync:'Synkroniseret via iCal \u2014 opdateres automatisk.', cal_airbnb_link:'Se ogs\u00e5 p\u00e5 Airbnb',
     price_label:'Priser', price_heading:'<em>Billigere</em> end Airbnb',
@@ -757,7 +758,7 @@ const T = {
     a8:'Eiskiosk in der Hochsaison', a9:'Live-Musik, Markt und "Hou Dage" (Sommer)',
     a11:'Vestre Fjordpark & Gigantium Schwimmbad', a13:'Maximum Aktivit\u00e4tszentrum und Kino',
     cal_label:'Verf\u00fcgbarkeit', cal_heading:'Kalender',
-    cal_intro:'Sehen Sie, wann Villa Hou frei ist. Der Kalender synchronisiert automatisch mit Airbnb.',
+    cal_intro:'Sehen Sie, wann Villa Hou frei ist. Klicken Sie auf An- und Abreisedatum \u2014 die Daten werden automatisch ins Buchungsformular \u00fcbertragen.',
     leg_free:'Frei', leg_booked:'Belegt', leg_changeover:'Wechseltag', leg_selected:'Ausgew\u00e4hlt',
     cal_sync:'Synchronisiert \u00fcber iCal \u2014 wird automatisch aktualisiert.', cal_airbnb_link:'Auch auf Airbnb ansehen',
     price_label:'Preise', price_heading:'<em>G\u00fcnstiger</em> als Airbnb',
@@ -845,7 +846,7 @@ const T = {
     a8:'Ice cream kiosk in high season', a9:'Live music, market and "Hou Days" (summer)',
     a11:'Vestre Fjordpark & Gigantium swimming pool', a13:'Maximum activity centre and cinema',
     cal_label:'Availability', cal_heading:'Calendar',
-    cal_intro:'Check when Villa Hou is available. The calendar syncs automatically with Airbnb, so you always see the correct dates.',
+    cal_intro:'Check when Villa Hou is available. Click your arrival day, then departure day \u2014 dates transfer automatically to the booking form.',
     leg_free:'Available', leg_booked:'Booked', leg_changeover:'Changeover', leg_selected:'Selected',
     cal_sync:'Synced via iCal \u2014 updated automatically.', cal_airbnb_link:'Also view on Airbnb',
     price_label:'Prices', price_heading:'<em>Cheaper</em> than Airbnb',
@@ -978,8 +979,26 @@ let bookedRanges=[];
 let current=new Date();
 let viewYear=current.getFullYear();
 let viewMonth=current.getMonth();
+let selCheckin=null;
+let selCheckout=null;
+let pickingCheckout=false;
 
-function parseJsonDate(s){return new Date(Date.UTC(+s.substring(0,4),+s.substring(4,6)-1,+s.substring(6,8)))}
+function dateNum(d){return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
+function parseJsonDate(s){return new Date(+s.substring(0,4),+s.substring(4,6)-1,+s.substring(6,8))}
+
+function isBooked(d){
+  const n=dateNum(d);
+  return bookedRanges.some(r=>dateNum(r.from)<n&&n<dateNum(r.to));
+}
+function isChangeover(d){
+  const n=dateNum(d);
+  return bookedRanges.some(r=>dateNum(r.to)===n)&&bookedRanges.some(r=>dateNum(r.from)===n);
+}
+function isInRange(d){
+  if(!selCheckin||!selCheckout)return false;
+  return d>selCheckin&&d<selCheckout;
+}
+function isToday(d){return d.toDateString()===current.toDateString()}
 
 function showCalStatus(msg,err){
   let el=document.getElementById('cal-status');
@@ -1007,24 +1026,40 @@ async function loadAirbnbCalendar(){
       text.split('BEGIN:VEVENT').slice(1).forEach(ev=>{
         const s=ev.match(/DTSTART[^:\n]*:([^\r\n]+)/);
         const e=ev.match(/DTEND[^:\n]*:([^\r\n]+)/);
-        if(s&&e){try{const from=parseJsonDate(s[1].trim().replace(/[^\d]/g,'').substring(0,8).padEnd(8,'0'));const to=parseJsonDate(e[1].trim().replace(/[^\d]/g,'').substring(0,8).padEnd(8,'0'));if(!isNaN(from)&&to>from)bookedRanges.push({from,to});}catch(_){}}
+        if(s&&e){try{const from=parseJsonDate(s[1].trim().replace(/[^\d]/g,'').substring(0,8));const to=parseJsonDate(e[1].trim().replace(/[^\d]/g,'').substring(0,8));if(!isNaN(from)&&to>from)bookedRanges.push({from,to});}catch(_){}}
       });
       renderCal();
       showCalStatus('Synkroniseret med Airbnb');
       return;
     }catch(_){}
   }
-  showCalStatus('Kalender midlertidigt utilgængelig',true);
+  showCalStatus('Kalender midlertidigt utilg\u00e6ngelig',true);
   renderCal();
 }
 
-function isBooked(d){return bookedRanges.some(r=>d>r.from&&d<r.to)}
-function isChangeover(d){
-  const isCheckout=bookedRanges.some(r=>d.getTime()===r.to.getTime());
-  const isCheckin=bookedRanges.some(r=>d.getTime()===r.from.getTime());
-  return isCheckout&&isCheckin;
+function toInputDate(d){
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 }
-function isToday(d){return d.toDateString()===current.toDateString()}
+
+function handleDayClick(date,booked){
+  if(booked)return;
+  if(!pickingCheckout||date<=selCheckin){
+    selCheckin=date;
+    selCheckout=null;
+    pickingCheckout=true;
+    const ci=document.getElementById('checkin');
+    const co=document.getElementById('checkout');
+    if(ci)ci.value=toInputDate(date);
+    if(co)co.value='';
+  }else{
+    selCheckout=date;
+    pickingCheckout=false;
+    const co=document.getElementById('checkout');
+    if(co)co.value=toInputDate(date);
+    document.getElementById('book').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  renderCal();
+}
 
 function renderCal(){
   const months=currentLang==='de'?MONTHS_DE:currentLang==='en'?MONTHS_EN:MONTHS_DA;
@@ -1039,17 +1074,22 @@ function renderCal(){
   const dim=new Date(viewYear,viewMonth+1,0).getDate();
   for(let d=1;d<=dim;d++){
     const date=new Date(viewYear,viewMonth,d);
-    const el=document.createElement('div');
     const booked=isBooked(date);
     const changeover=!booked&&isChangeover(date);
-    el.className='cal-day '+(booked?'booked':changeover?'changeover':'available')+(isToday(date)?' today':'');
+    const isCI=selCheckin&&dateNum(date)===dateNum(selCheckin);
+    const isCO=selCheckout&&dateNum(date)===dateNum(selCheckout);
+    const inRange=!booked&&isInRange(date);
+    const el=document.createElement('div');
+    let cls='cal-day ';
+    if(booked)cls+='booked';
+    else if(isCI||isCO)cls+='selected';
+    else if(inRange)cls+='in-range';
+    else if(changeover)cls+='changeover';
+    else cls+='available';
+    if(isToday(date))cls+=' today';
+    el.className=cls;
     el.textContent=d;
-    if(!booked)el.onclick=()=>{
-      document.querySelectorAll('.cal-day.selected').forEach(x=>x.classList.remove('selected'));
-      el.classList.add('selected');
-      const ci=document.getElementById('checkin');
-      if(ci)ci.value=date.toISOString().split('T')[0];
-    };
+    el.onclick=()=>handleDayClick(date,booked);
     grid.appendChild(el);
   }
 }
