@@ -168,6 +168,8 @@ section{padding:5rem 2rem}
 .cal-day.booked{background:#e8ddd0;color:#a08060;cursor:not-allowed;text-decoration:line-through}
 .cal-day.available:hover{background:#eaf3de;cursor:pointer}
 .cal-day.selected{background:var(--moss);color:white;font-weight:500}
+.cal-day.changeover{background:linear-gradient(135deg,#eaf3de 50%,#e8ddd0 50%);cursor:pointer}
+.cal-day.changeover:hover{background:linear-gradient(135deg,#d4eac0 50%,#ddd0c2 50%)}
 .cal-day.today{border:1.5px solid var(--accent)}
 .cal-legend{display:flex;gap:1.5rem;padding:1rem 1.5rem;background:#faf6f0;border-top:1px solid var(--warm);flex-wrap:wrap}
 .leg-item{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-light)}
@@ -393,6 +395,7 @@ footer a:hover{color:var(--accent)}
       <div class="cal-grid" id="calGrid"></div>
       <div class="cal-legend">
         <div class="leg-item"><div class="leg-dot" style="background:#eaf3de;border:1px solid #c0dd97"></div><span data-i18n="leg_free">Ledig</span></div>
+        <div class="leg-item"><div class="leg-dot" style="background:linear-gradient(135deg,#eaf3de 50%,#e8ddd0 50%);border:1px solid #c0dd97"></div><span data-i18n="leg_changeover">Skiftedag</span></div>
         <div class="leg-item"><div class="leg-dot" style="background:#e8ddd0"></div><span data-i18n="leg_booked">Optaget</span></div>
         <div class="leg-item"><div class="leg-dot" style="background:#6b7c5a"></div><span data-i18n="leg_selected">Valgt</span></div>
       </div>
@@ -667,7 +670,7 @@ const T = {
     a11:'Vestre Fjordpark & Gigantium sv\u00f8mmehal', a13:'Maximum aktivitetscenter og biograf',
     cal_label:'Tilg\u00e6ngelighed', cal_heading:'Kalender',
     cal_intro:'Se hvorn\u00e5r Villa Hou er ledig. Kalenderen synkroniserer automatisk med Airbnb, s\u00e5 du altid ser de korrekte datoer.',
-    leg_free:'Ledig', leg_booked:'Optaget', leg_selected:'Valgt',
+    leg_free:'Ledig', leg_booked:'Optaget', leg_changeover:'Skiftedag', leg_selected:'Valgt',
     cal_sync:'Synkroniseret via iCal \u2014 opdateres automatisk.', cal_airbnb_link:'Se ogs\u00e5 p\u00e5 Airbnb',
     price_label:'Priser', price_heading:'<em>Billigere</em> end Airbnb',
     p_badge_label:'Direkte booking', p_badge_pct:'15% billigere',
@@ -755,7 +758,7 @@ const T = {
     a11:'Vestre Fjordpark & Gigantium Schwimmbad', a13:'Maximum Aktivit\u00e4tszentrum und Kino',
     cal_label:'Verf\u00fcgbarkeit', cal_heading:'Kalender',
     cal_intro:'Sehen Sie, wann Villa Hou frei ist. Der Kalender synchronisiert automatisch mit Airbnb.',
-    leg_free:'Frei', leg_booked:'Belegt', leg_selected:'Ausgew\u00e4hlt',
+    leg_free:'Frei', leg_booked:'Belegt', leg_changeover:'Wechseltag', leg_selected:'Ausgew\u00e4hlt',
     cal_sync:'Synchronisiert \u00fcber iCal \u2014 wird automatisch aktualisiert.', cal_airbnb_link:'Auch auf Airbnb ansehen',
     price_label:'Preise', price_heading:'<em>G\u00fcnstiger</em> als Airbnb',
     p_badge_label:'Direktbuchung', p_badge_pct:'15% g\u00fcnstiger',
@@ -843,7 +846,7 @@ const T = {
     a11:'Vestre Fjordpark & Gigantium swimming pool', a13:'Maximum activity centre and cinema',
     cal_label:'Availability', cal_heading:'Calendar',
     cal_intro:'Check when Villa Hou is available. The calendar syncs automatically with Airbnb, so you always see the correct dates.',
-    leg_free:'Available', leg_booked:'Booked', leg_selected:'Selected',
+    leg_free:'Available', leg_booked:'Booked', leg_changeover:'Changeover', leg_selected:'Selected',
     cal_sync:'Synced via iCal \u2014 updated automatically.', cal_airbnb_link:'Also view on Airbnb',
     price_label:'Prices', price_heading:'<em>Cheaper</em> than Airbnb',
     p_badge_label:'Book direct', p_badge_pct:'15% cheaper',
@@ -976,7 +979,7 @@ let current=new Date();
 let viewYear=current.getFullYear();
 let viewMonth=current.getMonth();
 
-function parseJsonDate(s){return new Date(+s.substring(0,4),+s.substring(4,6)-1,+s.substring(6,8))}
+function parseJsonDate(s){return new Date(Date.UTC(+s.substring(0,4),+s.substring(4,6)-1,+s.substring(6,8)))}
 
 function showCalStatus(msg,err){
   let el=document.getElementById('cal-status');
@@ -1015,7 +1018,12 @@ async function loadAirbnbCalendar(){
   renderCal();
 }
 
-function isBooked(d){return bookedRanges.some(r=>d>=r.from&&d<r.to)}
+function isBooked(d){return bookedRanges.some(r=>d>r.from&&d<r.to)}
+function isChangeover(d){
+  const isCheckout=bookedRanges.some(r=>d.getTime()===r.to.getTime());
+  const isCheckin=bookedRanges.some(r=>d.getTime()===r.from.getTime());
+  return isCheckout&&isCheckin;
+}
 function isToday(d){return d.toDateString()===current.toDateString()}
 
 function renderCal(){
@@ -1033,7 +1041,8 @@ function renderCal(){
     const date=new Date(viewYear,viewMonth,d);
     const el=document.createElement('div');
     const booked=isBooked(date);
-    el.className='cal-day '+(booked?'booked':'available')+(isToday(date)?' today':'');
+    const changeover=!booked&&isChangeover(date);
+    el.className='cal-day '+(booked?'booked':changeover?'changeover':'available')+(isToday(date)?' today':'');
     el.textContent=d;
     if(!booked)el.onclick=()=>{
       document.querySelectorAll('.cal-day.selected').forEach(x=>x.classList.remove('selected'));
