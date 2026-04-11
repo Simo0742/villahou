@@ -1088,6 +1088,7 @@ function updateBookBtn(){
 }
 
 function renderCal(){
+  const months=currentLang==='de'?MONTHS_DE:currentLang==='en'?MONTHS_EN:MONTHS_DA;
   const days=currentLang==='de'?DAYS_DE:currentLang==='en'?DAYS_EN:DAYS_DA;
   document.getElementById('monthLabel').textContent=months[viewMonth]+' '+viewYear;
   const grid=document.getElementById('calGrid');
