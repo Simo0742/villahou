@@ -1051,18 +1051,43 @@ function handleDayClick(date,booked){
     const co=document.getElementById('checkout');
     if(ci)ci.value=toInputDate(date);
     if(co)co.value='';
+    updateBookBtn();
   }else{
     selCheckout=date;
     pickingCheckout=false;
     const co=document.getElementById('checkout');
     if(co)co.value=toInputDate(date);
-    document.getElementById('book').scrollIntoView({behavior:'smooth',block:'center'});
+    updateBookBtn();
   }
   renderCal();
 }
 
+function updateBookBtn(){
+  let btn=document.getElementById('cal-book-btn');
+  if(!btn){
+    btn=document.createElement('div');
+    btn.id='cal-book-btn';
+    btn.style.cssText='margin-top:1.2rem';
+    document.querySelector('.airbnb-note').before(btn);
+  }
+  if(selCheckin&&selCheckout){
+    const nights=Math.round((selCheckout-selCheckin)/(1000*60*60*24));
+    const fmt=d=>toInputDate(d).split('-').reverse().join('.');
+    btn.innerHTML=`<a href="#book" class="btn-prim" style="display:inline-flex;align-items:center;gap:0.7rem;text-decoration:none">
+      <span>${fmt(selCheckin)} \u2013 ${fmt(selCheckout)}</span>
+      <span style="opacity:0.6">|</span>
+      <span>${nights} ${nights===1?'nat':'n\u00e6tter'}</span>
+      <span style="opacity:0.6">|</span>
+      <span>\u2192 Send bookingforesp\u00f8rgsel</span>
+    </a>`;
+  }else if(selCheckin){
+    btn.innerHTML=`<p style="font-size:0.85rem;color:var(--bark);font-style:italic">V\u00e6lg nu din afrejsedag \u2192</p>`;
+  }else{
+    btn.innerHTML='';
+  }
+}
+
 function renderCal(){
-  const months=currentLang==='de'?MONTHS_DE:currentLang==='en'?MONTHS_EN:MONTHS_DA;
   const days=currentLang==='de'?DAYS_DE:currentLang==='en'?DAYS_EN:DAYS_DA;
   document.getElementById('monthLabel').textContent=months[viewMonth]+' '+viewYear;
   const grid=document.getElementById('calGrid');
