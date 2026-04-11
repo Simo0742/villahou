@@ -162,6 +162,7 @@ footer a:hover{color:var(--accent)}
     <li><a href="#aktiviteter" data-i18n="nav_activities">Aktiviteter</a></li>
     <li><a href="#kalender" data-i18n="nav_calendar">Kalender</a></li>
     <li><a href="#priser" data-i18n="nav_prices">Priser</a></li>
+    <li><a href="#anmeldelser" data-i18n="nav_reviews">Anmeldelser</a></li>
     <li><a href="#book" data-i18n="nav_book">Book</a></li>
     <li><a href="#kontakt" data-i18n="nav_contact">Kontakt</a></li>
     <li><a href="#betingelser" data-i18n="nav_terms">Betingelser</a></li>
@@ -338,7 +339,7 @@ footer a:hover{color:var(--accent)}
         <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a87c;margin-bottom:0.5rem" data-i18n="p_badge_label">Direkte booking</p>
         <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#f0e0cc;line-height:1.1" data-i18n="p_badge_pct">15% billigere</p>
         <p style="font-size:0.85rem;color:#c9b49a;margin-top:0.4rem" data-i18n="p_badge_sub">end Airbnb-prisen — samme hus, ingen formidlingsgebyr</p>
-        <a id="airbnb-price-link" href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" style="display:inline-block;margin-top:0.8rem;font-size:0.78rem;color:#c9a87c;text-decoration:underline;letter-spacing:0.03em" data-i18n="p_airbnb_compare">Se vores Airbnb-opslag</a>
+        <a id="airbnb-price-link" href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" style="display:inline-block;margin-top:0.8rem;font-size:0.88rem;color:#fff9f0;text-decoration:underline;letter-spacing:0.03em;font-weight:500" data-i18n="p_airbnb_compare">Se vores Airbnb-opslag</a>
       </div>
       <div style="flex:2;min-width:260px">
         <div style="display:flex;flex-direction:column;gap:0.7rem">
@@ -376,6 +377,61 @@ footer a:hover{color:var(--accent)}
 </section>
 
 
+<!-- ANMELDELSER -->
+<section id="anmeldelser" style="background:var(--bark-dark);padding:5rem 2rem">
+  <div class="inner">
+    <p class="label" style="color:#c9a87c" data-i18n="rev_label">Anmeldelser</p>
+    <h2 class="heading" style="color:#f0e0cc" data-i18n="rev_heading">Hvad siger <em>vores gæster</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem">
+
+      <div style="background:rgba(255,249,240,0.07);border-radius:4px;padding:1.6rem;border:1px solid rgba(255,249,240,0.1)">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;color:white;flex-shrink:0">G</div>
+          <div>
+            <p style="color:#f0e0cc;font-size:0.9rem;font-weight:500">Gabriel</p>
+            <p style="color:#c9a87c;font-size:0.75rem">★★★★★ · februar 2026</p>
+          </div>
+        </div>
+        <p style="color:#c9b49a;font-size:0.87rem;line-height:1.75" data-i18n="rev1">"Det er et meget rart sted at bo med et meget stort udendørsområde og fantastiske møbler. Ideel til familier. Den levede fuldt ud op til vores forventninger, og værterne besvarede spørgsmål meget hurtigt og venligt."</p>
+      </div>
+
+      <div style="background:rgba(255,249,240,0.07);border-radius:4px;padding:1.6rem;border:1px solid rgba(255,249,240,0.1)">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--moss);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;color:white;flex-shrink:0">I</div>
+          <div>
+            <p style="color:#f0e0cc;font-size:0.9rem;font-weight:500">Ines</p>
+            <p style="color:#c9a87c;font-size:0.75rem">★★★★★ · december 2025</p>
+          </div>
+        </div>
+        <p style="color:#c9b49a;font-size:0.87rem;line-height:1.75" data-i18n="rev2">"Vores ferie var virkelig vidunderlig. Huset ser præcis ud som på billederne. Haven er en drøm om sommeren. Hvis du leder efter en ferie i absolut fred i et smukt hus, så er dette stedet. Vi kan varmt anbefale det og vil med glæde vende tilbage!"</p>
+      </div>
+
+      <div style="background:rgba(255,249,240,0.07);border-radius:4px;padding:1.6rem;border:1px solid rgba(255,249,240,0.1)">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem">
+          <div style="width:40px;height:40px;border-radius:50%;background:#6b5c4a;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;color:white;flex-shrink:0">L</div>
+          <div>
+            <p style="color:#f0e0cc;font-size:0.9rem;font-weight:500">Lutz</p>
+            <p style="color:#c9a87c;font-size:0.75rem">★★★★★ · december 2025</p>
+          </div>
+        </div>
+        <p style="color:#c9b49a;font-size:0.87rem;line-height:1.75" data-i18n="rev3">"Vi havde et rigtig godt ophold og nød tiden meget! Simon og Gina er gode værter og var tilgængelige til enhver tid for forespørgsler. Vi ville komme tilbage når som helst og nyde det smukke feriehus."</p>
+      </div>
+
+      <div style="background:rgba(255,249,240,0.07);border-radius:4px;padding:1.6rem;border:1px solid rgba(255,249,240,0.1)">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem">
+          <div style="width:40px;height:40px;border-radius:50%;background:#8b6f4e;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;color:white;flex-shrink:0">V</div>
+          <div>
+            <p style="color:#f0e0cc;font-size:0.9rem;font-weight:500">Vincent</p>
+            <p style="color:#c9a87c;font-size:0.75rem">★★★★★ · april 2026</p>
+          </div>
+        </div>
+        <p style="color:#c9b49a;font-size:0.87rem;line-height:1.75" data-i18n="rev4">"En vidunderlig oase ved den danske kyst."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- BOOKING -->
 <section id="book">
   <div class="book-inner">
@@ -398,7 +454,7 @@ footer a:hover{color:var(--accent)}
           <div class="form-group"><label data-i18n="form_lname">Efternavn</label><input type="text" id="lname" data-i18n-ph="ph_lname"></div>
         </div>
         <div class="form-group"><label data-i18n="form_email">E-mail</label><input type="email" id="email" placeholder="din@email.dk"></div>
-        <div class="form-group"><label data-i18n="form_phone">Telefon</label><input type="tel" id="phone" placeholder="+45 12 34 56 78"></div>
+        <div class="form-group"><label data-i18n="form_phone">Telefon</label><input type="tel" id="phone" placeholder="+XX XXX XXX XXX"></div>
         <div class="form-row">
           <div class="form-group"><label data-i18n="form_checkin">Ankomst</label><input type="date" id="checkin"></div>
           <div class="form-group"><label data-i18n="form_checkout">Afrejse</label><input type="date" id="checkout"></div>
@@ -415,10 +471,6 @@ footer a:hover{color:var(--accent)}
           </select>
         </div>
         <div class="form-group"><label data-i18n="form_msg">Besked (valgfri)</label><textarea id="msg" data-i18n-ph="ph_msg"></textarea></div>
-        <div class="bank-info">
-          <p><strong data-i18n="bank_title">Betaling via bankoverførsel</strong></p>
-          <p data-i18n="bank_text">Efter din forespørgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr — enkel og tryg betaling.</p>
-        </div>
         <button class="submit-btn" onclick="sendBooking()" data-i18n="form_submit">Send forespørgsel</button>
         <p class="form-disclaimer" data-i18n="form_disclaimer">Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.</p>
       </div>
@@ -576,6 +628,12 @@ const T = {
     contact_label:'Kontakt', contact_heading:'Find <em>os</em>',
     contact_intro:'Har du sp\u00f8rgsm\u00e5l? Du er altid velkommen til at kontakte os \u2014 vi svarer hurtigt.',
     contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Ring til os',
+    nav_reviews:'Anmeldelser',
+    rev_label:'Anmeldelser', rev_heading:'Hvad siger <em>vores g\u00e6ster</em>', rev_source:'· Airbnb anmeldelser',
+    rev1:'"Det er et meget rart sted at bo med et meget stort udend\u00f8rsomr\u00e5de og fantastiske m\u00f8bler. Ideel til familier. Den levede fuldt ud op til vores forventninger, og v\u00e6rterne besvarede sp\u00f8rgsm\u00e5l meget hurtigt og venligt."',
+    rev2:'"Vores ferie var virkelig vidunderlig. Huset ser pr\u00e6cis ud som p\u00e5 billederne. Haven er en dr\u00f8m om sommeren. Hvis du leder efter en ferie i absolut fred i et smukt hus, s\u00e5 er dette stedet. Vi kan varmt anbefale det og vil med gl\u00e6de vende tilbage!"',
+    rev3:'"Vi havde et rigtig godt ophold og n\u00f8d tiden meget! Simon og Gina er gode v\u00e6rter og var tilg\u00e6ngelige til enhver tid for foresp\u00f8rgsler. Vi ville komme tilbage n\u00e5r som helst og nyde det smukke feriehus."',
+    rev4:'"En vidunderlig oase ved den danske kyst."',
     nav_terms:'Betingelser',
     terms_label:'Lejebetingelser', terms_heading:'<em>Betingelser</em> for leje',
     terms_intro:'L\u00e6s venligst vores lejebetingelser grundigt inden booking.',
@@ -658,6 +716,12 @@ const T = {
     contact_label:'Kontakt', contact_heading:'<em>Uns</em> finden',
     contact_intro:'Haben Sie Fragen? Kontaktieren Sie uns jederzeit \u2014 wir antworten schnell.',
     contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Anrufen',
+    nav_reviews:'Bewertungen',
+    rev_label:'Bewertungen', rev_heading:'Was sagen <em>unsere G\u00e4ste</em>', rev_source:'· Airbnb Bewertungen',
+    rev1:'"Ein sehr sch\u00f6ner Ort mit einem gro\u00dfen Au\u00dfenbereich und wundersch\u00f6nen M\u00f6beln. Ideal f\u00fcr Familien. Es hat unsere Erwartungen voll erf\u00fcllt und die Gastgeber haben Fragen sehr schnell und freundlich beantwortet."',
+    rev2:'"Unser Urlaub war wirklich wunderbar. Das Haus sieht genau so aus wie auf den Bildern. Der Garten ist ein Traum im Sommer. Wenn Sie nach einem Urlaub in absoluter Ruhe suchen, ist dies der richtige Ort. Wir empfehlen es w\u00e4rmstens!"',
+    rev3:'"Wir hatten einen sehr sch\u00f6nen Aufenthalt! Simon und Gina sind tolle Gastgeber und jederzeit erreichbar. Wir w\u00fcrden jederzeit wiederkommen."',
+    rev4:'"Eine wunderbare Oase an der d\u00e4nischen K\u00fcste."',
     nav_terms:'Mietbedingungen',
     terms_label:'Mietbedingungen', terms_heading:'<em>Mietbedingungen</em>',
     terms_intro:'Bitte lesen Sie unsere Mietbedingungen sorgf\u00e4ltig vor der Buchung.',
@@ -740,6 +804,12 @@ const T = {
     contact_label:'Contact', contact_heading:'Find <em>us</em>',
     contact_intro:'Have questions? Feel free to contact us \u2014 we respond quickly.',
     contact_addr_label:'Address', contact_phone_label:'Phone', contact_call:'Call us',
+    nav_reviews:'Reviews',
+    rev_label:'Reviews', rev_heading:'What our <em>guests say</em>', rev_source:'· Airbnb reviews',
+    rev1:'"A very lovely place to stay with a huge outdoor area and fantastic furniture. Ideal for families. It fully lived up to our expectations and the hosts answered questions very quickly and kindly."',
+    rev2:'"Our holiday was truly wonderful. The house looks exactly like the photos. The garden is a dream in summer. If you\'re looking for a holiday in absolute peace in a beautiful house, this is the place. We warmly recommend it and will happily return!"',
+    rev3:'"We had a really great stay and enjoyed our time so much! Simon and Gina are wonderful hosts and were available at any time. We would come back whenever we can."',
+    rev4:'"A wonderful oasis by the Danish coast."',
     nav_terms:'Terms',
     terms_label:'Rental terms', terms_heading:'<em>Terms</em> & conditions',
     terms_intro:'Please read our rental terms carefully before booking.',
