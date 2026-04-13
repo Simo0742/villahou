@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.villahou.com/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.villahou.com/images/cover.jpg</image:loc>
+      <image:title>Villa Hou – Feriehus i Hou, Nordjylland, Danmark</image:title>
+      <image:caption>Unikt sommerhus til leje i Hou, Nordjylland. 99 m² med vildmarksbad og bålplads.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.villahou.com/images/stue.jpg</image:loc>
+      <image:title>Stue med brændeovn – Villa Hou sommerhus Danmark</image:title>
+      <image:caption>Hyggelig stue med brændeovn i Villa Hou, Hou, Nordjylland.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.villahou.com/images/baghave.jpg</image:loc>
+      <image:title>Baghave med bålplads – Villa Hou feriehus Hou</image:title>
+      <image:caption>Stor naturgrund med bålplads og hængekøje ved Villa Hou.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.villahou.com/images/hems.jpg</image:loc>
+      <image:title>Hems med sovepladser – Villa Hou sommerhus Nordjylland</image:title>
+      <image:caption>Stor hems med ståhøjde og 2 sovepladser i Villa Hou.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.villahou.com/images/verelse1.jpg</image:loc>
+      <image:title>Soveværelse med dobbeltseng – Villa Hou Danmark</image:title>
+      <image:caption>Soveværelse med 180x200 cm dobbeltseng i Villa Hou, Hals.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.villahou.com/images/badeverelse.jpg</image:loc>
+      <image:title>Badeværelse – Villa Hou feriehus Nordjylland</image:title>
+      <image:caption>Moderne badeværelse i Villa Hou sommerhus, Hou.</image:caption>
+    </image:image>
+  </url>
+</urlset>
