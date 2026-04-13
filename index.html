@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Villa Hou – Feriehus i Hou, Jylland | villahou.com</title>
-<meta name="description" content="Unikt feriehus i Hou, Jylland. 99 m² på 1.400 m² naturgrund med vildmarksbad, brændeovn og bålplads. Plads til 6 personer. 1 km fra strand og havn. Book direkte — 15% billigere end Airbnb.">
-<meta name="keywords" content="feriehus Hou, sommerhus Hals, feriehus Jylland, villa Hou, feriebolig Limfjorden, vildmarksbad feriehus">
-<meta property="og:title" content="Villa Hou – Feriehus i Hou, Jylland">
-<meta property="og:description" content="Unikt feriehus på 1.400 m² naturgrund med vildmarksbad, brændeovn og bålplads. 1 km fra stranden. Book direkte og spar 15%.">
+<title>Sommerhus til leje i Hou – Feriehus Nordjylland | villahou.com</title>
+<meta name="description" content="Lej et unikt sommerhus i Hou, Nordjylland. 99 m² med vildmarksbad, brændeovn og bålplads. Plads til 6 personer. 1 km fra sandstrand. Book direkte – 15% billigere end Airbnb.">
+<meta name="keywords" content="sommerhus til leje Hou, feriehus Nordjylland Danmark, sommerhus Hals, feriehus med vildmarksbad, Ferienhaus Dänemark mieten, Ferienhaus Nordjütland, holiday house Denmark rent, vacation rental North Jutland Denmark">
+<meta property="og:title" content="Sommerhus til leje i Hou, Nordjylland – Villa Hou">
+<meta property="og:description" content="Unikt sommerhus med vildmarksbad, brændeovn og bålplads. 1 km fra sandstrand. Plads til 6 personer. Book direkte og spar 15% ift. Airbnb.">
 <meta property="og:image" content="https://villahou.com/images/cover.jpg">
-<meta property="og:url" content="https://villahou.com">
+<meta property="og:url" content="https://www.villahou.com">
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://villahou.com">
+<link rel="canonical" href="https://www.villahou.com">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.svg">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -221,9 +221,47 @@ footer p{font-size:0.82rem;line-height:2;letter-spacing:0.03em}
 footer a{color:#c9a87c;text-decoration:none}
 footer a:hover{color:var(--accent)}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:#f0e0cc;margin-bottom:0.8rem;display:block;font-style:italic}
+.fab-wrap{position:fixed;bottom:2rem;right:2rem;z-index:99;display:flex;flex-direction:column;align-items:flex-end;gap:0.6rem}
+.fab-main{background:var(--bark-dark);color:var(--cream);border:none;cursor:pointer;padding:0.75rem 1.4rem;border-radius:40px;font-family:'Lora',serif;font-size:0.88rem;letter-spacing:0.04em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 4px 20px rgba(44,32,22,0.35);transition:background 0.2s,transform 0.15s}
+.fab-main:hover{background:var(--accent);transform:translateY(-2px)}
+.fab-main svg{width:16px;height:16px;flex-shrink:0}
+.fab-options{display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s}
+.fab-options.open{opacity:1;pointer-events:auto;transform:translateY(0)}
+.fab-option{background:var(--bark);color:var(--cream);text-decoration:none;padding:0.6rem 1.2rem;border-radius:40px;font-family:'Lora',serif;font-size:0.82rem;letter-spacing:0.04em;display:flex;align-items:center;gap:0.5rem;box-shadow:0 3px 12px rgba(44,32,22,0.25);white-space:nowrap;transition:background 0.2s}
+.fab-option:hover{background:var(--accent)}
+.fab-option svg{width:14px;height:14px;flex-shrink:0}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--bark-dark);transition:all 0.25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(250,246,240,0.98);backdrop-filter:blur(8px);border-bottom:1px solid var(--warm);padding:1.2rem 1.5rem;z-index:99;flex-direction:column;gap:0}
+.mobile-menu.open{display:flex}
+.mobile-menu a{text-decoration:none;font-size:0.85rem;color:var(--text-light);letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0;border-bottom:0.5px solid var(--warm);display:block;transition:color 0.2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--accent)}
+
+/* Foto hover */
+.photo-cell{position:relative;cursor:zoom-in}
+.photo-cell::after{content:'+';position:absolute;inset:0;background:rgba(44,32,22,0);color:white;font-size:2rem;display:flex;align-items:center;justify-content:center;transition:background 0.25s,opacity 0.25s;opacity:0}
+.photo-cell:hover::after{background:rgba(44,32,22,0.35);opacity:1}
+
+/* Lightbox */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(10,6,3,0.92);z-index:200;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:3px}
+.lightbox-close{position:absolute;top:1.2rem;right:1.5rem;color:white;font-size:2rem;cursor:pointer;background:none;border:none;line-height:1;opacity:0.7;transition:opacity 0.2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);color:white;font-size:2rem;cursor:pointer;background:rgba(255,255,255,0.1);border:none;padding:0.5rem 0.9rem;border-radius:2px;transition:background 0.2s}
+.lightbox-prev{left:1rem}
+.lightbox-next{right:1rem}
+.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,0.25)}
 @media(max-width:900px){
   .nav-links{display:none}
   nav{padding:0.8rem 1.2rem}
+  .hamburger{display:flex}
 }
 @media(max-width:768px){
   .om-grid,.book-inner,.akt-grid{grid-template-columns:1fr;gap:2rem}
@@ -256,9 +294,32 @@ footer a:hover{color:var(--accent)}
       <button class="lang-btn" onclick="setLang('de')" title="Deutsch">&#127465;&#127466;</button>
       <button class="lang-btn" onclick="setLang('en')" title="English">&#127468;&#127463;</button>
     </div>
-    <a href="#book" class="nav-btn" data-i18n="nav_book_btn">Book ophold</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobil menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#billeder" data-i18n="nav_photos" onclick="closeMenu()">Billeder</a>
+  <a href="#om" data-i18n="nav_about" onclick="closeMenu()">Om villaen</a>
+  <a href="#aktiviteter" data-i18n="nav_activities" onclick="closeMenu()">Aktiviteter</a>
+  <a href="#kalender" data-i18n="nav_calendar" onclick="closeMenu()">Kalender</a>
+  <a href="#priser" data-i18n="nav_prices" onclick="closeMenu()">Priser</a>
+  <a href="#anmeldelser" data-i18n="nav_reviews" onclick="closeMenu()">Anmeldelser</a>
+  <a href="#book" data-i18n="nav_book" onclick="closeMenu()">Book</a>
+  <a href="#kontakt" data-i18n="nav_contact" onclick="closeMenu()">Kontakt</a>
+  <a href="#betingelser" data-i18n="nav_terms" onclick="closeMenu()">Betingelser</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1)">&#8592;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="lightboxNav(1)">&#8594;</button>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -268,7 +329,7 @@ footer a:hover{color:var(--accent)}
     <h1 class="hero-title"><em>Villa Hou</em></h1>
     <p class="hero-sub" data-i18n="hero_sub">Unikt feriehus fra 2015 på 1.400 m² naturgrund — med vildmarksbad, bålplads, brændeovn og stor terrasse. Plads til 6 personer.</p>
     <div class="hero-ctas">
-      <a href="#book" class="btn-prim" data-i18n="hero_cta_book">Send bookingforespørgsel</a>
+      <a href="#kalender" class="btn-prim" data-i18n="hero_cta_book">Send bookingforespørgsel</a>
       <a href="#om" class="btn-ghost" data-i18n="hero_cta_see">Se huset</a>
     </div>
   </div>
@@ -285,22 +346,22 @@ footer a:hover{color:var(--accent)}
     <p class="label" data-i18n="photos_label">Galleri</p>
     <h2 class="heading" data-i18n="photos_heading">Se <em>villaen</em></h2>
     <div class="photo-grid">
-      <div class="photo-cell">
+      <div class="photo-cell" onclick="openLightbox(0)">
         <img src="images/cover.jpg" alt="Villa Hou" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell">
+      <div class="photo-cell" onclick="openLightbox(1)">
         <img src="images/stue.jpg" alt="Stue" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell">
+      <div class="photo-cell" onclick="openLightbox(2)">
         <img src="images/baghave.jpg" alt="Baghave" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell">
+      <div class="photo-cell" onclick="openLightbox(3)">
         <img src="images/hems.jpg" alt="Hems" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell">
+      <div class="photo-cell" onclick="openLightbox(4)">
         <img src="images/verelse1.jpg" alt="Soveværelse" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell">
+      <div class="photo-cell" onclick="openLightbox(5)">
         <img src="images/badeverelse.jpg" alt="Badeværelse" style="width:100%;height:100%;object-fit:cover">
       </div>
     </div>
@@ -532,6 +593,10 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="book-form">
       <h3 data-i18n="form_heading">Bookingforespørgsel</h3>
+      <div id="calReminder" style="background:var(--sand);border-left:3px solid var(--accent);padding:0.9rem 1.1rem;margin-bottom:1.2rem;border-radius:2px;font-size:0.85rem;color:var(--bark-dark);display:flex;align-items:center;gap:0.6rem">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="cal_reminder">Vælg dine datoer i kalenderen ovenfor — de udfyldes automatisk herunder.</span>
+      </div>
       <div id="bookForm">
         <div class="form-row">
           <div class="form-group"><label data-i18n="form_fname">Fornavn</label><input type="text" id="fname" data-i18n-ph="ph_fname"></div>
@@ -628,6 +693,15 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
+<section style="background:var(--sand);padding:3rem 2rem">
+  <div class="inner" style="max-width:780px">
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--bark-dark);margin-bottom:1rem" data-i18n="seo_h2">Sommerhus til leje i Hou, Nordjylland</h2>
+    <p style="font-size:0.85rem;color:var(--text-light);line-height:1.85;margin-bottom:0.8rem" data-i18n="seo_p1">Leder du efter et sommerhus til leje i Nordjylland, Danmark? Villa Hou er et unikt feriehus beliggende i Hou ved Limfjorden, tæt på Hals og kun 1 km fra en af Danmarks reneste sandstrande. Huset er ideelt til familier og grupper på op til 6 personer.</p>
+    <p style="font-size:0.85rem;color:var(--text-light);line-height:1.85;margin-bottom:0.8rem" data-i18n="seo_p2">Sommerhuset er udstyret med vildmarksbad, brændeovn, bålplads, aircondition og stor naturterrasse — alt hvad du skal bruge for et uforglemmelig ferieophold i Danmark. Vi udlejer direkte uden formidlingsgebyr, så du får en bedre pris end på Airbnb.</p>
+    <p style="font-size:0.85rem;color:var(--text-light);line-height:1.85" data-i18n="seo_p3">Hou ligger i hjertet af Nordjylland, Danmark, med nem adgang til Aalborg, Hals og Limfjorden. Området byder på havnebad med sauna, golfbane, naturstier og børnevenlige strande. Book dit næste sommerhusophold direkte hos os.</p>
+  </div>
+</section>
+
 <footer>
   <span class="footer-logo">Villa Hou</span>
   <p>Kongevejen 219, 9370 Hals &nbsp;·&nbsp; <a id="email-link-footer" href="#" style="color:#c9a87c">info&#64;villahou.com</a> &nbsp;·&nbsp; <a href="tel:+4557709971">+45 57 70 99 71</a></p>
@@ -635,12 +709,73 @@ footer a:hover{color:var(--accent)}
   <p style="margin-top:0.5rem;font-size:0.72rem">© 2025 Villa Hou &nbsp;·&nbsp; villahou.com</p>
 </footer>
 
+<!-- Flydende handlingsknap -->
+<div class="fab-wrap">
+  <a href="#kalender" class="fab-main" id="fabMain">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <span data-i18n="nav_book_btn">Book ophold</span>
+  </a>
+</div>
+
 <script>
 const _e = ['info','villahou.com'].join('\u0040');
 ['email-link-contact','email-link-footer'].forEach(id=>{
   const el=document.getElementById(id);
   if(el){el.href='mailto:'+_e;el.textContent=_e;}
 });
+
+// FAB
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+document.addEventListener('click',e=>{
+  const nav=document.querySelector('nav');
+  const menu=document.getElementById('mobileMenu');
+  if(nav&&menu&&!nav.contains(e.target)&&!menu.contains(e.target))closeMenu();
+});
+
+// Lightbox
+const lightboxImages=['images/cover.jpg','images/stue.jpg','images/baghave.jpg','images/hems.jpg','images/verelse1.jpg','images/badeverelse.jpg'];
+let lightboxIndex=0;
+function openLightbox(i){
+  lightboxIndex=i;
+  document.getElementById('lightboxImg').src=lightboxImages[i];
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(!e||e.target===document.getElementById('lightbox')||e.currentTarget===document.querySelector('.lightbox-close')){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+}
+function lightboxNav(dir){
+  event.stopPropagation();
+  lightboxIndex=(lightboxIndex+dir+lightboxImages.length)%lightboxImages.length;
+  document.getElementById('lightboxImg').src=lightboxImages[lightboxIndex];
+}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('lightbox').classList.contains('open')){
+    if(e.key==='ArrowLeft')lightboxNav(-1);
+    if(e.key==='ArrowRight')lightboxNav(1);
+    if(e.key==='Escape'){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+  }
+});
+
+// Sidetitel pr. sprog
+function updatePageTitle(lang){
+  const titles={
+    da:'Sommerhus til leje i Hou \u2013 Feriehus Nordjylland | villahou.com',
+    de:'Ferienhaus mieten in Hou, D\u00e4nemark | villahou.com',
+    en:'Holiday house for rent in Hou, Denmark | villahou.com'
+  };
+  document.title=titles[lang]||titles.da;
+}
 
 const T = {
   da: {
@@ -712,7 +847,13 @@ const T = {
     contact_label:'Kontakt', contact_heading:'Find <em>os</em>',
     contact_intro:'Har du sp\u00f8rgsm\u00e5l? Du er altid velkommen til at kontakte os \u2014 vi svarer hurtigt.',
     contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Ring til os',
+    seo_h2:'Sommerhus til leje i Hou, Nordjylland, Danmark',
+    seo_p1:'Leder du efter et sommerhus til leje i Nordjylland, Danmark? Villa Hou er et unikt feriehus i Hou ved Limfjorden, t\u00e6t p\u00e5 Hals og kun 1 km fra en af Danmarks reneste sandstrande. Ideelt til familier og grupper p\u00e5 op til 6 personer.',
+    seo_p2:'Sommerhuset har vildmarksbad, br\u00e6ndeovn, b\u00e5lplads, aircondition og stor naturterrasse. Vi udlejer direkte — ingen formidlingsgeb\u00e6r — s\u00e5 du f\u00e5r en bedre pris end p\u00e5 Airbnb.',
+    seo_p3:'Hou ligger i hjertet af Nordjylland, Danmark, med nem adgang til Aalborg og Limfjorden. Omr\u00e5det byder p\u00e5 havnebad med sauna, golf, naturstier og b\u00f8rnevenlige strande.',
     nav_reviews:'Anmeldelser',
+    float_cal:'Se kalender', fab_label:'Menu',
+    cal_reminder:'V\u00e6lg dine datoer i kalenderen ovenfor \u2014 de udfyldes automatisk herunder.',
     rev_label:'Anmeldelser', rev_heading:'Hvad siger <em>vores g\u00e6ster</em>', rev_source:'· Airbnb anmeldelser',
     rev1:'"Det er et meget rart sted at bo med et meget stort udend\u00f8rsomr\u00e5de og fantastiske m\u00f8bler. Ideel til familier. Den levede fuldt ud op til vores forventninger, og v\u00e6rterne besvarede sp\u00f8rgsm\u00e5l meget hurtigt og venligt."',
     rev2:'"Vores ferie var virkelig vidunderlig. Huset ser pr\u00e6cis ud som p\u00e5 billederne. Haven er en dr\u00f8m om sommeren. Hvis du leder efter en ferie i absolut fred i et smukt hus, s\u00e5 er dette stedet. Vi kan varmt anbefale det og vil med gl\u00e6de vende tilbage!"',
@@ -800,7 +941,13 @@ const T = {
     contact_label:'Kontakt', contact_heading:'<em>Uns</em> finden',
     contact_intro:'Haben Sie Fragen? Kontaktieren Sie uns jederzeit \u2014 wir antworten schnell.',
     contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Anrufen',
+    seo_h2:'Ferienhaus mieten in Hou, Nordjütland, D\u00e4nemark',
+    seo_p1:'Suchen Sie ein Ferienhaus in D\u00e4nemark? Villa Hou ist ein einzigartiges Ferienhaus in Hou an der Limfjord, nahe Hals und nur 1 km vom Strand entfernt. Ideal f\u00fcr Familien und Gruppen bis zu 6 Personen.',
+    seo_p2:'Das Ferienhaus verf\u00fcgt \u00fcber Wildnisbad, Kamin, Lagerfeuerplatz, Klimaanlage und gro\u00dfe Terrasse. Direkt beim Eigent\u00fcmer buchen ohne Vermittlungsgeb\u00fchr — g\u00fcnstiger als Airbnb.',
+    seo_p3:'Hou liegt im Herzen von Nordjütland, D\u00e4nemark, mit guter Anbindung an Aalborg und die Limfjord. Die Region bietet Hafenbad mit Sauna, Golf, Naturwege und kinderfreundliche Str\u00e4nde.',
     nav_reviews:'Bewertungen',
+    float_cal:'Kalender anzeigen', fab_label:'Menü',
+    cal_reminder:'W\u00e4hlen Sie Ihre Daten im Kalender oben \u2014 sie werden automatisch hier eingetragen.',
     rev_label:'Bewertungen', rev_heading:'Was sagen <em>unsere G\u00e4ste</em>', rev_source:'· Airbnb Bewertungen',
     rev1:'"Ein sehr sch\u00f6ner Ort mit einem gro\u00dfen Au\u00dfenbereich und wundersch\u00f6nen M\u00f6beln. Ideal f\u00fcr Familien. Es hat unsere Erwartungen voll erf\u00fcllt und die Gastgeber haben Fragen sehr schnell und freundlich beantwortet."',
     rev2:'"Unser Urlaub war wirklich wunderbar. Das Haus sieht genau so aus wie auf den Bildern. Der Garten ist ein Traum im Sommer. Wenn Sie nach einem Urlaub in absoluter Ruhe suchen, ist dies der richtige Ort. Wir empfehlen es w\u00e4rmstens!"',
@@ -888,7 +1035,13 @@ const T = {
     contact_label:'Contact', contact_heading:'Find <em>us</em>',
     contact_intro:'Have questions? Feel free to contact us \u2014 we respond quickly.',
     contact_addr_label:'Address', contact_phone_label:'Phone', contact_call:'Call us',
+    seo_h2:'Holiday house for rent in Hou, North Jutland, Denmark',
+    seo_p1:'Looking for a holiday house in Denmark? Villa Hou is a unique holiday home in Hou by the Limfjord, close to Hals and just 1 km from one of Denmark\'s cleanest sandy beaches. Perfect for families and groups of up to 6 people.',
+    seo_p2:'The holiday house features a wilderness hot tub, wood-burning stove, fire pit, air conditioning and a large terrace. Book directly with the owner — no service fee — and pay less than on Airbnb.',
+    seo_p3:'Hou is located in the heart of North Jutland, Denmark, with easy access to Aalborg and the Limfjord. The area offers harbour baths with sauna, golf, nature trails and family-friendly beaches.',
     nav_reviews:'Reviews',
+    float_cal:'View calendar', fab_label:'Menu',
+    cal_reminder:'Select your dates in the calendar above \u2014 they will be filled in automatically below.',
     rev_label:'Reviews', rev_heading:'What our <em>guests say</em>', rev_source:'· Airbnb reviews',
     rev1:'"A very lovely place to stay with a huge outdoor area and fantastic furniture. Ideal for families. It fully lived up to our expectations and the hosts answered questions very quickly and kindly."',
     rev2:'"Our holiday was truly wonderful. The house looks exactly like the photos. The garden is a dream in summer. If you\'re looking for a holiday in absolute peace in a beautiful house, this is the place. We warmly recommend it and will happily return!"',
@@ -952,6 +1105,7 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn')[map[lang]].classList.add('active');
   renderTerms(lang);
   renderCal();
+  updatePageTitle(lang);
   const airbnbUrls={
     da:'https://www.airbnb.dk/rooms/1440420483011438215',
     de:'https://www.airbnb.de/rooms/1440420483011438215',
@@ -1082,6 +1236,8 @@ function updateBookBtn(){
       <span style="opacity:0.6">|</span>
       <span>\u2192 Send bookingforesp\u00f8rgsel</span>
     </a>`;
+    const rem=document.getElementById('calReminder');
+    if(rem)rem.style.display='none';
   }else if(selCheckin){
     btn.innerHTML=`<p style="font-size:0.85rem;color:var(--bark);font-style:italic">V\u00e6lg nu din afrejsedag \u2192</p>`;
   }else{
@@ -1132,7 +1288,15 @@ function sendBooking(){
   const email=document.getElementById('email').value.trim();
   const checkin=document.getElementById('checkin').value;
   const checkout=document.getElementById('checkout').value;
-  if(!fname||!email||!checkin||!checkout){alert('Please fill in: name, email, arrival and departure.');return;}
+  const msgs={
+    da:{required:'Udfyld venligst: navn, e-mail, ankomst og afrejse.',min3:'Minimum 3 nætters ophold. Vælg venligst en længere periode.'},
+    de:{required:'Bitte ausfüllen: Name, E-Mail, An- und Abreise.',min3:'Mindestaufenthalt 3 Nächte. Bitte einen längeren Zeitraum wählen.'},
+    en:{required:'Please fill in: name, email, arrival and departure.',min3:'Minimum 3 nights stay. Please select a longer period.'}
+  };
+  const m=msgs[currentLang]||msgs.da;
+  if(!fname||!email||!checkin||!checkout){alert(m.required);return;}
+  const nights=Math.round((new Date(checkout)-new Date(checkin))/(1000*60*60*24));
+  if(nights<3){alert(m.min3);return;}
   const lname=document.getElementById('lname').value.trim();
   const phone=document.getElementById('phone').value.trim();
   const guests=document.getElementById('guests').value;
