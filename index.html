@@ -1197,6 +1197,16 @@ function toInputDate(d){
   return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 }
 
+function hasBookedDaysInRange(from, to){
+  return bookedRanges.some(r=>{
+    const rFrom=dateNum(r.from);
+    const rTo=dateNum(r.to);
+    const selFrom=dateNum(from);
+    const selTo=dateNum(to);
+    return rFrom<selTo&&rTo>selFrom;
+  });
+}
+
 function handleDayClick(date,booked){
   if(booked)return;
   if(!pickingCheckout||date<=selCheckin){
@@ -1207,8 +1217,28 @@ function handleDayClick(date,booked){
     const co=document.getElementById('checkout');
     if(ci)ci.value=toInputDate(date);
     if(co)co.value='';
+    const rem=document.getElementById('calReminder');
+    if(rem)rem.style.display='';
     updateBookBtn();
   }else{
+    if(hasBookedDaysInRange(selCheckin,date)){
+      const msgs={
+        da:'Du kan ikke booke hen over en allerede booket periode. V\u00e6lg venligst en anden dato.',
+        de:'Sie k\u00f6nnen keine bereits gebuchten Zeitr\u00e4ume \u00fcberschneiden. Bitte w\u00e4hlen Sie ein anderes Datum.',
+        en:'You cannot book across an already booked period. Please select a different date.'
+      };
+      alert(msgs[currentLang]||msgs.da);
+      selCheckin=null;
+      selCheckout=null;
+      pickingCheckout=false;
+      document.getElementById('checkin').value='';
+      document.getElementById('checkout').value='';
+      const rem=document.getElementById('calReminder');
+      if(rem)rem.style.display='';
+      updateBookBtn();
+      renderCal();
+      return;
+    }
     selCheckout=date;
     pickingCheckout=false;
     const co=document.getElementById('checkout');
