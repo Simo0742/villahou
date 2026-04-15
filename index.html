@@ -4,15 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sommerhus til leje i Hou – Feriehus Nordjylland | villahou.com</title>
-<meta name="description" content="Lej et unikt sommerhus i Hou, Nordjylland. 99 m² med vildmarksbad, brændeovn og bålplads. Plads til 6 personer. 1 km fra sandstrand. Book direkte – 15% billigere end Airbnb.">
-<meta name="keywords" content="sommerhus til leje Hou, feriehus Nordjylland Danmark, sommerhus Hals, feriehus med vildmarksbad, Ferienhaus Dänemark mieten, Ferienhaus Nordjütland, holiday house Denmark rent, vacation rental North Jutland Denmark">
+<meta name="description" id="metaDesc" content="Lej et unikt sommerhus i Hou, Nordjylland. 99 m² med vildmarksbad, brændeovn og bålplads. Plads til 6 personer. 1 km fra sandstrand. Book direkte – 15% billigere end Airbnb.">
+<meta name="keywords" id="metaKeywords" content="sommerhus til leje Hou, feriehus Nordjylland Danmark, sommerhus Hals, feriehus med vildmarksbad, Ferienhaus Dänemark mieten, Ferienhaus Nordjütland, holiday house Denmark rent, vacation rental North Jutland Denmark">
 <meta property="og:title" content="Sommerhus til leje i Hou, Nordjylland – Villa Hou">
 <meta property="og:description" content="Unikt sommerhus med vildmarksbad, brændeovn og bålplads. 1 km fra sandstrand. Plads til 6 personer. Book direkte og spar 15% ift. Airbnb.">
 <meta property="og:image" content="https://villahou.com/images/cover.jpg">
 <meta property="og:url" content="https://www.villahou.com">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="en_GB">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.villahou.com">
+<link rel="alternate" hreflang="da" href="https://www.villahou.com">
+<link rel="alternate" hreflang="de" href="https://www.villahou.com?lang=de">
+<link rel="alternate" hreflang="en" href="https://www.villahou.com?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://www.villahou.com">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.svg">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -23,7 +30,7 @@
   "name": "Villa Hou",
   "description": "Unikt feriehus fra 2015 på 99 m² med plads til 6 personer. Privat 1.400 m² naturgrund med vildmarksbad, brændeovn, bålplads og terrasse. 1 km fra strand og havn i Hou, Nordjylland.",
   "url": "https://villahou.com",
-  "logo": "https://villahou.com/favicon.svg",
+  "logo": "https://www.villahou.com/favicon.svg",
   "image": [
     "https://www.villahou.com/images/cover.jpg",
     "https://www.villahou.com/images/stue.jpg",
@@ -183,17 +190,6 @@ section{padding:5rem 2rem}
 .airbnb-note{margin-top:1rem;font-size:0.8rem;color:var(--text-light);display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
 .airbnb-badge{background:#ff5a5f;color:white;padding:0.15rem 0.5rem;border-radius:2px;font-size:0.7rem;letter-spacing:0.04em;flex-shrink:0}
 #priser{background:var(--sand)}
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
-.price-card{background:white;border:1px solid var(--warm);border-radius:4px;padding:1.8rem;position:relative}
-.price-card.featured{border:2px solid var(--accent)}
-.price-season{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.5rem}
-.price-amount{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--bark-dark);line-height:1}
-.price-unit{font-size:0.8rem;color:var(--text-light);margin-bottom:1rem}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.83rem;color:var(--text-light)}
-.price-features li::before{content:"✓ ";color:var(--moss)}
-.popular-badge{position:absolute;top:-1px;right:1rem;background:var(--accent);color:white;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:0 0 3px 3px}
-.price-note{margin-top:2rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px;background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem}
-.price-note strong{color:var(--bark-dark);font-weight:500}
 .medbring-box{margin-top:1.2rem;background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px}
 .medbring-box strong{color:var(--bark-dark);font-weight:500}
 #book{background:var(--bark-dark);padding:5rem 2rem}
@@ -212,9 +208,14 @@ section{padding:5rem 2rem}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--bark)}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group textarea{resize:vertical;min-height:90px}
-.bank-info{background:var(--sand);border-radius:3px;padding:1rem 1.2rem;margin:1.2rem 0;font-size:0.83rem;border-left:3px solid var(--accent)}
-.bank-info p{color:var(--text-light);margin-bottom:0.25rem;line-height:1.6}
-.bank-info strong{color:var(--bark-dark)}
+
+.send-options{display:flex;flex-direction:column;gap:0.7rem;margin-top:1.2rem}
+.send-wa{display:flex;align-items:center;justify-content:center;gap:0.7rem;width:100%;background:#25D366;color:white;border:none;cursor:pointer;padding:1rem;font-family:'Lora',serif;font-size:0.95rem;letter-spacing:0.03em;border-radius:3px;transition:background 0.2s,transform 0.15s}
+.send-wa:hover{background:#1fba59;transform:translateY(-1px)}
+.send-email{display:flex;align-items:center;justify-content:center;gap:0.6rem;width:100%;background:transparent;color:var(--bark-dark);border:1px solid var(--warm);cursor:pointer;padding:0.85rem;font-family:'Lora',serif;font-size:0.88rem;letter-spacing:0.03em;border-radius:3px;transition:background 0.2s,border-color 0.2s}
+.send-email:hover{background:var(--sand);border-color:var(--bark)}
+.send-divider{display:flex;align-items:center;gap:0.8rem;font-size:0.75rem;color:var(--text-light);letter-spacing:0.08em;text-transform:uppercase}
+.send-divider::before,.send-divider::after{content:'';flex:1;height:1px;background:var(--warm)}
 .submit-btn{width:100%;background:var(--bark-dark);color:var(--cream);border:none;cursor:pointer;padding:1rem;font-family:'Lora',serif;font-size:0.95rem;letter-spacing:0.05em;border-radius:3px;transition:background 0.2s;margin-top:0.5rem}
 .submit-btn:hover{background:#3d2e1e}
 .form-disclaimer{font-size:0.74rem;color:var(--text-light);text-align:center;margin-top:0.8rem;line-height:1.6}
@@ -228,11 +229,6 @@ footer a:hover{color:var(--accent)}
 .fab-main{background:var(--bark-dark);color:var(--cream);border:none;cursor:pointer;padding:0.75rem 1.4rem;border-radius:40px;font-family:'Lora',serif;font-size:0.88rem;letter-spacing:0.04em;display:flex;align-items:center;gap:0.55rem;box-shadow:0 4px 20px rgba(44,32,22,0.35);transition:background 0.2s,transform 0.15s}
 .fab-main:hover{background:var(--accent);transform:translateY(-2px)}
 .fab-main svg{width:16px;height:16px;flex-shrink:0}
-.fab-options{display:flex;flex-direction:column;align-items:flex-end;gap:0.5rem;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s}
-.fab-options.open{opacity:1;pointer-events:auto;transform:translateY(0)}
-.fab-option{background:var(--bark);color:var(--cream);text-decoration:none;padding:0.6rem 1.2rem;border-radius:40px;font-family:'Lora',serif;font-size:0.82rem;letter-spacing:0.04em;display:flex;align-items:center;gap:0.5rem;box-shadow:0 3px 12px rgba(44,32,22,0.25);white-space:nowrap;transition:background 0.2s}
-.fab-option:hover{background:var(--accent)}
-.fab-option svg{width:14px;height:14px;flex-shrink:0}
 
 /* Hamburger */
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
@@ -317,11 +313,11 @@ footer a:hover{color:var(--accent)}
 </div>
 
 <!-- Lightbox -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
-  <button class="lightbox-prev" onclick="lightboxNav(-1)">&#8592;</button>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Billedvisning" onclick="closeLightbox(event)">
+  <button class="lightbox-close" aria-label="Luk billedvisning" onclick="closeLightbox()">&#215;</button>
+  <button class="lightbox-prev" aria-label="Forrige billede" onclick="lightboxNav(-1, event)">&#8592;</button>
   <img id="lightboxImg" src="" alt="">
-  <button class="lightbox-next" onclick="lightboxNav(1)">&#8594;</button>
+  <button class="lightbox-next" aria-label="Næste billede" onclick="lightboxNav(1, event)">&#8594;</button>
 </div>
 
 <!-- HERO -->
@@ -350,22 +346,22 @@ footer a:hover{color:var(--accent)}
     <h2 class="heading" data-i18n="photos_heading">Se <em>villaen</em></h2>
     <div class="photo-grid">
       <div class="photo-cell" onclick="openLightbox(0)">
-        <img src="images/cover.jpg" alt="Villa Hou - Feriehus i Hou, Nordjylland, Danmark" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/cover.jpg" alt="Villa Hou - Feriehus i Hou, Nordjylland, Danmark" data-i18n-alt="alt_cover" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" onclick="openLightbox(1)">
-        <img src="images/stue.jpg" alt="Villa Hou stue med brændeovn - sommerhus Hou Danmark" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/stue.jpg" loading="lazy" alt="Villa Hou stue med brændeovn - sommerhus Hou Danmark" data-i18n-alt="alt_stue" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" onclick="openLightbox(2)">
-        <img src="images/baghave.jpg" alt="Villa Hou baghave med bålplads - feriehus Nordjylland" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/baghave.jpg" loading="lazy" alt="Villa Hou baghave med bålplads - feriehus Nordjylland" data-i18n-alt="alt_baghave" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" onclick="openLightbox(3)">
-        <img src="images/hems.jpg" alt="Villa Hou hems med sovepladser - sommerhus til leje Hou" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/hems.jpg" loading="lazy" alt="Villa Hou hems med sovepladser - sommerhus til leje Hou" data-i18n-alt="alt_hems" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" onclick="openLightbox(4)">
-        <img src="images/verelse1.jpg" alt="Villa Hou soveværelse med dobbeltseng - feriehus Danmark" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/verelse1.jpg" loading="lazy" alt="Villa Hou soveværelse med dobbeltseng - feriehus Danmark" data-i18n-alt="alt_verelse" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" onclick="openLightbox(5)">
-        <img src="images/badeverelse.jpg" alt="Villa Hou badeværelse - sommerhus Hals Nordjylland" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/badeverelse.jpg" loading="lazy" alt="Villa Hou badeværelse - sommerhus Hals Nordjylland" data-i18n-alt="alt_bad" style="width:100%;height:100%;object-fit:cover">
       </div>
     </div>
   </div>
@@ -453,11 +449,11 @@ footer a:hover{color:var(--accent)}
     <p class="label" data-i18n="cal_label">Tilgængelighed</p>
     <h2 class="heading" data-i18n="cal_heading">Kalender</h2>
     <p class="cal-intro" data-i18n="cal_intro">Se hvornår Villa Hou er ledig. Klik på ankomstdag, derefter afrejsedag — datoerne overføres automatisk til bookingformularen.</p>
-    <div class="cal-wrap">
+    <div class="cal-wrap" role="application" aria-label="Bookingkalender">
       <div class="cal-header">
-        <button class="cal-nav-btn" id="prev">&#8592;</button>
+        <button class="cal-nav-btn" id="prev" aria-label="Forrige måned">&#8592;</button>
         <span class="cal-month" id="monthLabel"></span>
-        <button class="cal-nav-btn" id="next">&#8594;</button>
+        <button class="cal-nav-btn" id="next" aria-label="Næste måned">&#8594;</button>
       </div>
       <div class="cal-grid" id="calGrid"></div>
       <div class="cal-legend">
@@ -470,7 +466,7 @@ footer a:hover{color:var(--accent)}
     <p class="airbnb-note">
       <span class="airbnb-badge">Airbnb</span>
       <span data-i18n="cal_sync">Synkroniseret via iCal — opdateres automatisk.</span>
-      <a id="airbnb-cal-link" href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" style="color:var(--accent)" data-i18n="cal_airbnb_link">Se også på Airbnb</a>
+      <a id="airbnb-cal-link" href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" rel="noopener" style="color:var(--accent)" data-i18n="cal_airbnb_link">Se også på Airbnb</a>
     </p>
   </div>
 </section>
@@ -481,41 +477,73 @@ footer a:hover{color:var(--accent)}
     <p class="label" data-i18n="price_label">Priser</p>
     <h2 class="heading" data-i18n="price_heading"><em>Billigere</em> end Airbnb</h2>
 
-    <!-- Airbnb sammenligning banner -->
-    <div style="background:var(--bark-dark);border-radius:6px;padding:2rem 2.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap">
-      <div style="flex:1;min-width:220px">
-        <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a87c;margin-bottom:0.5rem" data-i18n="p_badge_label">Direkte booking</p>
-        <p style="font-family:'Playfair Display',serif;font-size:2rem;color:#f0e0cc;line-height:1.1" data-i18n="p_badge_pct">15% billigere</p>
-        <p style="font-size:0.85rem;color:#c9b49a;margin-top:0.4rem" data-i18n="p_badge_sub">end Airbnb-prisen — samme hus, ingen formidlingsgebyr</p>
-        <a id="airbnb-price-link" href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" style="display:inline-block;margin-top:0.8rem;font-size:0.88rem;color:#fff9f0;text-decoration:underline;letter-spacing:0.03em;font-weight:500" data-i18n="p_airbnb_compare">Se vores Airbnb-opslag</a>
+    <!-- Hovedbesked: Tjek Airbnb, book hos os -->
+    <div style="background:var(--bark-dark);border-radius:6px;padding:2.5rem;margin-bottom:2rem">
+
+      <!-- Trin 1-2-3 flow -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2.5rem">
+
+        <div style="text-align:center;padding:0.5rem">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--accent);color:white;font-family:'Playfair Display',serif;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">1</div>
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#f0e0cc;margin-bottom:0.4rem" data-i18n="p_step1_title">Tjek prisen p\u00e5 Airbnb</p>
+          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step1_text">Find dine \u00f8nskede datoer p\u00e5 vores Airbnb-opslag og se totalprisen</p>
+        </div>
+
+        <div style="text-align:center;padding:0.5rem">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--accent);color:white;font-family:'Playfair Display',serif;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">2</div>
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#f0e0cc;margin-bottom:0.4rem" data-i18n="p_step2_title">Book direkte hos os</p>
+          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step2_text">Send en foresp\u00f8rgsel her p\u00e5 siden \u2014 vi svarer inden 24 timer</p>
+        </div>
+
+        <div style="text-align:center;padding:0.5rem">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--moss);color:white;font-family:'Playfair Display',serif;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#f0e0cc;margin-bottom:0.4rem" data-i18n="p_step3_title">Spar 15%</p>
+          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step3_text">Ingen Airbnb-geb\u00e6r \u2014 du betaler kun for huset</p>
+        </div>
+
       </div>
-      <div style="flex:2;min-width:260px">
-        <div style="display:flex;flex-direction:column;gap:0.7rem">
-          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
-            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
-            <span data-i18n="p_usp1">Ingen Airbnb-gebyr — pengene går direkte til udlejer</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
-            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
-            <span data-i18n="p_usp2">Minimum 3 overnatninger</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
-            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
-            <span data-i18n="p_usp3">Send en forespørgsel — vi svarer med en pris inden 24 timer</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
-            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
-            <span data-i18n="p_usp4">Betaling via bankoverførsel — ingen kortgebyr</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.88rem;color:#c9b49a">
-            <span style="color:#6b7c5a;font-size:1rem">&#10003;</span>
-            <span data-i18n="p_usp5">Slutrengøring inkluderet i prisen</span>
-          </div>
+
+      <!-- Airbnb knap -->
+      <div style="text-align:center;margin-bottom:2rem">
+        <a id="airbnb-price-link" href="https://www.airbnb.dk/rooms/1440420483011438215" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.7rem;background:#ff5a5f;color:white;padding:0.9rem 2rem;border-radius:3px;text-decoration:none;font-family:'Lora',serif;font-size:0.92rem;letter-spacing:0.03em;transition:background 0.2s">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span data-i18n="p_airbnb_check">Se prisen for dine datoer p\u00e5 Airbnb</span>
+        </a>
+        <p style="font-size:0.78rem;color:#9a8470;margin-top:0.7rem" data-i18n="p_airbnb_then">\u2014 og send os derefter en foresp\u00f8rgsel her, s\u00e5 matcher vi prisen minus 15%</p>
+      </div>
+
+      <!-- USP'er -->
+      <div style="display:flex;flex-direction:column;gap:0.6rem;max-width:520px;margin:0 auto">
+        <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
+          <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
+          <span data-i18n="p_usp1">Ingen Airbnb-geb\u00e6r \u2014 pengene g\u00e5r direkte til udlejer</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
+          <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
+          <span data-i18n="p_usp2">Minimum 3 overnatninger</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
+          <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
+          <span data-i18n="p_usp4">Betaling via bankovef\u00f8rsel \u2014 ingen kortgeb\u00e6r</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
+          <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
+          <span data-i18n="p_usp5">Slutreng\u00f8ring inkluderet i prisen</span>
         </div>
       </div>
-      <div style="flex-shrink:0">
-        <a href="#book" class="btn-prim" data-i18n="p_cta">Få et tilbud</a>
+
+      <!-- CTA -->
+      <div style="text-align:center;margin-top:2rem">
+        <a href="#book" class="btn-prim" data-i18n="p_cta">F\u00e5 et tilbud</a>
       </div>
+
+    </div>
+
+    <!-- Praktisk info boks -->
+    <div style="background:white;border:1px solid var(--warm);border-radius:4px;padding:1.4rem;font-size:0.83rem;color:var(--text-light);line-height:1.75;max-width:700px">
+      <span data-i18n="p_note"></span>
     </div>
 
     <div class="medbring-box">
@@ -602,14 +630,14 @@ footer a:hover{color:var(--accent)}
       </div>
       <div id="bookForm">
         <div class="form-row">
-          <div class="form-group"><label data-i18n="form_fname">Fornavn</label><input type="text" id="fname" data-i18n-ph="ph_fname"></div>
+          <div class="form-group"><label data-i18n="form_fname">Fornavn</label><input type="text" id="fname" data-i18n-ph="ph_fname" required></div>
           <div class="form-group"><label data-i18n="form_lname">Efternavn</label><input type="text" id="lname" data-i18n-ph="ph_lname"></div>
         </div>
-        <div class="form-group"><label data-i18n="form_email">E-mail</label><input type="email" id="email" placeholder="din@email.dk"></div>
+        <div class="form-group"><label data-i18n="form_email">E-mail</label><input type="email" id="email" placeholder="din@email.dk" required></div>
         <div class="form-group"><label data-i18n="form_phone">Telefon</label><input type="tel" id="phone" placeholder="+XX XXX XXX XXX"></div>
         <div class="form-row">
-          <div class="form-group"><label data-i18n="form_checkin">Ankomst</label><input type="date" id="checkin"></div>
-          <div class="form-group"><label data-i18n="form_checkout">Afrejse</label><input type="date" id="checkout"></div>
+          <div class="form-group"><label data-i18n="form_checkin">Ankomst</label><input type="date" id="checkin" required></div>
+          <div class="form-group"><label data-i18n="form_checkout">Afrejse</label><input type="date" id="checkout" required></div>
         </div>
         <div class="form-group">
           <label data-i18n="form_guests">Antal gæster</label>
@@ -623,7 +651,17 @@ footer a:hover{color:var(--accent)}
           </select>
         </div>
         <div class="form-group"><label data-i18n="form_msg">Besked (valgfri)</label><textarea id="msg" data-i18n-ph="ph_msg"></textarea></div>
-        <button class="submit-btn" onclick="sendBooking()" data-i18n="form_submit">Send forespørgsel</button>
+        <div class="send-options">
+          <button class="send-wa" onclick="sendWhatsApp()" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            <span data-i18n="send_wa">Send via WhatsApp</span>
+          </button>
+          <div class="send-divider"><span data-i18n="send_or">eller</span></div>
+          <button class="send-email" onclick="sendEmail()" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="send_email">Send via e-mail</span>
+          </button>
+        </div>
         <p class="form-disclaimer" data-i18n="form_disclaimer">Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.</p>
       </div>
       <div class="success-msg" id="successMsg" data-i18n="form_success">
@@ -648,7 +686,7 @@ footer a:hover{color:var(--accent)}
             </div>
             <div>
               <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--bark);margin-bottom:0.2rem" data-i18n="contact_addr_label">Adresse</p>
-              <a href="https://maps.google.com/?q=Kongevejen+219,+9370+Hals" target="_blank" style="color:var(--text);text-decoration:none;font-size:0.92rem;line-height:1.6">Kongevejen 219<br>9370 Hals</a>
+              <a href="https://maps.google.com/?q=Kongevejen+219,+9370+Hals" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;font-size:0.92rem;line-height:1.6">Kongevejen 219<br>9370 Hals</a>
             </div>
           </div>
           <div style="display:flex;gap:1rem;align-items:flex-start">
@@ -671,7 +709,7 @@ footer a:hover{color:var(--accent)}
           </div>
         </div>
         <div style="display:flex;gap:0.8rem;margin-top:2rem;flex-wrap:wrap">
-          <a href="https://wa.me/4557709971" target="_blank" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:white;padding:0.7rem 1.4rem;border-radius:3px;text-decoration:none;font-family:'Lora',serif;font-size:0.87rem">
+          <a href="https://wa.me/4557709971" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:white;padding:0.7rem 1.4rem;border-radius:3px;text-decoration:none;font-family:'Lora',serif;font-size:0.87rem">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
             WhatsApp
           </a>
@@ -679,7 +717,7 @@ footer a:hover{color:var(--accent)}
         </div>
       </div>
       <div style="border-radius:6px;overflow:hidden;border:1px solid var(--warm);height:380px">
-        <iframe src="https://maps.google.com/maps?q=Kongevejen+219,+9370+Hals,+Danmark&output=embed&z=14" width="100%" height="100%" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+        <iframe title="Google Maps - Villa Hou beliggenhed" src="https://maps.google.com/maps?q=Kongevejen+219,+9370+Hals,+Danmark&output=embed&z=14" width="100%" height="100%" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -708,7 +746,7 @@ footer a:hover{color:var(--accent)}
 <footer>
   <span class="footer-logo">Villa Hou</span>
   <p>Kongevejen 219, 9370 Hals &nbsp;·&nbsp; <a id="email-link-footer" href="#" style="color:#c9a87c">info&#64;villahou.com</a> &nbsp;·&nbsp; <a href="tel:+4557709971">+45 57 70 99 71</a></p>
-  <p style="margin-top:0.4rem"><a href="https://wa.me/4557709971" target="_blank" style="color:#25D366">WhatsApp</a> &nbsp;·&nbsp; <a href="#betingelser" data-i18n="nav_terms">Lejebetingelser</a> &nbsp;·&nbsp; <a href="#">Privatlivspolitik</a></p>
+  <p style="margin-top:0.4rem"><a href="https://wa.me/4557709971" target="_blank" rel="noopener" style="color:#25D366">WhatsApp</a> &nbsp;·&nbsp; <a href="#betingelser" data-i18n="nav_terms">Lejebetingelser</a> &nbsp;·&nbsp; <a href="#">Privatlivspolitik</a></p>
   <p style="margin-top:0.5rem;font-size:0.72rem">© 2025 Villa Hou &nbsp;·&nbsp; villahou.com</p>
 </footer>
 
@@ -757,8 +795,8 @@ function closeLightbox(e){
     document.body.style.overflow='';
   }
 }
-function lightboxNav(dir){
-  event.stopPropagation();
+function lightboxNav(dir, e){
+  if(e) e.stopPropagation();
   lightboxIndex=(lightboxIndex+dir+lightboxImages.length)%lightboxImages.length;
   document.getElementById('lightboxImg').src=lightboxImages[lightboxIndex];
 }
@@ -778,6 +816,23 @@ function updatePageTitle(lang){
     en:'Holiday house for rent in Hou, Denmark | villahou.com'
   };
   document.title=titles[lang]||titles.da;
+}
+
+function updateMeta(lang){
+  const descs={
+    da:'Lej et unikt sommerhus i Hou, Nordjylland. 99 m\u00b2 med vildmarksbad, br\u00e6ndeovn og b\u00e5lplads. Plads til 6 personer. 1 km fra sandstrand. Book direkte \u2013 15% billigere end Airbnb.',
+    de:'Einzigartiges Ferienhaus in Hou, Nordj\u00fctland mieten. 99 m\u00b2 mit Wildnisbad, Kamin und Lagerfeuerplatz. Platz f\u00fcr 6 Personen. 1 km vom Strand. Direkt buchen \u2013 15% g\u00fcnstiger als Airbnb.',
+    en:'Rent a unique holiday house in Hou, North Jutland. 99 m\u00b2 with wilderness hot tub, wood stove and fire pit. Sleeps 6. 1 km from sandy beach. Book direct \u2013 15% cheaper than Airbnb.'
+  };
+  const keywords={
+    da:'sommerhus til leje Hou, feriehus Nordjylland Danmark, sommerhus Hals, feriehus med vildmarksbad',
+    de:'Ferienhaus D\u00e4nemark mieten, Ferienhaus Nordj\u00fctland, Ferienhaus Hou, Ferienhaus mit Badetonne',
+    en:'holiday house Denmark rent, vacation rental North Jutland, holiday home Hou Denmark, hot tub cabin Denmark'
+  };
+  const descEl=document.getElementById('metaDesc');
+  const kwEl=document.getElementById('metaKeywords');
+  if(descEl) descEl.content=descs[lang]||descs.da;
+  if(kwEl) kwEl.content=keywords[lang]||keywords.da;
 }
 
 const T = {
@@ -830,6 +885,24 @@ const T = {
     p_popular:'Mest popul\u00e6r',
     p_feat1:'Op til 6 personer', p_feat2:'Wifi inkluderet', p_feat3:'Vildmarksbad inkl.', p_feat_min:'Min. 3 n\u00e6tter',
     p_note:'<strong>Forbrug afregnes separat:</strong> Elektricitet: 3 kr/kWh &nbsp;\u00b7&nbsp; Vand: 100 kr/m\u00b3<br><br><strong>Depositum: 1.000 kr.</strong> — betales med 2. rate senest 6 uger f\u00f8r ankomst. Tilbagebetales senest 1 uge efter afrejse.<br><strong>Gratis afbestilling</strong> op til 6 uger f\u00f8r ankomst.',
+
+    send_wa: 'Send via WhatsApp',
+    send_or: 'eller',
+    send_email: 'Send via e-mail',
+    p_step1_title: 'Tjek prisen p\u00e5 Airbnb',
+    p_step1_text: 'Find dine \u00f8nskede datoer p\u00e5 vores Airbnb-opslag og se totalprisen',
+    p_step2_title: 'Book direkte hos os',
+    p_step2_text: 'Send en foresp\u00f8rgsel her p\u00e5 siden \u2014 vi svarer inden 24 timer',
+    p_step3_title: 'Spar 15%',
+    p_step3_text: 'Ingen Airbnb-geb\u00e6r \u2014 du betaler kun for huset',
+    p_airbnb_check: 'Se prisen for dine datoer p\u00e5 Airbnb',
+    p_airbnb_then: '\u2014 og send os derefter en foresp\u00f8rgsel her, s\u00e5 matcher vi prisen minus 15%',
+    alt_cover:'Villa Hou - Feriehus i Hou, Nordjylland, Danmark',
+    alt_stue:'Villa Hou stue med br\u00e6ndeovn - sommerhus Hou Danmark',
+    alt_baghave:'Villa Hou baghave med b\u00e5lplads - feriehus Nordjylland',
+    alt_hems:'Villa Hou hems med sovepladser - sommerhus til leje Hou',
+    alt_verelse:'Villa Hou sovev\u00e6relse med dobbeltseng - feriehus Danmark',
+    alt_bad:'Villa Hou badev\u00e6relse - sommerhus Hals Nordjylland',
     p_bring:'<strong>Medbring selv:</strong> Sengelinned &nbsp;\u00b7&nbsp; H\u00e5ndkl\u00e6der &nbsp;\u00b7&nbsp; Viskestykker &nbsp;\u00b7&nbsp; Klude',
     book_label:'Reservation', book_heading:'Book dit <em>ophold</em>',
     book_intro:'Send os en bookingforesp\u00f8rgsel, og vi vender tilbage inden for 24 timer.',
@@ -867,7 +940,7 @@ const T = {
     terms_intro:'L\u00e6s venligst vores lejebetingelser grundigt inden booking.',
     terms:[
       {t:'Generelt', b:'Sommerhuset m\u00e5 max benyttes af 6 personer. Lejem\u00e5lets reservation er bindende.'},
-      {t:'Husorden', b:'Husdyr er ikke tilladt. R\u00f8gning er ikke tilladt indendd\u00f8rs. Udend\u00f8rs fodt\u00f8j er ikke tilladt indend\u00f8rs. M\u00f8bler tilh\u00f8rende indvendig beboelse m\u00e5 ikke tages udenfor.'},
+      {t:'Husorden', b:'Husdyr er ikke tilladt. R\u00f8gning er ikke tilladt indend\u00f8rs. Udend\u00f8rs fodt\u00f8j er ikke tilladt indend\u00f8rs. M\u00f8bler tilh\u00f8rende indvendig beboelse m\u00e5 ikke tages udenfor.'},
       {t:'Skader & reklamationer', b:'Lejeren holdes ansvarlig for forvoldte skader p\u00e5 hus og inventar. Reklamationer over ferieboligen skal rettes til udlejer straks ved overtagelsen og senest inden 24 timer fra lejeperiodens start. Forlader lejer ferieboligen uden at have underrettet udlejer om fejl/mangler kan udlejer ikke p\u00e5l\u00e6gges nogen tilbagebetalingspligt.'},
       {t:'Affald & reng\u00f8ring', b:'Det er lejerens pligt at s\u00f8rge for at affaldet sorteres. Reng\u00f8ringsgebyret er obligatorisk og er lagt ind i lejeprisen. Lejeren er ansvarlig for, at huset afleveres p\u00e6nt og i samme stand som ved ankomst.'},
       {t:'Afbestilling', b:'Annulleres bookingen <strong>mere end 6 uger</strong> før ankomst, tilbagebetales alle betalte bel\u00f8b fuldt ud (100%). Annulleres inden for 6 uger fra ankomst, forfalder alle betalte bel\u00f8b til udlejeren.'},
@@ -924,6 +997,24 @@ const T = {
     p_popular:'Beliebteste',
     p_feat1:'Bis zu 6 Personen', p_feat2:'WLAN inklusive', p_feat3:'Wildnisbad inkl.', p_feat_min:'Mind. 3 N\u00e4chte',
     p_note:'<strong>Verbrauch wird separat abgerechnet:</strong> Strom: 0,40 \u20ac/kWh &nbsp;\u00b7&nbsp; Wasser: 13 \u20ac/m\u00b3<br><br><strong>Kaution: 150 \u20ac</strong> — f\u00e4llig mit der 2. Rate sp\u00e4testens 6 Wochen vor Anreise. R\u00fcckzahlung sp\u00e4testens 1 Woche nach Abreise.<br><strong>Kostenlose Stornierung</strong> bis zu 6 Wochen vor Anreise.',
+
+    send_wa: '\u00dcber WhatsApp senden',
+    send_or: 'oder',
+    send_email: 'Per E-Mail senden',
+    p_step1_title: 'Preis auf Airbnb pr\u00fcfen',
+    p_step1_text: 'Finden Sie Ihre Wunschdaten in unserem Airbnb-Inserat und sehen Sie den Gesamtpreis',
+    p_step2_title: 'Direkt bei uns buchen',
+    p_step2_text: 'Senden Sie eine Anfrage hier auf der Seite \u2014 wir antworten innerhalb von 24 Stunden',
+    p_step3_title: '15% sparen',
+    p_step3_text: 'Keine Airbnb-Geb\u00fchr \u2014 Sie zahlen nur f\u00fcr das Haus',
+    p_airbnb_check: 'Preis f\u00fcr Ihre Daten auf Airbnb ansehen',
+    p_airbnb_then: '\u2014 und senden Sie uns dann hier eine Anfrage, wir unterbieten den Preis um 15%',
+    alt_cover:'Villa Hou - Ferienhaus in Hou, Nordj\u00fctland, D\u00e4nemark',
+    alt_stue:'Villa Hou Wohnzimmer mit Kamin - Ferienhaus Hou D\u00e4nemark',
+    alt_baghave:'Villa Hou Garten mit Lagerfeuerplatz - Ferienhaus Nordj\u00fctland',
+    alt_hems:'Villa Hou Hochbett mit Schlafpl\u00e4tzen - Ferienhaus Hou',
+    alt_verelse:'Villa Hou Schlafzimmer mit Doppelbett - Ferienhaus D\u00e4nemark',
+    alt_bad:'Villa Hou Badezimmer - Ferienhaus Hals Nordj\u00fctland',
     p_bring:'<strong>Bitte mitbringen:</strong> Bettw\u00e4sche &nbsp;\u00b7&nbsp; Handt\u00fccher &nbsp;\u00b7&nbsp; Geschirrt\u00fccher &nbsp;\u00b7&nbsp; Lappen',
     book_label:'Reservierung', book_heading:'Ihren <em>Aufenthalt</em> buchen',
     book_intro:'Senden Sie uns eine Buchungsanfrage, und wir melden uns innerhalb von 24 Stunden.',
@@ -1018,6 +1109,24 @@ const T = {
     p_popular:'Most popular',
     p_feat1:'Up to 6 people', p_feat2:'Wi-Fi included', p_feat3:'Hot tub included', p_feat_min:'Min. 3 nights',
     p_note:'<strong>Utilities billed separately:</strong> Electricity: \u20ac0.40/kWh &nbsp;\u00b7&nbsp; Water: \u20ac13/m\u00b3<br><br><strong>Deposit: \u20ac150</strong> — due with the 2nd instalment no later than 6 weeks before arrival. Refunded within 1 week of departure.<br><strong>Free cancellation</strong> up to 6 weeks before arrival.',
+
+    send_wa: 'Send via WhatsApp',
+    send_or: 'or',
+    send_email: 'Send via email',
+    p_step1_title: 'Check the price on Airbnb',
+    p_step1_text: 'Find your desired dates on our Airbnb listing and see the total price',
+    p_step2_title: 'Book direct with us',
+    p_step2_text: 'Send an enquiry here on our site \u2014 we reply within 24 hours',
+    p_step3_title: 'Save 15%',
+    p_step3_text: 'No Airbnb fee \u2014 you only pay for the house',
+    p_airbnb_check: 'Check the price for your dates on Airbnb',
+    p_airbnb_then: '\u2014 then send us an enquiry here and we\u2019ll match the price minus 15%',
+    alt_cover:'Villa Hou - Holiday house in Hou, North Jutland, Denmark',
+    alt_stue:'Villa Hou living room with wood stove - holiday house Hou Denmark',
+    alt_baghave:'Villa Hou garden with fire pit - holiday home North Jutland',
+    alt_hems:'Villa Hou loft with sleeping spots - holiday house Hou',
+    alt_verelse:'Villa Hou bedroom with double bed - holiday home Denmark',
+    alt_bad:'Villa Hou bathroom - holiday house Hals North Jutland',
     p_bring:'<strong>Please bring:</strong> Bed linen &nbsp;\u00b7&nbsp; Towels &nbsp;\u00b7&nbsp; Tea towels &nbsp;\u00b7&nbsp; Cloths',
     book_label:'Booking', book_heading:'Book your <em>stay</em>',
     book_intro:'Send us a booking enquiry and we\'ll get back to you within 24 hours.',
@@ -1103,12 +1212,17 @@ function setLang(lang) {
     const key = el.getAttribute('data-i18n-ph');
     if (t[key] !== undefined) el.placeholder = t[key];
   });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if (t[key] !== undefined) el.alt = t[key];
+  });
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   const map = {da:0,de:1,en:2};
   document.querySelectorAll('.lang-btn')[map[lang]].classList.add('active');
   renderTerms(lang);
   renderCal();
   updatePageTitle(lang);
+  updateMeta(lang);
   const airbnbUrls={
     da:'https://www.airbnb.dk/rooms/1440420483011438215',
     de:'https://www.airbnb.de/rooms/1440420483011438215',
@@ -1262,17 +1376,24 @@ function updateBookBtn(){
   if(selCheckin&&selCheckout){
     const nights=Math.round((selCheckout-selCheckin)/(1000*60*60*24));
     const fmt=d=>toInputDate(d).split('-').reverse().join('.');
+    const labels={
+      da:{night:'nat',nights:'n\u00e6tter',cta:'\u2192 Send bookingforesp\u00f8rgsel'},
+      de:{night:'Nacht',nights:'N\u00e4chte',cta:'\u2192 Buchungsanfrage senden'},
+      en:{night:'night',nights:'nights',cta:'\u2192 Send booking enquiry'}
+    };
+    const l=labels[currentLang]||labels.da;
     btn.innerHTML=`<a href="#book" class="btn-prim" style="display:inline-flex;align-items:center;gap:0.7rem;text-decoration:none">
       <span>${fmt(selCheckin)} \u2013 ${fmt(selCheckout)}</span>
       <span style="opacity:0.6">|</span>
-      <span>${nights} ${nights===1?'nat':'n\u00e6tter'}</span>
+      <span>${nights} ${nights===1?l.night:l.nights}</span>
       <span style="opacity:0.6">|</span>
-      <span>\u2192 Send bookingforesp\u00f8rgsel</span>
+      <span>${l.cta}</span>
     </a>`;
     const rem=document.getElementById('calReminder');
     if(rem)rem.style.display='none';
   }else if(selCheckin){
-    btn.innerHTML=`<p style="font-size:0.85rem;color:var(--bark);font-style:italic">V\u00e6lg nu din afrejsedag \u2192</p>`;
+    const hints={da:'V\u00e6lg nu din afrejsedag \u2192',de:'W\u00e4hlen Sie nun Ihren Abreisetag \u2192',en:'Now select your departure day \u2192'};
+    btn.innerHTML=`<p style="font-size:0.85rem;color:var(--bark);font-style:italic">${hints[currentLang]||hints.da}</p>`;
   }else{
     btn.innerHTML='';
   }
@@ -1316,29 +1437,79 @@ document.getElementById('next').onclick=()=>{viewMonth++;if(viewMonth>11){viewMo
 renderTerms('da');
 loadAirbnbCalendar();
 
-function sendBooking(){
-  const fname=document.getElementById('fname').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const checkin=document.getElementById('checkin').value;
-  const checkout=document.getElementById('checkout').value;
-  const msgs={
-    da:{required:'Udfyld venligst: navn, e-mail, ankomst og afrejse.',min3:'Minimum 3 nætters ophold. Vælg venligst en længere periode.'},
-    de:{required:'Bitte ausfüllen: Name, E-Mail, An- und Abreise.',min3:'Mindestaufenthalt 3 Nächte. Bitte einen längeren Zeitraum wählen.'},
-    en:{required:'Please fill in: name, email, arrival and departure.',min3:'Minimum 3 nights stay. Please select a longer period.'}
+function getFormData() {
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const checkin = document.getElementById('checkin').value;
+  const checkout = document.getElementById('checkout').value;
+  const guests = document.getElementById('guests').value;
+  const msg = document.getElementById('msg').value.trim();
+  return { fname, lname, email, phone, checkin, checkout, guests, msg, name: (fname + ' ' + lname).trim() };
+}
+
+function validateBooking() {
+  const d = getFormData();
+  const msgs = {
+    da: { required: 'Udfyld venligst: navn, e-mail, ankomst og afrejse.', min3: 'Minimum 3 nætters ophold. Vælg venligst en længere periode.' },
+    de: { required: 'Bitte ausfüllen: Name, E-Mail, An- und Abreise.', min3: 'Mindestaufenthalt 3 Nächte. Bitte einen längeren Zeitraum wählen.' },
+    en: { required: 'Please fill in: name, email, arrival and departure.', min3: 'Minimum 3 nights stay. Please select a longer period.' }
   };
-  const m=msgs[currentLang]||msgs.da;
-  if(!fname||!email||!checkin||!checkout){alert(m.required);return;}
-  const nights=Math.round((new Date(checkout)-new Date(checkin))/(1000*60*60*24));
-  if(nights<3){alert(m.min3);return;}
-  const lname=document.getElementById('lname').value.trim();
-  const phone=document.getElementById('phone').value.trim();
-  const guests=document.getElementById('guests').value;
-  const msg=document.getElementById('msg').value.trim();
-  const subject=encodeURIComponent('Booking Villa Hou: '+checkin+' – '+checkout);
-  const body=encodeURIComponent('Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nArrival: '+checkin+'\nDeparture: '+checkout+'\nGuests: '+guests+'\n\nMessage:\n'+msg);
-  window.location.href='mailto:'+_e+'?subject='+subject+'&body='+body;
-  document.getElementById('bookForm').style.display='none';
-  document.getElementById('successMsg').style.display='block';
+  const m = msgs[currentLang] || msgs.da;
+  if (!d.fname || !d.email || !d.checkin || !d.checkout) { alert(m.required); return false; }
+  const nights = Math.round((new Date(d.checkout) - new Date(d.checkin)) / (1000*60*60*24));
+  if (nights < 3) { alert(m.min3); return false; }
+  return true;
+}
+
+function formatDateShort(dateStr) {
+  if (!dateStr) return '';
+  const p = dateStr.split('-');
+  return p[2] + '.' + p[1] + '.' + p[0];
+}
+
+function sendWhatsApp() {
+  if (!validateBooking()) return;
+  const d = getFormData();
+
+  const templates = {
+    da: 'Hej! Jeg vil gerne booke Villa Hou.\n\n*Navn:* {name}\n*E-mail:* {email}\n*Telefon:* {phone}\n*Ankomst:* {checkin}\n*Afrejse:* {checkout}\n*Gæster:* {guests}\n\n{msg}',
+    de: 'Hallo! Ich möchte Villa Hou buchen.\n\n*Name:* {name}\n*E-Mail:* {email}\n*Telefon:* {phone}\n*Anreise:* {checkin}\n*Abreise:* {checkout}\n*Gäste:* {guests}\n\n{msg}',
+    en: 'Hi! I would like to book Villa Hou.\n\n*Name:* {name}\n*Email:* {email}\n*Phone:* {phone}\n*Arrival:* {checkin}\n*Departure:* {checkout}\n*Guests:* {guests}\n\n{msg}'
+  };
+
+  let text = (templates[currentLang] || templates.da)
+    .replace('{name}', d.name)
+    .replace('{email}', d.email)
+    .replace('{phone}', d.phone || '\u2013')
+    .replace('{checkin}', formatDateShort(d.checkin))
+    .replace('{checkout}', formatDateShort(d.checkout))
+    .replace('{guests}', d.guests)
+    .replace('{msg}', d.msg || '')
+    .replace(/\n+$/, '');
+
+  window.open('https://wa.me/4557709971?text=' + encodeURIComponent(text), '_blank');
+  document.getElementById('bookForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+
+function sendEmail() {
+  if (!validateBooking()) return;
+  const d = getFormData();
+  const subject = encodeURIComponent('Booking Villa Hou: ' + d.checkin + ' \u2013 ' + d.checkout);
+  const body = encodeURIComponent(
+    'Name: ' + d.name +
+    '\nEmail: ' + d.email +
+    '\nPhone: ' + (d.phone || '\u2013') +
+    '\nArrival: ' + d.checkin +
+    '\nDeparture: ' + d.checkout +
+    '\nGuests: ' + d.guests +
+    '\n\nMessage:\n' + d.msg
+  );
+  window.location.href = 'mailto:' + _e + '?subject=' + subject + '&body=' + body;
+  document.getElementById('bookForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
 }
 </script>
 </body>
