@@ -468,12 +468,8 @@ footer a:hover{color:var(--accent)}
       <div class="photo-cell gallery-extra gallery-hidden" data-cat="area" onclick="openLightbox(21)">
         <img src="images/havn2.jpg" alt="Hou Havn med både" data-i18n-alt="alt_havn2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell gallery-extra gallery-hidden span-2x1 video-cell" data-cat="all" onclick="window.open('https://www.youtube.com/watch?v=sa5dWrHWxyA','_blank')" style="cursor:pointer;position:relative">
-        <img src="https://img.youtube.com/vi/sa5dWrHWxyA/hqdefault.jpg" alt="Villa Hou video rundtur" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
-          <svg width="56" height="56" viewBox="0 0 68 48" style="filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4))"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="white"/></svg>
-        </div>
-        <span style="position:absolute;bottom:0.5rem;left:0.7rem;color:white;font-size:0.75rem;font-family:'Lora',serif;text-shadow:0 1px 3px rgba(0,0,0,0.6)" data-i18n="gal_video">Se video</span>
+      <div class="photo-cell gallery-extra gallery-hidden span-2x1 video-cell" data-cat="all">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sa5dWrHWxyA" title="Villa Hou video" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="border-radius:3px"></iframe>
       </div>
     </div>
     <button class="gallery-more" id="galleryMore" onclick="toggleGallery()">
@@ -642,7 +638,7 @@ footer a:hover{color:var(--accent)}
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
-          <span data-i18n="p_usp4">Betaling via bankoveførsel — ingen kortgebyr</span>
+          <span data-i18n="p_usp4">Betaling via bankoverførsel — ingen kortgebyr</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
@@ -1029,7 +1025,7 @@ const T = {
     p_usp1:'Ingen Airbnb-gebyr \u2014 pengene g\u00e5r direkte til udlejer',
     p_usp2:'Minimum 3 overnatninger',
     p_usp3:'Send en foresp\u00f8rgsel \u2014 vi svarer hurtigt med en pris',
-    p_usp4:'Betaling via bankovef\u00f8rsel \u2014 ingen kortgebyr',
+    p_usp4:'Betaling via bankoverf\u00f8rsel \u2014 ingen kortgebyr',
     p_usp5:'Slutreng\u00f8ring inkluderet i prisen',
     p_cta:'F\u00e5 et tilbud',
     p_on_request:'Pris p\u00e5 foresp\u00f8rgsel',
@@ -1092,7 +1088,7 @@ const T = {
     form_guests:'Antal g\u00e6ster', form_msg:'Besked (valgfri)',
     ph_fname:'Dit fornavn', ph_lname:'Dit efternavn', ph_msg:'Sp\u00f8rgsm\u00e5l eller \u00f8nsker\u2026',
     opt_1:'1 person', opt_2:'2 personer', opt_3:'3 personer', opt_4:'4 personer', opt_5:'5 personer', opt_6:'6 personer',
-    bank_title:'Betaling via bankovef\u00f8rsel',
+    bank_title:'Betaling via bankoverf\u00f8rsel',
     bank_text:'Efter din foresp\u00f8rgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr \u2014 enkel og tryg betaling.',
     form_submit:'Send foresp\u00f8rgsel',
     form_disclaimer:'Vi behandler din henvendelse hurtigt. Dine oplysninger deles aldrig med tredjepart.',
