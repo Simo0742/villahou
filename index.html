@@ -293,7 +293,9 @@ footer a:hover{color:var(--accent)}
 
 /* Foto hover */
 .photo-cell{position:relative;cursor:zoom-in}
-.photo-cell::after{content:'+';position:absolute;inset:0;background:rgba(44,32,22,0);color:white;font-size:2rem;display:flex;align-items:center;justify-content:center;transition:background 0.25s,opacity 0.25s;opacity:0}
+.photo-cell::after{content:'+';position:absolute;inset:0;background:rgba(44,32,22,0);color:white;font-size:2rem;display:flex;align-items:center;justify-content:center;transition:background 0.25s,opacity 0.25s;opacity:0;pointer-events:none}
+.photo-cell.video-cell{cursor:default}
+.photo-cell.video-cell::after{display:none}
 .photo-cell:hover::after{background:rgba(44,32,22,0.35);opacity:1}
 
 /* Lightbox */
@@ -466,8 +468,11 @@ footer a:hover{color:var(--accent)}
       <div class="photo-cell" data-cat="area" onclick="openLightbox(20)">
         <img src="images/havn2.jpg" alt="Hou Havn med både" data-i18n-alt="alt_havn2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell span-2x1" data-cat="all" style="cursor:default" onclick="">
+      <div class="photo-cell span-2x1 video-cell" data-cat="all">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sa5dWrHWxyA" title="Villa Hou video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="border-radius:3px"></iframe>
+      </div>
+      <div class="photo-cell span-2x1" data-cat="indoors" onclick="openLightbox(21)">
+        <img src="images/Poolbord.jpg" alt="Villa Hou poolbord" data-i18n-alt="alt_poolbord" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
     </div>
     <p class="photo-counter" id="photoCounter">21 billeder</p>
@@ -884,7 +889,7 @@ document.addEventListener('click',e=>{
 });
 
 // Lightbox
-const lightboxImages=['images/forhave.jpg','images/stue1.jpg','images/stue2.jpg','images/alrum.jpg','images/alrum2.jpg','images/vildmarksbad.jpg','images/verlse1.jpg','images/verlse2.jpg','images/hems.jpg','images/hems2.jpg','images/baghave1.jpg','images/bad.jpg','images/legerum.jpg','images/baghave2.jpg','images/badebro.jpg','images/udsigt.jpg','images/strand.jpg','images/strand2.jpg','images/strand3.jpg','images/havn1.jpg','images/havn2.jpg'];
+const lightboxImages=['images/forhave.jpg','images/stue1.jpg','images/stue2.jpg','images/alrum.jpg','images/alrum2.jpg','images/vildmarksbad.jpg','images/verlse1.jpg','images/verlse2.jpg','images/hems.jpg','images/hems2.jpg','images/baghave1.jpg','images/bad.jpg','images/legerum.jpg','images/baghave2.jpg','images/badebro.jpg','images/udsigt.jpg','images/strand.jpg','images/strand2.jpg','images/strand3.jpg','images/havn1.jpg','images/havn2.jpg','images/Poolbord.jpg'];
 let lightboxIndex=0;
 function openLightbox(i){
   lightboxIndex=i;
@@ -1037,6 +1042,7 @@ const T = {
     alt_strand2:'Sandstrand t\u00e6t p\u00e5 Villa Hou',
     alt_strand3:'Strand ved Hou',
     alt_havn1:'Hou Havn',
+    alt_poolbord:'Villa Hou poolbord',
     alt_havn2:'Hou Havn med b\u00e5de',
     gal_all:'Alle',
     gal_indoors:'Indend\u00f8rs',
@@ -1171,6 +1177,7 @@ const T = {
     alt_strand2:'Sandstrand nahe Villa Hou',
     alt_strand3:'Strand bei Hou',
     alt_havn1:'Hou Hafen',
+    alt_poolbord:'Villa Hou Billardtisch',
     alt_havn2:'Hou Hafen mit Booten',
     gal_all:'Alle',
     gal_indoors:'Innenbereich',
@@ -1305,6 +1312,7 @@ const T = {
     alt_strand2:'Sandy beach close to Villa Hou',
     alt_strand3:'Beach at Hou',
     alt_havn1:'Hou Harbour',
+    alt_poolbord:'Villa Hou pool table',
     alt_havn2:'Hou Harbour with boats',
     gal_all:'All',
     gal_indoors:'Indoors',
