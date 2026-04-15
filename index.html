@@ -194,10 +194,11 @@ section{padding:5rem 2rem}
 .photo-cell.span-2x2{grid-column:span 2;grid-row:span 2}
 .photo-cell.span-2x1{grid-column:span 2}
 .photo-cell.span-1x2{grid-row:span 2}
-.gallery-filters{display:flex;gap:0.5rem;margin-top:1.5rem;flex-wrap:wrap}
-.gallery-filter{background:none;border:1px solid var(--warm);cursor:pointer;padding:0.45rem 1.1rem;border-radius:20px;font-family:'Lora',serif;font-size:0.78rem;color:var(--text-light);letter-spacing:0.04em;transition:all 0.2s}
-.gallery-filter:hover{border-color:var(--bark);color:var(--bark)}
-.gallery-filter.active{background:var(--bark-dark);color:var(--cream);border-color:var(--bark-dark)}
+.gallery-extra{display:none}
+.gallery-more{display:flex;align-items:center;justify-content:center;gap:0.6rem;margin:1.5rem auto 0;background:none;border:1px solid var(--warm);cursor:pointer;padding:0.7rem 2rem;border-radius:3px;font-family:'Lora',serif;font-size:0.85rem;color:var(--text-light);letter-spacing:0.04em;transition:all 0.2s}
+.gallery-more:hover{border-color:var(--bark);color:var(--bark);background:white}
+.gallery-more svg{transition:transform 0.3s}
+.gallery-more.open svg{transform:rotate(180deg)}
 .photo-counter{font-size:0.8rem;color:var(--text-light);margin-top:1rem;text-align:center}
 #om{background:var(--cream)}
 .om-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
@@ -400,12 +401,6 @@ footer a:hover{color:var(--accent)}
   <div class="inner">
     <p class="label" data-i18n="photos_label">Galleri</p>
     <h2 class="heading" data-i18n="photos_heading">Se <em>villaen</em></h2>
-    <div class="gallery-filters">
-      <button class="gallery-filter active" onclick="filterGallery('all')" data-i18n="gal_all">Alle</button>
-      <button class="gallery-filter" onclick="filterGallery('indoors')" data-i18n="gal_indoors">Indendørs</button>
-      <button class="gallery-filter" onclick="filterGallery('outdoors')" data-i18n="gal_outdoors">Udendørs</button>
-      <button class="gallery-filter" onclick="filterGallery('area')" data-i18n="gal_area">Området</button>
-    </div>
     <div class="photo-grid" id="photoGrid">
       <div class="photo-cell span-2x2" data-cat="outdoors" onclick="openLightbox(0)">
         <img src="images/forhave.jpg" alt="Villa Hou set udefra" data-i18n-alt="alt_forhave" loading="lazy" style="width:100%;height:100%;object-fit:cover">
@@ -431,49 +426,49 @@ footer a:hover{color:var(--accent)}
       <div class="photo-cell" data-cat="indoors" onclick="openLightbox(7)">
         <img src="images/hems.jpg" alt="Villa Hou hems med sovepladser" data-i18n-alt="alt_hems" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(8)">
+      <div class="photo-cell gallery-extra" data-cat="indoors" onclick="openLightbox(8)">
         <img src="images/hems2.jpg" alt="Villa Hou hems ovenfra" data-i18n-alt="alt_hems2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(9)">
+      <div class="photo-cell gallery-extra" data-cat="indoors" onclick="openLightbox(9)">
         <img src="images/bad.jpg" alt="Villa Hou badeværelse" data-i18n-alt="alt_bad" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(10)">
+      <div class="photo-cell gallery-extra" data-cat="indoors" onclick="openLightbox(10)">
         <img src="images/legerum.jpg" alt="Villa Hou legerum" data-i18n-alt="alt_legerum" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(11)">
+      <div class="photo-cell gallery-extra" data-cat="indoors" onclick="openLightbox(11)">
         <img src="images/Poolbord.jpg" alt="Villa Hou poolbord" data-i18n-alt="alt_poolbord" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell span-2x2" data-cat="outdoors" onclick="openLightbox(12)">
+      <div class="photo-cell gallery-extra span-2x2" data-cat="outdoors" onclick="openLightbox(12)">
         <img src="images/baghave1.jpg" alt="Villa Hou baghave med bålplads" data-i18n-alt="alt_baghave1" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(13)">
+      <div class="photo-cell gallery-extra" data-cat="outdoors" onclick="openLightbox(13)">
         <img src="images/vildmarksbad.jpg" alt="Villa Hou vildmarksbad" data-i18n-alt="alt_vildmarksbad" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(14)">
+      <div class="photo-cell gallery-extra" data-cat="outdoors" onclick="openLightbox(14)">
         <img src="images/baghave2.jpg" alt="Villa Hou baghave med terrasse" data-i18n-alt="alt_baghave2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(15)">
+      <div class="photo-cell gallery-extra" data-cat="outdoors" onclick="openLightbox(15)">
         <img src="images/badebro.jpg" alt="Villa Hou badebro" data-i18n-alt="alt_badebro" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(16)">
+      <div class="photo-cell gallery-extra" data-cat="outdoors" onclick="openLightbox(16)">
         <img src="images/udsigt.jpg" alt="Udsigt fra Villa Hou" data-i18n-alt="alt_udsigt" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(17)">
+      <div class="photo-cell gallery-extra" data-cat="area" onclick="openLightbox(17)">
         <img src="images/strand.jpg" alt="Strand nær Villa Hou" data-i18n-alt="alt_strand" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(18)">
+      <div class="photo-cell gallery-extra" data-cat="area" onclick="openLightbox(18)">
         <img src="images/strand2.jpg" alt="Sandstrand tæt på Villa Hou" data-i18n-alt="alt_strand2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(19)">
+      <div class="photo-cell gallery-extra" data-cat="area" onclick="openLightbox(19)">
         <img src="images/strand3.jpg" alt="Strand ved Hou" data-i18n-alt="alt_strand3" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(20)">
+      <div class="photo-cell gallery-extra" data-cat="area" onclick="openLightbox(20)">
         <img src="images/havn1.jpg" alt="Hou Havn" data-i18n-alt="alt_havn1" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(21)">
+      <div class="photo-cell gallery-extra" data-cat="area" onclick="openLightbox(21)">
         <img src="images/havn2.jpg" alt="Hou Havn med både" data-i18n-alt="alt_havn2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell span-2x1 video-cell" data-cat="all" onclick="window.open('https://www.youtube.com/watch?v=sa5dWrHWxyA','_blank')" style="cursor:pointer;position:relative">
+      <div class="photo-cell gallery-extra span-2x1 video-cell" data-cat="all" onclick="window.open('https://www.youtube.com/watch?v=sa5dWrHWxyA','_blank')" style="cursor:pointer;position:relative">
         <img src="https://img.youtube.com/vi/sa5dWrHWxyA/hqdefault.jpg" alt="Villa Hou video rundtur" loading="lazy" style="width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
           <svg width="56" height="56" viewBox="0 0 68 48" style="filter:drop-shadow(0 2px 8px rgba(0,0,0,0.4))"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#FF0000"/><path d="M45 24L27 14v20" fill="white"/></svg>
@@ -481,7 +476,10 @@ footer a:hover{color:var(--accent)}
         <span style="position:absolute;bottom:0.5rem;left:0.7rem;color:white;font-size:0.75rem;font-family:'Lora',serif;text-shadow:0 1px 3px rgba(0,0,0,0.6)" data-i18n="gal_video">Se video</span>
       </div>
     </div>
-    <p class="photo-counter" id="photoCounter">22 billeder</p>
+    <button class="gallery-more" id="galleryMore" onclick="toggleGallery()">
+      <span data-i18n="gal_more">Vis alle 22 billeder</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
   </div>
 </section>
 
@@ -947,17 +945,18 @@ document.addEventListener('keydown',e=>{
 });
 
 // Gallery filter
-function filterGallery(cat){
-  document.querySelectorAll('.gallery-filter').forEach(b=>b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  const cells=document.querySelectorAll('#photoGrid .photo-cell');
-  let count=0;
-  cells.forEach(c=>{
-    if(cat==='all'||c.dataset.cat===cat){c.style.display='';count++;}
-    else{c.style.display='none';}
-  });
-  const labels={da:'billeder',de:'Fotos',en:'photos'};
-  document.getElementById('photoCounter').textContent=count+' '+(labels[currentLang]||labels.da);
+function toggleGallery(){
+  const extras=document.querySelectorAll('.gallery-extra');
+  const btn=document.getElementById('galleryMore');
+  const isOpen=btn.classList.toggle('open');
+  extras.forEach(c=>{c.style.display=isOpen?'':'none';});
+  const labels={
+    da:{show:'Vis alle 22 billeder',hide:'Vis færre billeder'},
+    de:{show:'Alle 22 Fotos anzeigen',hide:'Weniger Fotos anzeigen'},
+    en:{show:'Show all 22 photos',hide:'Show fewer photos'}
+  };
+  const l=labels[currentLang]||labels.da;
+  btn.querySelector('[data-i18n="gal_more"]').textContent=isOpen?l.hide:l.show;
 }
 
 // Sidetitel pr. sprog
@@ -1077,6 +1076,7 @@ const T = {
     gal_outdoors:'Udend\u00f8rs',
     gal_area:'Omr\u00e5det',
     gal_video:'Se video',
+    gal_more:'Vis alle 22 billeder',
     p_bring:'<strong>Medbring selv:</strong> Sengelinned &nbsp;\u00b7&nbsp; H\u00e5ndkl\u00e6der &nbsp;\u00b7&nbsp; Viskestykker &nbsp;\u00b7&nbsp; Klude',
     book_label:'Reservation', book_heading:'Book dit <em>ophold</em>',
     book_intro:'Send os en bookingforesp\u00f8rgsel, og vi vender tilbage hurtigt.',
@@ -1213,6 +1213,7 @@ const T = {
     gal_outdoors:'Au\u00dfenbereich',
     gal_area:'Die Umgebung',
     gal_video:'Video ansehen',
+    gal_more:'Alle 22 Fotos anzeigen',
     p_bring:'<strong>Bitte mitbringen:</strong> Bettw\u00e4sche &nbsp;\u00b7&nbsp; Handt\u00fccher &nbsp;\u00b7&nbsp; Geschirrt\u00fccher &nbsp;\u00b7&nbsp; Lappen',
     book_label:'Reservierung', book_heading:'Ihren <em>Aufenthalt</em> buchen',
     book_intro:'Senden Sie uns eine Buchungsanfrage, und wir melden uns schnellstm\u00f6glich.',
@@ -1349,6 +1350,7 @@ const T = {
     gal_outdoors:'Outdoors',
     gal_area:'The area',
     gal_video:'Watch video',
+    gal_more:'Show all 22 photos',
     p_bring:'<strong>Please bring:</strong> Bed linen &nbsp;\u00b7&nbsp; Towels &nbsp;\u00b7&nbsp; Tea towels &nbsp;\u00b7&nbsp; Cloths',
     book_label:'Booking', book_heading:'Book your <em>stay</em>',
     book_intro:'Send us a booking enquiry and we\'ll get back to you as soon as possible.',
