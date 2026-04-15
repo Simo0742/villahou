@@ -186,6 +186,7 @@ section{padding:5rem 2rem}
 .heading{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,4vw,2.6rem);color:var(--bark-dark);margin-bottom:1.5rem;line-height:1.2}
 .heading em{font-style:italic}
 #billeder{background:var(--sand)}
+#photoGrid{background:var(--sand)}
 .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:8px;margin-top:1.5rem}
 .photo-cell{border-radius:3px;overflow:hidden;background:var(--warm);position:relative}
 .photo-cell.span-2x2{grid-column:span 2;grid-row:span 2}
@@ -465,6 +466,9 @@ footer a:hover{color:var(--accent)}
       <div class="photo-cell" data-cat="area" onclick="openLightbox(20)">
         <img src="images/havn2.jpg" alt="Hou Havn med både" data-i18n-alt="alt_havn2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
+      <div class="photo-cell span-2x1" data-cat="all" style="cursor:default" onclick="">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sa5dWrHWxyA" title="Villa Hou video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="border-radius:3px"></iframe>
+      </div>
     </div>
     <p class="photo-counter" id="photoCounter">21 billeder</p>
   </div>
@@ -595,7 +599,7 @@ footer a:hover{color:var(--accent)}
         <div style="text-align:center;padding:0.5rem">
           <div style="width:48px;height:48px;border-radius:50%;background:var(--accent);color:white;font-family:'Playfair Display',serif;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">2</div>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#f0e0cc;margin-bottom:0.4rem" data-i18n="p_step2_title">Book direkte hos os</p>
-          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step2_text">Send en forespørgsel her på siden — vi svarer inden 24 timer</p>
+          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step2_text">Send en forespørgsel her på siden — vi svarer hurtigt</p>
         </div>
 
         <div style="text-align:center;padding:0.5rem">
@@ -603,7 +607,7 @@ footer a:hover{color:var(--accent)}
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#f0e0cc;margin-bottom:0.4rem" data-i18n="p_step3_title">Spar 15%</p>
-          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step3_text">Ingen Airbnb-gebær — du betaler kun for huset</p>
+          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step3_text">Ingen Airbnb-gebyr — du betaler kun for huset</p>
         </div>
 
       </div>
@@ -621,7 +625,7 @@ footer a:hover{color:var(--accent)}
       <div style="display:flex;flex-direction:column;gap:0.6rem;max-width:520px;margin:0 auto">
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
-          <span data-i18n="p_usp1">Ingen Airbnb-gebær — pengene går direkte til udlejer</span>
+          <span data-i18n="p_usp1">Ingen Airbnb-gebyr — pengene går direkte til udlejer</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
@@ -629,7 +633,7 @@ footer a:hover{color:var(--accent)}
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
-          <span data-i18n="p_usp4">Betaling via bankoveførsel — ingen kortgebær</span>
+          <span data-i18n="p_usp4">Betaling via bankoveførsel — ingen kortgebyr</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
@@ -637,10 +641,7 @@ footer a:hover{color:var(--accent)}
         </div>
       </div>
 
-      <!-- CTA -->
-      <div style="text-align:center;margin-top:2rem">
-        <a href="#book" class="btn-prim" data-i18n="p_cta">Få et tilbud</a>
-      </div>
+
 
       <!-- Praktisk info -->
       <div style="margin-top:2rem;border-top:1px solid rgba(255,249,240,0.12);padding-top:1.5rem;font-size:0.82rem;color:#c9b49a;line-height:1.75;max-width:620px;margin-left:auto;margin-right:auto;text-align:center">
@@ -716,10 +717,10 @@ footer a:hover{color:var(--accent)}
     <div class="book-left">
       <p class="label" style="color:#c9a87c" data-i18n="book_label">Reservation</p>
       <h2 class="heading" style="color:#f0e0cc" data-i18n="book_heading">Book dit <em>ophold</em></h2>
-      <p data-i18n="book_intro">Send os en bookingforespørgsel, og vi vender tilbage inden for 24 timer.</p>
+      <p data-i18n="book_intro">Send os en bookingforespørgsel, og vi vender tilbage hurtigt.</p>
       <ul class="steps">
         <li class="step"><div class="step-num">1</div><div class="step-text"><strong data-i18n="step1_title">Udfyld formularen</strong><br><span data-i18n="step1_text">Med ønskede datoer og kontaktoplysninger</span></div></li>
-        <li class="step"><div class="step-num">2</div><div class="step-text"><strong data-i18n="step2_title">Vi bekræfter inden 24 timer</strong><br><span data-i18n="step2_text">Vi vender tilbage med pris for det ønskede ophold</span></div></li>
+        <li class="step"><div class="step-num">2</div><div class="step-text"><strong data-i18n="step2_title">Vi bekræfter hurtigt</strong><br><span data-i18n="step2_text">Vi vender tilbage med pris for det ønskede ophold</span></div></li>
         <li class="step"><div class="step-num">3</div><div class="step-text"><strong data-i18n="step3_title">Indbetaling af 2 rater</strong><br><span data-i18n="step3_text">Vi sender betalingsdetaljer og kontrakt når vi bekræfter din booking</span></div></li>
         <li class="step"><div class="step-num">4</div><div class="step-text"><strong data-i18n="step4_title">Nyd opholdet!</strong><br><span data-i18n="step4_text">Vi sender alle praktiske informationer inden ankomst</span></div></li>
       </ul>
@@ -764,10 +765,10 @@ footer a:hover{color:var(--accent)}
             <span data-i18n="send_email">Send via e-mail</span>
           </button>
         </div>
-        <p class="form-disclaimer" data-i18n="form_disclaimer">Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.</p>
+        <p class="form-disclaimer" data-i18n="form_disclaimer">Vi behandler din henvendelse hurtigt. Dine oplysninger deles aldrig med tredjepart.</p>
       </div>
       <div class="success-msg" id="successMsg" data-i18n="form_success">
-        <strong>Tak!</strong> Vi vender tilbage inden for 24 timer med bekræftelse og bankoplysninger.
+        <strong>Tak!</strong> Vi vender tilbage hurtigt med bekræftelse og bankoplysninger.
       </div>
     </div>
   </div>
@@ -988,12 +989,12 @@ const T = {
     cal_sync:'Synkroniseret via iCal \u2014 opdateres automatisk.', cal_airbnb_link:'Se ogs\u00e5 p\u00e5 Airbnb',
     price_label:'Priser', price_heading:'<em>Billigere</em> end Airbnb',
     p_badge_label:'Direkte booking', p_badge_pct:'15% billigere',
-    p_badge_sub:'end Airbnb-prisen \u2014 samme hus, ingen formidlingsgeb\u00e6r',
+    p_badge_sub:'end Airbnb-prisen \u2014 samme hus, ingen formidlingsgebyr',
     p_airbnb_compare:'Se vores Airbnb-opslag \u2192',
-    p_usp1:'Ingen Airbnb-geb\u00e6r \u2014 pengene g\u00e5r direkte til udlejer',
+    p_usp1:'Ingen Airbnb-gebyr \u2014 pengene g\u00e5r direkte til udlejer',
     p_usp2:'Minimum 3 overnatninger',
-    p_usp3:'Send en foresp\u00f8rgsel \u2014 vi svarer med en pris inden 24 timer',
-    p_usp4:'Betaling via bankovef\u00f8rsel \u2014 ingen kortgeb\u00e6r',
+    p_usp3:'Send en foresp\u00f8rgsel \u2014 vi svarer hurtigt med en pris',
+    p_usp4:'Betaling via bankovef\u00f8rsel \u2014 ingen kortgebyr',
     p_usp5:'Slutreng\u00f8ring inkluderet i prisen',
     p_cta:'F\u00e5 et tilbud',
     p_on_request:'Pris p\u00e5 foresp\u00f8rgsel',
@@ -1010,9 +1011,9 @@ const T = {
     p_step1_title: 'Tjek prisen p\u00e5 Airbnb',
     p_step1_text: 'Find dine \u00f8nskede datoer p\u00e5 vores Airbnb-opslag og se totalprisen',
     p_step2_title: 'Book direkte hos os',
-    p_step2_text: 'Send en foresp\u00f8rgsel her p\u00e5 siden \u2014 vi svarer inden 24 timer',
+    p_step2_text: 'Send en foresp\u00f8rgsel her p\u00e5 siden \u2014 vi svarer hurtigt',
     p_step3_title: 'Spar 15%',
-    p_step3_text: 'Ingen Airbnb-geb\u00e6r \u2014 du betaler kun for huset',
+    p_step3_text: 'Ingen Airbnb-gebyr \u2014 du betaler kun for huset',
     p_airbnb_check: 'Se prisen for dine datoer p\u00e5 Airbnb',
     p_airbnb_then: '\u2014 og send os derefter en foresp\u00f8rgsel her, s\u00e5 matcher vi prisen minus 15%',
     alt_cover:'Villa Hou - Feriehus i Hou, Nordjylland, Danmark',
@@ -1043,9 +1044,9 @@ const T = {
     gal_area:'Omr\u00e5det',
     p_bring:'<strong>Medbring selv:</strong> Sengelinned &nbsp;\u00b7&nbsp; H\u00e5ndkl\u00e6der &nbsp;\u00b7&nbsp; Viskestykker &nbsp;\u00b7&nbsp; Klude',
     book_label:'Reservation', book_heading:'Book dit <em>ophold</em>',
-    book_intro:'Send os en bookingforesp\u00f8rgsel, og vi vender tilbage inden for 24 timer.',
+    book_intro:'Send os en bookingforesp\u00f8rgsel, og vi vender tilbage hurtigt.',
     step1_title:'Udfyld formularen', step1_text:'Med \u00f8nskede datoer og kontaktoplysninger',
-    step2_title:'Vi bekr\u00e6fter inden 24 timer', step2_text:'Vi vender tilbage med pris for det \u00f8nskede ophold',
+    step2_title:'Vi bekr\u00e6fter hurtigt', step2_text:'Vi vender tilbage med pris for det \u00f8nskede ophold',
     step3_title:'Indbetaling af 2 rater', step3_text:'Vi sender betalingsdetaljer og kontrakt n\u00e5r vi bekr\u00e6fter din booking',
     step4_title:'Nyd opholdet!', step4_text:'Vi sender alle praktiske informationer inden ankomst',
     form_heading:'Bookingforesp\u00f8rgsel', form_fname:'Fornavn', form_lname:'Efternavn',
@@ -1056,14 +1057,14 @@ const T = {
     bank_title:'Betaling via bankovef\u00f8rsel',
     bank_text:'Efter din foresp\u00f8rgsel sender vi kontonummer og betalingsdetaljer direkte til dig. Ingen kortgebyr \u2014 enkel og tryg betaling.',
     form_submit:'Send foresp\u00f8rgsel',
-    form_disclaimer:'Vi behandler din henvendelse inden for 24 timer. Dine oplysninger deles aldrig med tredjepart.',
-    form_success:'<strong>Tak!</strong> Vi vender tilbage inden for 24 timer med bekr\u00e6ftelse og bankoplysninger.',
+    form_disclaimer:'Vi behandler din henvendelse hurtigt. Dine oplysninger deles aldrig med tredjepart.',
+    form_success:'<strong>Tak!</strong> Vi vender tilbage hurtigt med bekr\u00e6ftelse og bankoplysninger.',
     contact_label:'Kontakt', contact_heading:'Find <em>os</em>',
     contact_intro:'Har du sp\u00f8rgsm\u00e5l? Du er altid velkommen til at kontakte os \u2014 vi svarer hurtigt.',
     contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Ring til os',
     seo_h2:'Sommerhus til leje i Hou, Nordjylland, Danmark',
     seo_p1:'Leder du efter et sommerhus til leje i Nordjylland, Danmark? Villa Hou er et unikt feriehus i Hou ved Limfjorden, t\u00e6t p\u00e5 Hals og kun 1 km fra en af Danmarks reneste sandstrande. Ideelt til familier og grupper p\u00e5 op til 6 personer.',
-    seo_p2:'Sommerhuset har vildmarksbad, br\u00e6ndeovn, b\u00e5lplads, aircondition og stor naturterrasse. Vi udlejer direkte — ingen formidlingsgeb\u00e6r — s\u00e5 du f\u00e5r en bedre pris end p\u00e5 Airbnb.',
+    seo_p2:'Sommerhuset har vildmarksbad, br\u00e6ndeovn, b\u00e5lplads, aircondition og stor naturterrasse. Vi udlejer direkte — ingen formidlingsgebyr — s\u00e5 du f\u00e5r en bedre pris end p\u00e5 Airbnb.',
     seo_p3:'Hou ligger i hjertet af Nordjylland, Danmark, med nem adgang til Aalborg og Limfjorden. Omr\u00e5det byder p\u00e5 havnebad med sauna, golf, naturstier og b\u00f8rnevenlige strande.',
     nav_reviews:'Anmeldelser',
     float_cal:'Se kalender', fab_label:'Menu',
@@ -1126,7 +1127,7 @@ const T = {
     p_airbnb_compare:'Unser Airbnb-Inserat ansehen \u2192',
     p_usp1:'Keine Airbnb-Geb\u00fchr \u2014 Ihr Geld geht direkt an den Vermieter',
     p_usp2:'Mindestaufenthalt 3 N\u00e4chte',
-    p_usp3:'Anfrage senden \u2014 wir antworten mit einem Preis innerhalb von 24 Stunden',
+    p_usp3:'Anfrage senden \u2014 wir antworten mit einem Preis schnellstm\u00f6glich',
     p_usp4:'Zahlung per Banktransfer \u2014 keine Kartengebühren',
     p_usp5:'Endreinigung im Preis inbegriffen',
     p_cta:'Angebot anfordern',
@@ -1144,7 +1145,7 @@ const T = {
     p_step1_title: 'Preis auf Airbnb pr\u00fcfen',
     p_step1_text: 'Finden Sie Ihre Wunschdaten in unserem Airbnb-Inserat und sehen Sie den Gesamtpreis',
     p_step2_title: 'Direkt bei uns buchen',
-    p_step2_text: 'Senden Sie eine Anfrage hier auf der Seite \u2014 wir antworten innerhalb von 24 Stunden',
+    p_step2_text: 'Senden Sie eine Anfrage hier auf der Seite \u2014 wir antworten schnellstm\u00f6glich',
     p_step3_title: '15% sparen',
     p_step3_text: 'Keine Airbnb-Geb\u00fchr \u2014 Sie zahlen nur f\u00fcr das Haus',
     p_airbnb_check: 'Preis f\u00fcr Ihre Daten auf Airbnb ansehen',
@@ -1177,7 +1178,7 @@ const T = {
     gal_area:'Die Umgebung',
     p_bring:'<strong>Bitte mitbringen:</strong> Bettw\u00e4sche &nbsp;\u00b7&nbsp; Handt\u00fccher &nbsp;\u00b7&nbsp; Geschirrt\u00fccher &nbsp;\u00b7&nbsp; Lappen',
     book_label:'Reservierung', book_heading:'Ihren <em>Aufenthalt</em> buchen',
-    book_intro:'Senden Sie uns eine Buchungsanfrage, und wir melden uns innerhalb von 24 Stunden.',
+    book_intro:'Senden Sie uns eine Buchungsanfrage, und wir melden uns schnellstm\u00f6glich.',
     step1_title:'Formular ausf\u00fcllen', step1_text:'Mit gew\u00fcnschten Terminen und Kontaktdaten',
     step2_title:'Wir best\u00e4tigen innerhalb 24 Std.', step2_text:'Wir antworten mit dem Preis f\u00fcr den gew\u00fcnschten Aufenthalt',
     step3_title:'Zahlung in 2 Raten', step3_text:'Wir senden Zahlungsdetails und Vertrag mit der Buchungsbest\u00e4tigung',
@@ -1190,8 +1191,8 @@ const T = {
     bank_title:'Zahlung per Banktransfer',
     bank_text:'Nach Ihrer Anfrage senden wir Ihnen direkt Kontonummer und Zahlungsdetails. Keine Kartengebühren \u2014 einfach und sicher.',
     form_submit:'Anfrage senden',
-    form_disclaimer:'Wir bearbeiten Ihre Anfrage innerhalb von 24 Stunden. Ihre Daten werden niemals an Dritte weitergegeben.',
-    form_success:'<strong>Danke!</strong> Wir melden uns innerhalb von 24 Stunden mit Best\u00e4tigung und Bankdaten.',
+    form_disclaimer:'Wir bearbeiten Ihre Anfrage schnellstm\u00f6glich. Ihre Daten werden niemals an Dritte weitergegeben.',
+    form_success:'<strong>Danke!</strong> Wir melden uns schnellstm\u00f6glich mit Best\u00e4tigung und Bankdaten.',
     contact_label:'Kontakt', contact_heading:'<em>Uns</em> finden',
     contact_intro:'Haben Sie Fragen? Kontaktieren Sie uns jederzeit \u2014 wir antworten schnell.',
     contact_addr_label:'Adresse', contact_phone_label:'Telefon', contact_call:'Anrufen',
@@ -1260,7 +1261,7 @@ const T = {
     p_airbnb_compare:'View our Airbnb listing \u2192',
     p_usp1:'No Airbnb fee \u2014 your money goes directly to the owner',
     p_usp2:'Minimum 3 nights',
-    p_usp3:'Send an enquiry \u2014 we reply with a price within 24 hours',
+    p_usp3:'Send an enquiry \u2014 we reply with a price as soon as possible',
     p_usp4:'Payment by bank transfer \u2014 no card fees',
     p_usp5:'Final cleaning included in the price',
     p_cta:'Get a quote',
@@ -1278,7 +1279,7 @@ const T = {
     p_step1_title: 'Check the price on Airbnb',
     p_step1_text: 'Find your desired dates on our Airbnb listing and see the total price',
     p_step2_title: 'Book direct with us',
-    p_step2_text: 'Send an enquiry here on our site \u2014 we reply within 24 hours',
+    p_step2_text: 'Send an enquiry here on our site \u2014 we reply as soon as possible',
     p_step3_title: 'Save 15%',
     p_step3_text: 'No Airbnb fee \u2014 you only pay for the house',
     p_airbnb_check: 'Check the price for your dates on Airbnb',
@@ -1311,9 +1312,9 @@ const T = {
     gal_area:'The area',
     p_bring:'<strong>Please bring:</strong> Bed linen &nbsp;\u00b7&nbsp; Towels &nbsp;\u00b7&nbsp; Tea towels &nbsp;\u00b7&nbsp; Cloths',
     book_label:'Booking', book_heading:'Book your <em>stay</em>',
-    book_intro:'Send us a booking enquiry and we\'ll get back to you within 24 hours.',
+    book_intro:'Send us a booking enquiry and we\'ll get back to you as soon as possible.',
     step1_title:'Fill in the form', step1_text:'With your desired dates and contact details',
-    step2_title:'We confirm within 24 hours', step2_text:'We reply with a price for your requested stay',
+    step2_title:'We confirm as soon as possible', step2_text:'We reply with a price for your requested stay',
     step3_title:'Payment in 2 instalments', step3_text:'We send payment details and contract when we confirm your booking',
     step4_title:'Enjoy your stay!', step4_text:'We\'ll send all practical information before arrival',
     form_heading:'Booking enquiry', form_fname:'First name', form_lname:'Last name',
@@ -1324,8 +1325,8 @@ const T = {
     bank_title:'Payment by bank transfer',
     bank_text:'After your enquiry we\'ll send you our bank details directly. No card fees \u2014 simple and secure.',
     form_submit:'Send enquiry',
-    form_disclaimer:'We respond within 24 hours. Your details are never shared with third parties.',
-    form_success:'<strong>Thank you!</strong> We\'ll be in touch within 24 hours with confirmation and bank details.',
+    form_disclaimer:'We respond as soon as possible. Your details are never shared with third parties.',
+    form_success:'<strong>Thank you!</strong> We\'ll be in touch as soon as possible with confirmation and bank details.',
     contact_label:'Contact', contact_heading:'Find <em>us</em>',
     contact_intro:'Have questions? Feel free to contact us \u2014 we respond quickly.',
     contact_addr_label:'Address', contact_phone_label:'Phone', contact_call:'Call us',
