@@ -27,10 +27,12 @@
 {
   "@context": "https://schema.org",
   "@type": "VacationRental",
+  "additionalType": "Villa",
   "name": "Villa Hou",
+  "identifier": "villahou-kongevejen219",
   "description": "Unikt feriehus fra 2015 på 99 m² med plads til 6 personer. Privat 1.400 m² naturgrund med vildmarksbad, brændeovn, bålplads og terrasse. 1 km fra strand og havn i Hou, Nordjylland.",
-  "url": "https://villahou.com",
-  "logo": "https://www.villahou.com/favicon.svg",
+  "url": "https://www.villahou.com",
+  "knowsLanguage": ["da", "de", "en"],
   "image": [
     "https://www.villahou.com/images/forhave.jpg",
     "https://www.villahou.com/images/stue1.jpg",
@@ -39,11 +41,14 @@
     "https://www.villahou.com/images/verlse1.jpg",
     "https://www.villahou.com/images/strand.jpg"
   ],
+  "latitude": 56.9897,
+  "longitude": 10.3107,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Kongevejen 219",
     "addressLocality": "Hals",
     "postalCode": "9370",
+    "addressRegion": "Nordjylland",
     "addressCountry": "DK"
   },
   "geo": {
@@ -51,22 +56,44 @@
     "latitude": 56.9897,
     "longitude": 10.3107
   },
+  "containsPlace": {
+    "@type": "Accommodation",
+    "additionalType": "EntirePlace",
+    "floorSize": {
+      "@type": "QuantitativeValue",
+      "value": 99,
+      "unitCode": "MTK"
+    },
+    "numberOfRooms": 3,
+    "numberOfBedrooms": 2,
+    "numberOfBathroomsTotal": 1,
+    "bed": [
+      {"@type": "BedDetails", "numberOfBeds": 2, "typeOfBed": "Double"},
+      {"@type": "BedDetails", "numberOfBeds": 1, "typeOfBed": "Double"},
+      {"@type": "BedDetails", "numberOfBeds": 2, "typeOfBed": "Single"}
+    ],
+    "occupancy": {
+      "@type": "QuantitativeValue",
+      "value": 6
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "hotTub", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "fireplace", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "ac", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "wifi", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "parking", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "balcony", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "beachAccess", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "kidsFriendly", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "kitchen", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "washer", "value": true}
+    ],
+    "petsAllowed": false
+  },
+  "checkinTime": "15:00",
+  "checkoutTime": "11:00",
   "telephone": "+4557709971",
   "email": "info@villahou.com",
-  "numberOfRooms": 3,
-  "occupancy": {
-    "@type": "QuantitativeValue",
-    "maxValue": 6
-  },
-  "amenityFeature": [
-    {"@type": "LocationFeatureSpecification", "name": "Vildmarksbad", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Brændeovn", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Aircondition", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Wifi", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Bålplads", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Parkering", "value": true}
-  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -576,7 +603,7 @@ footer a:hover{color:var(--accent)}
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <p style="font-family:'Playfair Display',serif;font-size:1rem;color:#f0e0cc;margin-bottom:0.4rem" data-i18n="p_step3_title">Spar 15%</p>
-          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step3_text">Ingen Airbnb-gebyr — du betaler kun for huset</p>
+          <p style="font-size:0.83rem;color:#c9b49a;line-height:1.6" data-i18n="p_step3_text">Ingen Airbnb-gebær — du betaler kun for huset</p>
         </div>
 
       </div>
@@ -594,7 +621,7 @@ footer a:hover{color:var(--accent)}
       <div style="display:flex;flex-direction:column;gap:0.6rem;max-width:520px;margin:0 auto">
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
-          <span data-i18n="p_usp1">Ingen Airbnb-gebyr — pengene går direkte til udlejer</span>
+          <span data-i18n="p_usp1">Ingen Airbnb-gebær — pengene går direkte til udlejer</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
@@ -602,7 +629,7 @@ footer a:hover{color:var(--accent)}
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
-          <span data-i18n="p_usp4">Betaling via bankoveførsel — ingen kortgebyr</span>
+          <span data-i18n="p_usp4">Betaling via bankoveførsel — ingen kortgebær</span>
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;font-size:0.85rem;color:#c9b49a">
           <span style="color:#6b7c5a;font-size:1rem;flex-shrink:0">&#10003;</span>
