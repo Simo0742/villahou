@@ -187,7 +187,7 @@ section{padding:5rem 2rem}
 .heading em{font-style:italic}
 #billeder{background:var(--sand)}
 #photoGrid{background:var(--sand)}
-.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:8px;margin-top:1.5rem}
+.photo-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:8px;margin-top:1.5rem;grid-auto-flow:dense}
 .photo-cell{border-radius:3px;overflow:hidden;background:var(--warm);position:relative}
 .photo-cell.span-2x2{grid-column:span 2;grid-row:span 2}
 .photo-cell.span-2x1{grid-column:span 2}
@@ -420,62 +420,62 @@ footer a:hover{color:var(--accent)}
       <div class="photo-cell" data-cat="indoors" onclick="openLightbox(4)">
         <img src="images/alrum2.jpg" alt="Villa Hou alrum med spiseplads" data-i18n-alt="alt_alrum2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell span-2x1" data-cat="outdoors" onclick="openLightbox(5)">
-        <img src="images/vildmarksbad.jpg" alt="Villa Hou vildmarksbad" data-i18n-alt="alt_vildmarksbad" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-      </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(6)">
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(5)">
         <img src="images/verlse1.jpg" alt="Villa Hou soveværelse med dobbeltseng" data-i18n-alt="alt_verelse1" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(7)">
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(6)">
         <img src="images/verlse2.jpg" alt="Villa Hou soveværelse 2" data-i18n-alt="alt_verelse2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(8)">
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(7)">
         <img src="images/hems.jpg" alt="Villa Hou hems med sovepladser" data-i18n-alt="alt_hems" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(9)">
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(8)">
         <img src="images/hems2.jpg" alt="Villa Hou hems ovenfra" data-i18n-alt="alt_hems2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell span-2x2" data-cat="outdoors" onclick="openLightbox(10)">
-        <img src="images/baghave1.jpg" alt="Villa Hou baghave med bålplads" data-i18n-alt="alt_baghave1" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-      </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(11)">
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(9)">
         <img src="images/bad.jpg" alt="Villa Hou badeværelse" data-i18n-alt="alt_bad" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(12)">
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(10)">
         <img src="images/legerum.jpg" alt="Villa Hou legerum" data-i18n-alt="alt_legerum" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
+      <div class="photo-cell" data-cat="indoors" onclick="openLightbox(11)">
+        <img src="images/Poolbord.jpg" alt="Villa Hou poolbord" data-i18n-alt="alt_poolbord" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="photo-cell span-2x2" data-cat="outdoors" onclick="openLightbox(12)">
+        <img src="images/baghave1.jpg" alt="Villa Hou baghave med bålplads" data-i18n-alt="alt_baghave1" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+      </div>
       <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(13)">
-        <img src="images/baghave2.jpg" alt="Villa Hou baghave med terrasse" data-i18n-alt="alt_baghave2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/vildmarksbad.jpg" alt="Villa Hou vildmarksbad" data-i18n-alt="alt_vildmarksbad" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(14)">
-        <img src="images/badebro.jpg" alt="Villa Hou badebro" data-i18n-alt="alt_badebro" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <img src="images/baghave2.jpg" alt="Villa Hou baghave med terrasse" data-i18n-alt="alt_baghave2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(15)">
+        <img src="images/badebro.jpg" alt="Villa Hou badebro" data-i18n-alt="alt_badebro" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="photo-cell" data-cat="outdoors" onclick="openLightbox(16)">
         <img src="images/udsigt.jpg" alt="Udsigt fra Villa Hou" data-i18n-alt="alt_udsigt" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell span-2x1" data-cat="area" onclick="openLightbox(16)">
+      <div class="photo-cell" data-cat="area" onclick="openLightbox(17)">
         <img src="images/strand.jpg" alt="Strand nær Villa Hou" data-i18n-alt="alt_strand" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(17)">
+      <div class="photo-cell" data-cat="area" onclick="openLightbox(18)">
         <img src="images/strand2.jpg" alt="Sandstrand tæt på Villa Hou" data-i18n-alt="alt_strand2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(18)">
+      <div class="photo-cell" data-cat="area" onclick="openLightbox(19)">
         <img src="images/strand3.jpg" alt="Strand ved Hou" data-i18n-alt="alt_strand3" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(19)">
+      <div class="photo-cell" data-cat="area" onclick="openLightbox(20)">
         <img src="images/havn1.jpg" alt="Hou Havn" data-i18n-alt="alt_havn1" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
-      <div class="photo-cell" data-cat="area" onclick="openLightbox(20)">
+      <div class="photo-cell" data-cat="area" onclick="openLightbox(21)">
         <img src="images/havn2.jpg" alt="Hou Havn med både" data-i18n-alt="alt_havn2" loading="lazy" style="width:100%;height:100%;object-fit:cover">
       </div>
       <div class="photo-cell span-2x1 video-cell" data-cat="all">
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/sa5dWrHWxyA" title="Villa Hou video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="border-radius:3px"></iframe>
       </div>
-      <div class="photo-cell span-2x1" data-cat="indoors" onclick="openLightbox(21)">
-        <img src="images/Poolbord.jpg" alt="Villa Hou poolbord" data-i18n-alt="alt_poolbord" loading="lazy" style="width:100%;height:100%;object-fit:cover">
-      </div>
     </div>
-    <p class="photo-counter" id="photoCounter">21 billeder</p>
+    <p class="photo-counter" id="photoCounter">22 billeder</p>
   </div>
 </section>
 
@@ -889,7 +889,7 @@ document.addEventListener('click',e=>{
 });
 
 // Lightbox
-const lightboxImages=['images/forhave.jpg','images/stue1.jpg','images/stue2.jpg','images/alrum.jpg','images/alrum2.jpg','images/vildmarksbad.jpg','images/verlse1.jpg','images/verlse2.jpg','images/hems.jpg','images/hems2.jpg','images/baghave1.jpg','images/bad.jpg','images/legerum.jpg','images/baghave2.jpg','images/badebro.jpg','images/udsigt.jpg','images/strand.jpg','images/strand2.jpg','images/strand3.jpg','images/havn1.jpg','images/havn2.jpg','images/Poolbord.jpg'];
+const lightboxImages=['images/forhave.jpg','images/stue1.jpg','images/stue2.jpg','images/alrum.jpg','images/alrum2.jpg','images/verlse1.jpg','images/verlse2.jpg','images/hems.jpg','images/hems2.jpg','images/bad.jpg','images/legerum.jpg','images/Poolbord.jpg','images/baghave1.jpg','images/vildmarksbad.jpg','images/baghave2.jpg','images/badebro.jpg','images/udsigt.jpg','images/strand.jpg','images/strand2.jpg','images/strand3.jpg','images/havn1.jpg','images/havn2.jpg'];
 let lightboxIndex=0;
 function openLightbox(i){
   lightboxIndex=i;
