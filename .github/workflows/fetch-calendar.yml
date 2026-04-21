@@ -1,16 +1,14 @@
 name: Opdater Airbnb kalender
-
 on:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
-
 permissions:
   contents: write
-
+  pages: write
+  id-token: write
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -19,14 +17,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Hent Airbnb iCal og gem som JSON
         run: |
           curl -s "https://www.airbnb.dk/calendar/ical/1440420483011438215.ics?t=50358892574146fbb10083c54419f796" -o calendar.ics
 
           python3 << 'PYEOF'
           import re, json
-          from datetime import datetime
+          from datetime import datetime, timezone
 
           with open('calendar.ics', 'r', encoding='utf-8', errors='ignore') as f:
               text = f.read()
@@ -46,14 +43,13 @@ jobs:
                       pass
 
           out = {
-              'updated': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
+              'updated': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
               'booked': ranges
           }
           with open('calendar.json', 'w') as f:
               json.dump(out, f)
           print(f"Gemt {len(ranges)} bookinger")
           PYEOF
-
       - name: Commit og push calendar.json
         run: |
           git config user.name "github-actions[bot]"
@@ -61,3 +57,9 @@ jobs:
           git add calendar.json
           git diff --staged --quiet || git commit -m "Opdater kalender $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
+      - name: Deploy til GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Publish Pages
+        uses: actions/deploy-pages@v4
